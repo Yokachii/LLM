@@ -1,14 +1,17 @@
 #ifndef DATASET_H
 #define DATASET_H
 
+typedef struct {
+    int V;                      // Nombre de caractère
+    int *dic;                  // dict[char] -> indice dans map
+    char *dic_inv;             // dic_inv[indice] -> char
+    float **map;               // caractère -> indice, -1 si absent
+} Vocab;
 
-typedef struct dataset_s
-{
-    int n;
-    int dim;
-    float **data;
-} Dataset;
-
+typedef struct {
+    int n;                      // nombre de tokens
+    unsigned char *tok;         // n indices
+} Texte;
 
 typedef struct
 {
@@ -18,74 +21,22 @@ typedef struct
     int FP;
 } MatrixConfusion;
 
+Texte *new_text(int n, Vocab *voc);
 
-/**
- * \fn dataset *new_dataset(int dim, int taux) 
- * \brief Initialise un perceptron
- *
- * \param dim nombre de wi xi 
- * \param n nombre de données 
- * \return pointeur vers le nouveau perceptron
- */ 
-Dataset *new_dataset(int dim, int n);
+void *free_text(Texte t);
+void *free_vocab(Vocab v);
 
-/**
- * \fn void *free_dataset(Dataset *p)
- * \brief Libère un dataset
- *
- * \param p Pointeur vers le dataset à free 
- */ 
-void *free_dataset(Dataset *d);
+Texte *load_texte(char *path, Vocab **v, int d);
 
 
-/**
- * \fn Dataset *load_dataset(char *path)
- * \brief Charge un dataset
- *
- * \param path local path
- */ 
-Dataset *load_dataset(char *path, int d,int *V, float ***dict);
-
-/**
- * \fn void *display_dataset(dataset p)
- * \brief Affiche un dataset
- *
- * \param p dataset à afficher
- */ 
-void display_dataset(Dataset p);
+void display_Text(Texte t);
+void display_Vocab(Vocab v);
 
 
-/**
- * \fn float sigmoide(int z)
- */ 
 float sigmoide(float z);
 
+// float tanh(float z);
 
-
-/**
- * \fn void shuffle(Dataset *d)
- * \brief Mélange les données d'un dataset
- *
- * \param d dataset à mélanger
- */ 
-void shuffle(Dataset *d);
-
-
-/**
- * \fn void normalize(Dataset *d)
- * \brief Normalise les données d'un dataset
- *
- * \param d dataset à normaliser
- */ 
-void normalize(Dataset *d);
-
-
-/**
- * \fn void split_dataset(Dataset *d, Dataset *train, Dataset *test, float ratio)
- * \brief Sépare les données en deux dataset
- *
- * \param ratio 0 -> 1,EX 0.8 = 80%
- */ 
-void split_dataset(Dataset *d, Dataset **train, Dataset **test, float ratio);
+void split_texte(Texte *t, Texte **train, Texte **test, float ratio);
 
 #endif

@@ -27,58 +27,27 @@ int main(int argc, char *argv[]) {
     srand(seed);   // avant new_network, qui choisie les poids initiaux
     if(HumanOutput==1) printf("Graine : %u\n", seed);
 
-    int V = NULL;
-    float **dict;
-
-    Dataset *dataset_l = load_dataset(filepath,d,&V,&dict); // <- load text & set le nb de caractères distinct dans le text
-    // load_dataset va aussi remplire le dictionnaire avec V tableau de d float;
-    
+    Vocab *V;
+    Texte *text_l = load_texte(filepath,&V,d); // <- load text & set le nb de caractères distinct dans le text
 
     int dimE = N*d;
-
-    Reseau *n = new_network(nb_couche_cache, H, taux, dimE, V);
-    Dataset *tr, *tt;
-    shuffle(dataset_l);
-    // if(normalizeArg==1){
-    //     normalize(d);
-    // }
-    split_dataset(dataset_l,&tr,&tt,train_ratio);
+    Reseau *n = new_network(nb_couche_cache, H, taux, dimE, V->V);
+    Texte *tr, *tt;
+    
+    split_texte(text_l,&tr,&tt,train_ratio);
 
     int isFreed = 0;
 
-    if(tt->n==0){
-        free_dataset(tt);
-        tt=tr;
-        isFreed=1;
-    }
-
-    // float accBefore=calc_acc(n,tt);
-    // if(HumanOutput==1) printf("\nAcc avant train : %f\n\n",accBefore);
-
-    // int epoquesMax;
-    // float maxAcc;
-    // int epoques = train(n,nb_epoques,tr,tt,StopWhenTrained,&epoquesMax,&maxAcc,HumanOutput);
-
-    // MatrixConfusion *matrix = matrice_confusion(n,tt);
-    // float accAfter=calc_acc(n,tt);
-
-    // if(HumanOutput==1){
-    //     display_network(*n);
-    //     printf("Acc après train : %f\n\n",accAfter);
-    //     printf("epoquesMax : %d\nAccMax:%f\n",epoquesMax,maxAcc);
-    //     display_matrix(matrix);
-    // }else{
-    //     // #END;epoques;accBefore;accAfter;FN;FP;TN;TP;epoquesMax;accMax
-    //     printf("#END;%d;%f;%f;%d;%d;%d;%d;%d;%f\n",epoques,accBefore,accAfter,matrix->FN,matrix->FP,matrix->TN,matrix->TP,epoquesMax,maxAcc);
+    // if(tt->n==0){
+    //     free_dataset(tt);
+    //     tt=tr;
+    //     isFreed=1;
+    // }
+    // if(isFreed==0){
+    //     free_dataset(tt);
     // }
 
-    // free(matrix);
-
-    if(isFreed==0){
-        free_dataset(tt);
-    }
-
-    free_network(n);
-    free_dataset(tr);
+    // free_network(n);
+    // free_dataset(tr);
     return 0;
 }

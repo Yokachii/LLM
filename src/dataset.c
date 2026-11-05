@@ -4,221 +4,160 @@
 #include <string.h>
 #include <math.h>
 
+#define Max_Char 1024
 
-/**
- * \fn int new_dataset(int dim, int taux) 
- * \brief Initialise un dataset
- *
- * \param dim nombre de wi xi 
- * \param n nombre de données 
- * \return pointeur vers le nouveau dataset
- */ 
-Dataset *new_dataset(int dim, int n){
-    Dataset *n_dataset = malloc(sizeof(Dataset));
-    n_dataset->n=n;
-    n_dataset->dim=dim;
-    float **data = malloc(n*sizeof(float*));
-    for(int i = 0; i<n; i++){
-        float *ligne = malloc(dim*sizeof(float));
-        for(int j = 0; j<dim; j++){
-            ligne[j]=0;
-        }
-        data[i]=ligne;
-    }
-    n_dataset->data=data;
-    return n_dataset;
+long getFileSize(FILE* fp)
+{
+   long size = 0;
+   fpos_t pos;
+   fseek(fp, 0, SEEK_END);
+   size = ftell(fp);
+   fseek(fp, 0, SEEK_SET);
+   return size;
+}
+
+void *free_text(Texte t){
+    // for(int i = 0; i<d->n; i++){
+    //     free(d->data[i]);
+    // }
+    // free(d->data);
+    // free(d);
 };
 
-/**
- * \fn void *free_dataset(Dataset *p)
- * \brief Libère un dataset
- *
- * \param p Pointeur vers le dataset à free 
- */ 
-void *free_dataset(Dataset *d){
-    for(int i = 0; i<d->n; i++){
-        free(d->data[i]);
-    }
-    free(d->data);
-    free(d);
+void *free_vocab(Vocab v){
+    // for(int i = 0; i<d->n; i++){
+    //     free(d->data[i]);
+    // }
+    // free(d->data);
+    // free(d);
 };
 
-/**
- * \fn void *display_dataset(dataset p)
- * \brief Affiche un dataset
- *
- * \param p dataset à afficher
- */ 
-void display_dataset(Dataset d){
-    int n = d.n;
-    int dim = d.dim;
-    float **data = d.data;
-    printf("N : %d\nDim : %d\n[\n",n,dim);
-    for(int i = 0; i<n; i++){
-        printf("    [");
-        for(int j = 0; j<dim; j++){
-            printf("%.2f, ",data[i][j]);
-        }
-        printf("]\n");
-    }
-    printf("]\n");
+void display_Text(Texte t){
+    // int n = d.n;
+    // int dim = d.dim;
+    // float **data = d.data;
+    // printf("N : %d\nDim : %d\n[\n",n,dim);
+    // for(int i = 0; i<n; i++){
+    //     printf("    [");
+    //     for(int j = 0; j<dim; j++){
+    //         printf("%.2f, ",data[i][j]);
+    //     }
+    //     printf("]\n");
+    // }
+    // printf("]\n");
 };
 
-/**
- * \fn Dataset *load_dataset(char *path)
- * \brief Charge un dataset
- *
- * \param path local path
- */ 
-Dataset *load_dataset(char *path, int d, int *V, float ***dict){
+void display_Vocab(Vocab v){
+    // int n = d.n;
+    // int dim = d.dim;
+    // float **data = d.data;
+    // printf("N : %d\nDim : %d\n[\n",n,dim);
+    // for(int i = 0; i<n; i++){
+    //     printf("    [");
+    //     for(int j = 0; j<dim; j++){
+    //         printf("%.2f, ",data[i][j]);
+    //     }
+    //     printf("]\n");
+    // }
+    // printf("]\n");
+};
 
-    // Lecture de n & dim
+Texte *load_texte(char *path, Vocab **v, int d){
 
     FILE *fichier = fopen(path, "r");
     if (fichier == NULL) {
         printf("Erreur lors du chargement\n");
         return NULL;
     }
+    
+    /* Determine the size of the file */
+    long n = getFileSize(fichier);
 
-    char ligne[1024];
+    /* Allocate memory for the contents */
+    char *fileContents = malloc(n+1);
 
-    int dim = 0;
-    int n = 0;
+    /* Read the contents */
+    fread(fileContents, 1, n, fichier);
 
-    while (fgets(ligne, sizeof(ligne), fichier) != NULL) {
-        n++;
-        dim=0;
-        ligne[strcspn(ligne, "\r\n")] = 0;
+    /* fread does not automatically add a terminating NULL character.
+       You must add it yourself. */
+    fileContents[n] = '\0';
 
-        char *line = strtok(ligne, ",");
-        while (line != NULL) {
-            dim++;
-            line = strtok(NULL, ",");
-        }
-    }
+    /* Do something useful with the contents of the file */
+    printf("The contents of the file...\n%s", fileContents);
+
+    /* Release allocated memory */
+    free(fileContents);
 
     fclose(fichier);
 
-    // Cree le dataset
-    Dataset *d = new_dataset(dim,n);
 
-    // Remplissage
+    int V = 0;
+    *v = malloc(sizeof(Vocab));
+    int *dic = malloc(sizeof(int)*512);
+    char *dic_inv = malloc(sizeof(char)*512);
 
-    fichier = fopen(path, "r");
-    if (fichier == NULL) {
-        printf("Erreur lors du chargement\n");
-        return NULL;
-    }
-    
-    int i = 0;
-    while (fgets(ligne, sizeof(ligne), fichier) != NULL) {
-        ligne[strcspn(ligne, "\r\n")] = 0;
-        int j = 0;
+    for(int i = 0; i<512; i++) dic[i]=-1;
 
-        char *line = strtok(ligne, ",");
-        while (line != NULL) {
-            
-            d->data[i][j] = strtof(line,NULL);
-
-            line = strtok(NULL, ",");
-            j++;
+    for(int i = 0; i<n/sizeof(char);i++){
+        char cc = fileContents[i];
+        if(dic[cc]==-1){
+            dic[cc] = i;
+            dic_inv[i] = cc;
+            V++;
         }
-        i++;
     }
 
-    fclose(fichier);
 
-    
+    Texte *new_text = malloc(sizeof(Texte));
+    new_text->n=n;
+    new_text->tok=fileContents;
+    (*v)->V=V;
+    float **vocabulaire = malloc(sizeof(char *)*V);
+    for(int i = 0; i<V; i++){
+        float *ligne = malloc(d*sizeof(float));
+        for(int j = 0; j<d; j++){
+            ligne[j]=0;
+        }
+        vocabulaire[i]=ligne;
+    }
 
-    return d;
+    (*v)->map=&vocabulaire;
+    (*v)->dic=dic;
+    (*v)->dic_inv=dic_inv;
+
+    return new_text;
 };
 
-/**
- * \fn int sigmoide(int z)
- */ 
 float sigmoide(float z){
     return (1 / (1 + exp(-z)));
 }
 
-
-/**
- * \fn void shuffle(Dataset *d)
- * \brief Mélange les données d'un dataset
- *
- * \param d dataset à mélanger
- */ 
-void shuffle(Dataset *d){
-
-    int n = d->n;
-
-    for(int i=0; i<d->n; i++){
-        int j = rand() % n;
-        float *temp = d->data[i];
-        d->data[i] = d->data[j];
-        d->data[j] = temp;
-    }
-
-}
+// float tanh(float z){
+//     return z;
+// }
 
 
-
-/**
- * \fn void normalize(Dataset *d)
- * \brief Normalise les données d'un dataset
- *
- * \param d dataset à normaliser
- */ 
-void normalize(Dataset *d){
+void split_texte(Texte *t, Texte **train, Texte **test, float ratio){
+//     int dim = d->dim;
+//     int n = d->n;
+//     int nTrain = n*ratio;
+//     int nTest = n - nTrain;
     
-    int n = d->n;
-    int dim = d->dim;
-
-    for(int j=0; j<dim-1; j++){
-        float min = d->data[0][j];
-        float max = d->data[0][j];
-
-        for(int i=1; i<n; i++){
-            if(d->data[i][j] < min){
-                min = d->data[i][j];
-            }
-            if(d->data[i][j] > max){
-                max = d->data[i][j];
-            }
-        }
-
-        for(int i=0; i<n; i++){
-            d->data[i][j] = (d->data[i][j] - min) / (max - min);
-        }
-    }
-}
-
-
-/**
- * \fn void split_dataset(Dataset *d, Dataset *train, Dataset *test, float ratio)
- * \brief Sépare les données en deux dataset
- *
- * \param ratio 0 -> 1,EX 0.8 = 80%
- */ 
-void split_dataset(Dataset *d, Dataset **train, Dataset **test, float ratio){
-    int dim = d->dim;
-    int n = d->n;
-    int nTrain = n*ratio;
-    int nTest = n - nTrain;
-    
-    Dataset *resTrain = new_dataset(dim,nTrain);
-    Dataset *resTest = new_dataset(dim,nTest);
-    for(int i = 0; i<n;i++){
-        if(i<nTrain){
-            for(int j= 0; j<dim; j++){
-                resTrain->data[i][j]=d->data[i][j];
-            }
-        }else{
-            for(int j= 0; j<dim; j++){
-                resTest->data[i-nTrain][j]=d->data[i][j];
-            }
-        }
-    }
-    *train=resTrain;
-    *test=resTest;
-    free_dataset(d);
+//     Dataset *resTrain = new_dataset(dim,nTrain);
+//     Dataset *resTest = new_dataset(dim,nTest);
+//     for(int i = 0; i<n;i++){
+//         if(i<nTrain){
+//             for(int j= 0; j<dim; j++){
+//                 resTrain->data[i][j]=d->data[i][j];
+//             }
+//         }else{
+//             for(int j= 0; j<dim; j++){
+//                 resTest->data[i-nTrain][j]=d->data[i][j];
+//             }
+//         }
+//     }
+//     *train=resTrain;
+//     *test=resTest;
+//     free_dataset(d);
 }

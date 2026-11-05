@@ -65,66 +65,66 @@ void free_layer(Couche *p);
 void display_perceptron(Couche p);
 
 
-/**
- * \fn int prediction(Perceptron p, int* x)
- * \brief Prediction
- *
- * \param p perceptron
- * \param x vecteur
- */ 
-float *prediction(Couche p, float* x);
+// /**
+//  * \fn int prediction(Perceptron p, int* x)
+//  * \brief Prediction
+//  *
+//  * \param p perceptron
+//  * \param x vecteur
+//  */ 
+// float *prediction(Couche p, float* x);
 
 
-/**
- * \fn void update(Perceptron *p, float *tab)
- * \brief Met à jour les poids du perceptron
- *
- * \param p perceptron
- * \param tab vecteur de données
- */ 
-void update(Reseau *n, float *tab);
+// /**
+//  * \fn void update(Perceptron *p, float *tab)
+//  * \brief Met à jour les poids du perceptron
+//  *
+//  * \param p perceptron
+//  * \param tab vecteur de données
+//  */ 
+// void update(Reseau *n, float *tab);
 
 
-/**
- * \fn float train(Reseau *n, int nb_epoques, Dataset *d, Dataset *dt, int breakIfTrained, int *nb_epoques_max, float *acc_max)
- * \brief Entraine le perceptron sur un dataset
- *
- * \param p perceptron
- * \param nb_epoques nombre de cycle
- * \param d Dataset to train on
- */ 
-float train(Reseau *n, int nb_epoques, Dataset *d, Dataset *dt, int breakIfTrained, int *nb_epoques_max, float *acc_max, int humanOutput);
+// /**
+//  * \fn float train(Reseau *n, int nb_epoques, Dataset *d, Dataset *dt, int breakIfTrained, int *nb_epoques_max, float *acc_max)
+//  * \brief Entraine le perceptron sur un dataset
+//  *
+//  * \param p perceptron
+//  * \param nb_epoques nombre de cycle
+//  * \param d Dataset to train on
+//  */ 
+// float train(Reseau *n, int nb_epoques, Dataset *d, Dataset *dt, int breakIfTrained, int *nb_epoques_max, float *acc_max, int humanOutput);
 
 
-/**
- * \fn float calc_acc(Perceptron *p, Dataset *d)
- * \brief Calcule l'acc d'un perceptron sur un dataset donné
- *
- * \param p perceptron
- * \param d Dataset to test on
- */ 
-float calc_acc(Reseau *n, Dataset *d);
+// /**
+//  * \fn float calc_acc(Perceptron *p, Dataset *d)
+//  * \brief Calcule l'acc d'un perceptron sur un dataset donné
+//  *
+//  * \param p perceptron
+//  * \param d Dataset to test on
+//  */ 
+// float calc_acc(Reseau *n, Dataset *d);
 
 
-/**
- * \fn MatrixConfusion matrice_confusion(Perceptron *p, Dataset *d)
- * \brief Calcul la matrix de confusion
- *
- * \param p perceptron
- * \param d Dataset to test on
- */ 
-MatrixConfusion *matrice_confusion(Reseau *net, Dataset *d);
+// /**
+//  * \fn MatrixConfusion matrice_confusion(Perceptron *p, Dataset *d)
+//  * \brief Calcul la matrix de confusion
+//  *
+//  * \param p perceptron
+//  * \param d Dataset to test on
+//  */ 
+// MatrixConfusion *matrice_confusion(Reseau *net, Dataset *d);
 
 
-/**
- * \fn void display_matrix(MatrixConfusion m)
- * \brief Affiche la matrix de confusion
- *
- * \param m La matrix à afficher
- */ 
-void display_matrix(MatrixConfusion *m);
+// /**
+//  * \fn void display_matrix(MatrixConfusion m)
+//  * \brief Affiche la matrix de confusion
+//  *
+//  * \param m La matrix à afficher
+//  */ 
+// void display_matrix(MatrixConfusion *m);
 
 
-float** forward_network(Reseau *net, float *input);
+// float** forward_network(Reseau *net, float *input);
 
 #endif
