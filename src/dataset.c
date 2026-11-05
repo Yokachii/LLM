@@ -17,21 +17,26 @@ long getFileSize(FILE* fp)
    return size;
 }
 
-void *free_text(Texte t){
-    // for(int i = 0; i<d->n; i++){
-    //     free(d->data[i]);
-    // }
-    // free(d->data);
-    // free(d);
-};
+void free_text(Texte *t){
+    if (t == NULL) return;
 
-void *free_vocab(Vocab v){
-    // for(int i = 0; i<d->n; i++){
-    //     free(d->data[i]);
-    // }
-    // free(d->data);
-    // free(d);
-};
+    free(t->tok);
+    free(t);
+}
+
+void free_vocab(Vocab *v){
+    if (v == NULL) return;
+
+    if (v->map != NULL) {
+        for (int i = 0; i < v->V; i++) {
+            free(v->map[i]);
+        }
+    }
+    free(v->map);
+    free(v->dic);
+    free(v->dic_inv);
+    free(v);
+}
 
 void display_Text(Texte t){
     if (t.n < 0 || (t.n > 0 && t.tok == NULL)) {
@@ -39,13 +44,6 @@ void display_Text(Texte t){
         return;
     }
 
-    // printf("Texte (%d tokens) : [", t.n);
-    // for (int i = 0; i < t.n; i++) {
-    //     if (i > 0) {
-    //         printf(", ");
-    //     }
-    //     printf("%u", (unsigned int)t.tok[i]);
-    // }
     printf("]\n");
 }
 
@@ -106,9 +104,6 @@ Texte *load_texte(char *path, Vocab **v, int d){
        You must add it yourself. */
     fileContents[n] = '\0';
 
-    /* Release allocated memory */
-    free(fileContents);
-
     fclose(fichier);
 
 
@@ -131,9 +126,9 @@ Texte *load_texte(char *path, Vocab **v, int d){
 
     Texte *new_text = malloc(sizeof(Texte));
     new_text->n=n;
-    new_text->tok=fileContents;
+    new_text->tok=(unsigned char *)fileContents;
     (*v)->V=V;
-    float **vocabulaire = malloc(sizeof(char *)*V);
+    float **vocabulaire = malloc(sizeof(*vocabulaire)*V);
     for(int i = 0; i<V; i++){
         float *ligne = malloc(d*sizeof(float));
         for(int j = 0; j<d; j++){
@@ -142,7 +137,7 @@ Texte *load_texte(char *path, Vocab **v, int d){
         vocabulaire[i]=ligne;
     }
 
-    (*v)->map=&vocabulaire;
+    (*v)->map=vocabulaire;
     (*v)->dic=dic;
     (*v)->dic_inv=dic_inv;
 

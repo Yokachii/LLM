@@ -23,8 +23,8 @@ typedef struct
 
 Texte *new_text(int n, Vocab *voc);
 
-void *free_text(Texte t);
-void *free_vocab(Vocab v);
+void free_text(Texte *t);
+void free_vocab(Vocab *v);
 
 Texte *load_texte(char *path, Vocab **v, int d);
 

@@ -37,20 +37,25 @@ int main(int argc, char *argv[]) {
     display_Text(*text_l);
     display_Vocab(*V);
     
-    // split_texte(text_l,&tr,&tt,train_ratio);
+    split_texte(text_l,&tr,&tt,train_ratio);
 
     int isFreed = 0;
 
-    // if(tt->n==0){
-    //     free_dataset(tt);
-    //     tt=tr;
-    //     isFreed=1;
-    // }
-    // if(isFreed==0){
-    //     free_dataset(tt);
-    // }
+    if(tt->n==0){
+        free_text(tt);
+        tt=tr;
+        isFreed=1;
+    }
 
-    // free_network(n);
-    // free_dataset(tr);
+
+    // Train
+
+
+    if(isFreed==0){
+        free_text(tt);
+    }
+
+    free_network(n);
+    free_text(tr);
     return 0;
 }
