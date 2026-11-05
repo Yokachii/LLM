@@ -44,7 +44,7 @@ void *free_dataset(Dataset *d);
  *
  * \param path local path
  */ 
-Dataset *load_dataset(char *path, int *V);
+Dataset *load_dataset(char *path, int d,int *V, float ***dict);
 
 /**
  * \fn void *display_dataset(dataset p)

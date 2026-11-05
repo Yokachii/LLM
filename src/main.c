@@ -28,8 +28,11 @@ int main(int argc, char *argv[]) {
     if(HumanOutput==1) printf("Graine : %u\n", seed);
 
     int V = NULL;
+    float **dict;
 
-    Dataset *dataset_l = load_dataset(filepath,&V); // <- load text & set le nb de caractères distinct dans le text
+    Dataset *dataset_l = load_dataset(filepath,d,&V,&dict); // <- load text & set le nb de caractères distinct dans le text
+    // load_dataset va aussi remplire le dictionnaire avec V tableau de d float;
+    
 
     int dimE = N*d;
 
