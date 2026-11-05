@@ -1,0 +1,13 @@
+Problemes rencontré :
+Valeurs par defaut à 0 -> Tout les neuronnes ont les mêmes poids et biais final
+Perte (calc loss) surveiller l'entrainement
+Decroissance du taux
+Acc max VS Acc final
+
+
+
+Data :
+largeur : 4-8 neuronnes echouent sur spirale dur
+profondeur : plus de couche -> plus de plateaux et apprentissafge plus long
+Taux : taux trop grand sur petit resaux -> converge vers sortie constante
+CSV : CSV assez grand sinon proba non representative
