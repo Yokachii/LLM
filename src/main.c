@@ -33,8 +33,11 @@ int main(int argc, char *argv[]) {
     int dimE = N*d;
     Reseau *n = new_network(nb_couche_cache, H, taux, dimE, V->V);
     Texte *tr, *tt;
+
+    display_Text(*text_l);
+    display_Vocab(*V);
     
-    split_texte(text_l,&tr,&tt,train_ratio);
+    // split_texte(text_l,&tr,&tt,train_ratio);
 
     int isFreed = 0;
 

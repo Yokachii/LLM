@@ -1,5 +1,6 @@
 #include "../include/dataset.h"
 #include "../include/perceptron.h"
+#include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -33,34 +34,56 @@ void *free_vocab(Vocab v){
 };
 
 void display_Text(Texte t){
-    // int n = d.n;
-    // int dim = d.dim;
-    // float **data = d.data;
-    // printf("N : %d\nDim : %d\n[\n",n,dim);
-    // for(int i = 0; i<n; i++){
-    //     printf("    [");
-    //     for(int j = 0; j<dim; j++){
-    //         printf("%.2f, ",data[i][j]);
+    if (t.n < 0 || (t.n > 0 && t.tok == NULL)) {
+        fprintf(stderr, "Erreur : texte invalide\n");
+        return;
+    }
+
+    // printf("Texte (%d tokens) : [", t.n);
+    // for (int i = 0; i < t.n; i++) {
+    //     if (i > 0) {
+    //         printf(", ");
     //     }
-    //     printf("]\n");
+    //     printf("%u", (unsigned int)t.tok[i]);
     // }
-    // printf("]\n");
-};
+    printf("]\n");
+}
 
 void display_Vocab(Vocab v){
-    // int n = d.n;
-    // int dim = d.dim;
-    // float **data = d.data;
-    // printf("N : %d\nDim : %d\n[\n",n,dim);
-    // for(int i = 0; i<n; i++){
-    //     printf("    [");
-    //     for(int j = 0; j<dim; j++){
-    //         printf("%.2f, ",data[i][j]);
-    //     }
-    //     printf("]\n");
-    // }
-    // printf("]\n");
-};
+    if (v.V < 0 || (v.V > 0 && (v.dic == NULL || v.dic_inv == NULL))) {
+        fprintf(stderr, "Erreur : vocabulaire invalide\n");
+        return;
+    }
+
+    printf("Vocabulaire (%d caractères) :\n", v.V);
+    for (int i = 0; i < v.V; i++) {
+        unsigned char c = (unsigned char)v.dic_inv[i];
+
+        printf("  %d : ", i);
+        if (isprint(c)) {
+            printf("'%c'", c);
+        } else {
+            switch (c) {
+                case '\n':
+                    printf("'\\n'");
+                    break;
+                case '\r':
+                    printf("'\\r'");
+                    break;
+                case '\t':
+                    printf("'\\t'");
+                    break;
+                case '\0':
+                    printf("'\\0'");
+                    break;
+                default:
+                    printf("'\\x%02X'", (unsigned int)c);
+                    break;
+            }
+        }
+        printf(" (dic[%u] = %d)\n", (unsigned int)c, v.dic[c]);
+    }
+}
 
 Texte *load_texte(char *path, Vocab **v, int d){
 
@@ -82,9 +105,6 @@ Texte *load_texte(char *path, Vocab **v, int d){
     /* fread does not automatically add a terminating NULL character.
        You must add it yourself. */
     fileContents[n] = '\0';
-
-    /* Do something useful with the contents of the file */
-    printf("The contents of the file...\n%s", fileContents);
 
     /* Release allocated memory */
     free(fileContents);
