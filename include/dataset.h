@@ -11,7 +11,7 @@ typedef struct {
 
 typedef struct {
     int n;                      // nombre de tokens
-    unsigned char *tok;         // n indices <- contient des indices de caractères (0..V-1)
+    int *tok;         // n indices <- contient des indices de caractères (0..V-1)
     Vocab *voc; // Lien vers le vocabulaire
 } Texte;
 

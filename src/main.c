@@ -48,6 +48,7 @@ int main(int argc, char *argv[]) {
 
 
     // Train
+    display_Text(*tr);
 
 
     if(isFreed==0){

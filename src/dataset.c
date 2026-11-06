@@ -41,13 +41,29 @@ void display_Text(Texte t){
         return;
     }
 
-    if (t.n > 0 && fwrite(t.tok, sizeof(*t.tok), (size_t)t.n, stdout) != (size_t)t.n) {
-        fprintf(stderr, "Erreur lors de l'affichage du texte\n");
-        return;
-    }
-
-    if (t.n == 0 || t.tok[t.n - 1] != '\n') {
-        putchar('\n');
+    for(int i = 0; i < t.n; i++) {
+        unsigned char c = (unsigned char)(t.voc->dic_inv[t.tok[i]]);
+        if (isprint(c)) {
+            putchar(c);
+        } else {
+            switch (c) {
+                case '\n':
+                    printf("\\n");
+                    break;
+                case '\r':
+                    printf("\\r");
+                    break;
+                case '\t':
+                    printf("\\t");
+                    break;
+                case '\0':
+                    printf("\\0");
+                    break;
+                default:
+                    printf("\\x%02X", (unsigned int)c);
+                    break;
+            }
+        }
     }
 }
 
@@ -129,7 +145,7 @@ Texte *load_texte(char *path, Vocab **v, int d){
 
     Texte *new_text = malloc(sizeof(Texte));
     new_text->n=n;
-    new_text->tok=(unsigned char *)fileContents;
+    new_text->tok=(int *)malloc(n * sizeof(int));
     (*v)->V=V;
     float **vocabulaire = malloc(sizeof(*vocabulaire)*V);
     for(int i = 0; i<V; i++){
@@ -142,7 +158,8 @@ Texte *load_texte(char *path, Vocab **v, int d){
     new_text->voc=*v;
 
     for(int i = 0; i<n; i++){
-        new_text->tok[i]=dic[new_text->tok[i]];
+        new_text->tok[i]=dic[fileContents[i]];
+        printf("%d ",new_text->tok[i]);
     }
 
     (*v)->emb=vocabulaire;
