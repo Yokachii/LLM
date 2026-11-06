@@ -56,5 +56,6 @@ int main(int argc, char *argv[]) {
 
     free_network(n);
     free_text(tr);
+    free_vocab(V);
     return 0;
 }

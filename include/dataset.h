@@ -11,8 +11,8 @@ typedef struct {
 
 typedef struct {
     int n;                      // nombre de tokens
-    unsigned char *tok;         // n indices <- le texte d'entrainement chargé
-    Vocab *voc;
+    unsigned char *tok;         // n indices <- contient des indices de caractères (0..V-1)
+    Vocab *voc; // Lien vers le vocabulaire
 } Texte;
 
 Texte *new_text(int n, Vocab *voc);

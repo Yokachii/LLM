@@ -143,7 +143,6 @@ Texte *load_texte(char *path, Vocab **v, int d){
 
     for(int i = 0; i<n; i++){
         new_text->tok[i]=dic[new_text->tok[i]];
-        printf("%d ",new_text->tok[i]);
     }
 
     (*v)->emb=vocabulaire;
