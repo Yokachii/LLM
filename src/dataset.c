@@ -111,18 +111,13 @@ Texte *load_texte(char *path, Vocab **v, int d){
         return NULL;
     }
     
-    /* Determine the size of the file */
     long n = getFileSize(fichier);
 
-    /* Allocate memory for the contents */
     char *fileContents = malloc(n+1);
 
-    /* Read the contents */
     fread(fileContents, 1, n, fichier);
 
-    /* fread does not automatically add a terminating NULL character.
-       You must add it yourself. */
-    fileContents[n] = '\0';
+    fileContents[n] = '\0'; // Ajout du caractère de fin
 
     fclose(fichier);
 
@@ -173,10 +168,6 @@ Texte *load_texte(char *path, Vocab **v, int d){
 float sigmoide(float z){
     return (1 / (1 + exp(-z)));
 }
-
-// float tanh(float z){
-//     return z;
-// }
 
 
 void split_texte(Texte *t, Texte **train, Texte **test, float ratio){
