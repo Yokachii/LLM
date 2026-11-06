@@ -5,12 +5,9 @@
 #include <string.h>
 #include <math.h>
 
-#define Max_Char 1024
-
 long getFileSize(FILE* fp)
 {
    long size = 0;
-   fpos_t pos;
    fseek(fp, 0, SEEK_END);
    size = ftell(fp);
    fseek(fp, 0, SEEK_SET);
@@ -27,12 +24,12 @@ void free_text(Texte *t){
 void free_vocab(Vocab *v){
     if (v == NULL) return;
 
-    if (v->map != NULL) {
+    if (v->emb != NULL) {
         for (int i = 0; i < v->V; i++) {
-            free(v->map[i]);
+            free(v->emb[i]);
         }
     }
-    free(v->map);
+    free(v->emb);
     free(v->dic);
     free(v->dic_inv);
     free(v);
@@ -44,7 +41,14 @@ void display_Text(Texte t){
         return;
     }
 
-    printf("]\n");
+    if (t.n > 0 && fwrite(t.tok, sizeof(*t.tok), (size_t)t.n, stdout) != (size_t)t.n) {
+        fprintf(stderr, "Erreur lors de l'affichage du texte\n");
+        return;
+    }
+
+    if (t.n == 0 || t.tok[t.n - 1] != '\n') {
+        putchar('\n');
+    }
 }
 
 void display_Vocab(Vocab v){
@@ -117,12 +121,11 @@ Texte *load_texte(char *path, Vocab **v, int d){
     for(int i = 0; i<n/sizeof(char);i++){
         char cc = fileContents[i];
         if(dic[cc]==-1){
-            dic[cc] = i;
-            dic_inv[i] = cc;
+            dic[cc] = V;
+            dic_inv[V] = cc;
             V++;
         }
     }
-
 
     Texte *new_text = malloc(sizeof(Texte));
     new_text->n=n;
@@ -136,9 +139,16 @@ Texte *load_texte(char *path, Vocab **v, int d){
         }
         vocabulaire[i]=ligne;
     }
+    new_text->voc=*v;
 
-    (*v)->map=vocabulaire;
+    for(int i = 0; i<n; i++){
+        new_text->tok[i]=dic[new_text->tok[i]];
+        printf("%d ",new_text->tok[i]);
+    }
+
+    (*v)->emb=vocabulaire;
     (*v)->dic=dic;
+    (*v)->d=d;
     (*v)->dic_inv=dic_inv;
 
     return new_text;
@@ -154,25 +164,54 @@ float sigmoide(float z){
 
 
 void split_texte(Texte *t, Texte **train, Texte **test, float ratio){
-//     int dim = d->dim;
-//     int n = d->n;
-//     int nTrain = n*ratio;
-//     int nTest = n - nTrain;
-    
-//     Dataset *resTrain = new_dataset(dim,nTrain);
-//     Dataset *resTest = new_dataset(dim,nTest);
-//     for(int i = 0; i<n;i++){
-//         if(i<nTrain){
-//             for(int j= 0; j<dim; j++){
-//                 resTrain->data[i][j]=d->data[i][j];
-//             }
-//         }else{
-//             for(int j= 0; j<dim; j++){
-//                 resTest->data[i-nTrain][j]=d->data[i][j];
-//             }
-//         }
-//     }
-//     *train=resTrain;
-//     *test=resTest;
-//     free_dataset(d);
+    if (train == NULL || test == NULL) {
+        fprintf(stderr, "Erreur : sorties invalides pour split_texte\n");
+        return;
+    }
+
+    *train = NULL;
+    *test = NULL;
+
+    // if (t == NULL || t->n < 0 || (t->n > 0 && t->tok == NULL) ||
+    //     !isfinite(ratio) || ratio < 0.0f || ratio > 1.0f) {
+    //     fprintf(stderr, "Erreur : texte ou ratio invalide pour split_texte\n");
+    //     return;
+    // }
+
+    int nTrain = (int)(t->n * ratio);
+    int nTest = t->n - nTrain;
+    Texte *resTrain = malloc(sizeof(*resTrain));
+    Texte *resTest = malloc(sizeof(*resTest));
+    if (resTrain == NULL || resTest == NULL) {
+        fprintf(stderr, "Erreur : allocation impossible dans split_texte\n");
+        free(resTrain);
+        free(resTest);
+        return;
+    }
+
+    resTrain->n = nTrain;
+    resTrain->voc = t->voc;
+    resTrain->tok = nTrain > 0 ? malloc((size_t)nTrain * sizeof(*resTrain->tok)) : NULL;
+    resTest->n = nTest;
+    resTest->voc = t->voc;
+    resTest->tok = nTest > 0 ? malloc((size_t)nTest * sizeof(*resTest->tok)) : NULL;
+
+    if ((nTrain > 0 && resTrain->tok == NULL) ||
+        (nTest > 0 && resTest->tok == NULL)) {
+        fprintf(stderr, "Erreur : allocation impossible dans split_texte\n");
+        free_text(resTrain);
+        free_text(resTest);
+        return;
+    }
+
+    if (nTrain > 0) {
+        memcpy(resTrain->tok, t->tok, (size_t)nTrain * sizeof(*t->tok));
+    }
+    if (nTest > 0) {
+        memcpy(resTest->tok, t->tok + nTrain, (size_t)nTest * sizeof(*t->tok));
+    }
+
+    *train = resTrain;
+    *test = resTest;
+    free_text(t);
 }

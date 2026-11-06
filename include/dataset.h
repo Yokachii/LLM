@@ -2,24 +2,18 @@
 #define DATASET_H
 
 typedef struct {
-    int V;                      // Nombre de caractère
-    int *dic;                  // dict[char] -> indice dans map
-    char *dic_inv;             // dic_inv[indice] -> char
-    float **map;               // caractère -> indice, -1 si absent
-} Vocab;
+    int V;                       // nombre de caractères distincts
+    int d;                       // taille du vecteur de chaque caractère
+    int *dic;                // caractère -> indice, -1 si absent
+    unsigned char *dic_inv;  // indice -> caractère
+    float **emb;                 // emb[indice][j] : V lignes de d floats (appris)
+} Vocab; // <- table d'embeding + vocab
 
 typedef struct {
     int n;                      // nombre de tokens
-    unsigned char *tok;         // n indices
+    unsigned char *tok;         // n indices <- le texte d'entrainement chargé
+    Vocab *voc;
 } Texte;
-
-typedef struct
-{
-    int TP;
-    int TN;
-    int FN;
-    int FP;
-} MatrixConfusion;
 
 Texte *new_text(int n, Vocab *voc);
 
@@ -34,8 +28,6 @@ void display_Vocab(Vocab v);
 
 
 float sigmoide(float z);
-
-// float tanh(float z);
 
 void split_texte(Texte *t, Texte **train, Texte **test, float ratio);
 
