@@ -14,13 +14,13 @@ int main(int argc, char *argv[]) {
 
     char *filepath = argv[1];
 
-    int nb_epoques = (argc > 2) ? atoi(argv[2]) : 6;
-    float taux = (argc > 3) ? atof(argv[3]) : 1;
-    float train_ratio = (argc > 4) ? atof(argv[4]) : 0.03;
+    int nb_epoques = (argc > 2) ? atoi(argv[2]) : 15;
+    float taux = (argc > 3) ? atof(argv[3]) : 0.03;
+    float train_ratio = (argc > 4) ? atof(argv[4]) : 0.8;
     int N = (argc > 5) ? atoi(argv[5]) : 8;
     int d = (argc > 6) ? atoi(argv[6]) : 10;
     int H = (argc > 7) ? atoi(argv[7]) : 100;
-    int nb_couche_cache = (argc > 8) ? atoi(argv[8]) : 2;
+    int nb_couche_cache = (argc > 8) ? atoi(argv[8]) : 1;
     int HumanOutput = (argc > 9) ? atoi(argv[9]) : 1;
     unsigned int seed = (argc > 10) ? (unsigned int)strtoul(argv[10], NULL, 10) : (unsigned int)time(NULL);
     
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
     // generer(m,25,2,get_indices(m,"Bonjour toi",N));
     int amorce[8] = {0,1,2,3,4,5,6,7};
     printf("Texte généré avant entrainement : ");
-    generer(m,25,0.2,amorce);
+    generer(m,35,0.5,amorce);
     printf("\n\n");
 
 
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
     // display_Text(*tr);
 
     printf("Texte généré après entrainement : ");
-    generer(m,25,0.5,amorce);
+    generer(m,100,0.5,amorce);
     printf("\n\n");
 
 
@@ -74,6 +74,7 @@ int main(int argc, char *argv[]) {
         free_text(tt);
     }
 
+    free_modele(m);
     free_network(n);
     free_text(tr);
     free_vocab(voc);

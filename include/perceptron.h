@@ -28,12 +28,10 @@ void display_perceptron(Couche p);
 
 void generer(Modele *m, int longueur, float temperature, const int *amorce);
 
-void update(Reseau *n, float *tab);
-
 void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, float taux0);
 
 float calc_perte(Modele *m, const Texte *t, int pas);
 
-void update_modele(Modele *m, const unsigned char *ctx, int cible);
+void update_modele(Modele *m, int *ctx, int cible);
 
 #endif

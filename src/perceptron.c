@@ -190,6 +190,7 @@ float *forward_modele(Modele *m, int *ctx){
     float *inputs = m->x;
     for(int i = 0; i<net->nb_layer;i++){
         prediction(m,i,inputs);
+        inputs = m->a[i];
     }
 
     return m->a[net->nb_layer - 1];
@@ -271,7 +272,7 @@ void generer(Modele *m, int longueur, float temperature, const int *amorce){
     free(ctx); free(q);
 }
 
-void   update_modele(Modele *m, const unsigned char *ctx, int cible) {
+void   update_modele(Modele *m, int *ctx, int cible) {
     Reseau *net = m->net;
     int L = net->nb_layer, N = m->N, d = m->voc->d;
     float *p = forward_modele(m, ctx);
@@ -342,6 +343,10 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
         float Lt = calc_perte(m, train, 7);               // un exemple sur 7 suffit pour surveiller
         float Lv = calc_perte(m, val, 1);
         printf("epoque %d lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e + 1, lr, Lt, Lv, expf(Lv));
+        int amorce[8] = {0,1,2,3,4,5,6,7};
+        printf("Texte généré : ");
+        generer(m,35,0.5,amorce);
+        printf("\n\n");
         fflush(stdout);
     }
     free(pos);
