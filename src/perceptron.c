@@ -9,7 +9,6 @@ Reseau *new_network(int nb_couche_cache, int nb_neuronnes_ch, float taux, int di
     
     Couche **layers = malloc(sizeof(Couche*)*(res->nb_layer));
 
-    // int dimL0=dimE;
     int dimL0 = nb_neuronnes_ch;
 
     Couche *entree = new_layer(dimE,taux,dimL0);
@@ -54,14 +53,6 @@ void free_network(Reseau *n){
     free(n);
 }
 
-/**
- * \fn int new_perceptron(int dim, int taux) 
- * \brief Initialise un perceptron
- *
- * \param dim nombre de wi xi 
- * \param n nombre de données 
- * \return pointeur vers le nouveau perceptron
- */ 
 Couche *new_layer(int dim, float taux, int nb_neuronnes){
     Couche *n_perceptron = malloc(sizeof(Couche));
 
@@ -98,12 +89,6 @@ Couche *new_layer(int dim, float taux, int nb_neuronnes){
 };
 
 
-/**
- * \fn void free_layer(Perceptron *p)
- * \brief Libère un perceptron
- *
- * \param p Pointeur vers le perceptron à free 
- */ 
 void free_layer(Couche *p){
     int nb_neuronnes = p->nb_neuronnes;
     for(int i = 0;i<nb_neuronnes;i++){
@@ -113,12 +98,6 @@ void free_layer(Couche *p){
     free(p);
 };
 
-/**
- * \fn void *display_perceptron(Perceptron p)
- * \brief Affiche un perceptron
- *
- * \param p Perceptron à afficher
- */ 
 void display_perceptron(Couche p){
     printf("Dim : %d\n",p.dim);
     for(int j = 0; j<p.nb_neuronnes;j++){
@@ -193,9 +172,9 @@ void display_perceptron(Couche p){
 //     return loss / d->n;
 // }
 
-// static void set_taux(Reseau *n, float taux){
-//     for(int l = 0; l < n->nb_layer; l++) n->Layers[l]->taux = taux;
-// }
+static void set_taux(Reseau *n, float taux){
+    for(int l = 0; l < n->nb_layer; l++) n->Layers[l]->taux = taux;
+}
 
 // /**
 //  * \fn void update(Perceptron *p, float *tab)
@@ -270,6 +249,35 @@ void display_perceptron(Couche p){
 //     free_forward(forward_res, nb_layers);
 // }
 
+void train(Reseau *n, int nb_epoques, Texte t, int *nb_epoques_max, int humanOutput){
+    float taux0 = n->Layers[0]->taux;
+    float k = (nb_epoques > 0) ? 3.0f / nb_epoques : 0.0f; // décroissance du taux
+
+    int i;
+    for(i = 0; i < nb_epoques; i++){
+        set_taux(n, taux0 / (1.0f + k * i));
+
+        // if(humanOutput){
+        //     if(i % 100 == 0){
+        //         printf("Epoque : %d ; Acc : %.4f ; Loss : %.4f ; taux : %.4f\n",
+        //                i, acc, calc_loss(n, dt), n->Layers[0]->taux);
+        //     }
+        // }else if(i % 10 == 0){
+        //     // #EP;epoque;taux;acc;accMax;epoqueMax;TP;FP;TN;FN
+        //     printf("#EP;%d;%.5f;%.4f;%.4f;%d;%d;%d;%d;%d\n",
+        //            i, n->Layers[0]->taux, acc, bestAcc, bestAccEp,
+        //            m->TP, m->FP, m->TN, m->FN);
+        //     free(m);
+        // }
+
+        // for(int j = 0; j < d->n; j++){
+        //     update(n, d->data[j]);
+        // }
+    }
+
+    set_taux(n, taux0);
+
+}
 
 // /**
 //  * \fn float train(Reseau *n, int nb_epoques, Dataset *d, Dataset *dt, int breakIfTrained, int *nb_epoques_max, float *acc_max)

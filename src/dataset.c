@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <stdio.h>
 
 long getFileSize(FILE* fp)
 {
@@ -113,7 +114,7 @@ Texte *load_texte(char *path, Vocab **v, int d){
     
     long n = getFileSize(fichier);
 
-    char *fileContents = malloc(n+1);
+    unsigned char *fileContents = malloc(n+1);
 
     fread(fileContents, 1, n, fichier);
 
@@ -125,12 +126,12 @@ Texte *load_texte(char *path, Vocab **v, int d){
     int V = 0;
     *v = malloc(sizeof(Vocab));
     int *dic = malloc(sizeof(int)*512);
-    char *dic_inv = malloc(sizeof(char)*512);
+    unsigned char *dic_inv = malloc(sizeof(char)*512);
 
     for(int i = 0; i<512; i++) dic[i]=-1;
 
-    for(int i = 0; i<n/sizeof(char);i++){
-        char cc = fileContents[i];
+    for(long i = 0; i<n;i++){
+        unsigned char cc = fileContents[i];
         if(dic[cc]==-1){
             dic[cc] = V;
             dic_inv[V] = cc;
@@ -138,23 +139,23 @@ Texte *load_texte(char *path, Vocab **v, int d){
         }
     }
 
-    Texte *new_text = malloc(sizeof(Texte));
-    new_text->n=n;
-    new_text->tok=(int *)malloc(n * sizeof(int));
+    Texte *new_t = malloc(sizeof(Texte));
+    new_t->n=n;
+    new_t->tok=(int *)malloc(n * sizeof(int));
     (*v)->V=V;
     float **vocabulaire = malloc(sizeof(*vocabulaire)*V);
     for(int i = 0; i<V; i++){
         float *ligne = malloc(d*sizeof(float));
         for(int j = 0; j<d; j++){
-            ligne[j]=0;
+            ligne[j] = (float)rand() / RAND_MAX - 0.5f;
         }
         vocabulaire[i]=ligne;
     }
-    new_text->voc=*v;
+    new_t->voc=*v;
 
-    for(int i = 0; i<n; i++){
-        new_text->tok[i]=dic[fileContents[i]];
-        printf("%d ",new_text->tok[i]);
+    for(long i = 0; i<n; i++){
+        new_t->tok[i]=dic[fileContents[i]];
+        // printf("%d ",new_t->tok[i]);
     }
 
     (*v)->emb=vocabulaire;
@@ -162,7 +163,9 @@ Texte *load_texte(char *path, Vocab **v, int d){
     (*v)->d=d;
     (*v)->dic_inv=dic_inv;
 
-    return new_text;
+    free(fileContents);
+
+    return new_t;
 };
 
 float sigmoide(float z){
