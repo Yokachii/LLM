@@ -14,9 +14,9 @@ int main(int argc, char *argv[]) {
 
     char *filepath = argv[1];
 
-    int nb_epoques = (argc > 2) ? atoi(argv[2]) : 5;
+    int nb_epoques = (argc > 2) ? atoi(argv[2]) : 6;
     float taux = (argc > 3) ? atof(argv[3]) : 1;
-    float train_ratio = (argc > 4) ? atof(argv[4]) : 0.8;
+    float train_ratio = (argc > 4) ? atof(argv[4]) : 0.03;
     int N = (argc > 5) ? atoi(argv[5]) : 8;
     int d = (argc > 6) ? atoi(argv[6]) : 10;
     int H = (argc > 7) ? atoi(argv[7]) : 100;
@@ -53,9 +53,9 @@ int main(int argc, char *argv[]) {
 
     // Création initiale : 
     // generer(m,25,2,get_indices(m,"Bonjour toi",N));
-    int amorce[8] = {1,4,2,3,1,5,2,3};
+    int amorce[8] = {0,1,2,3,4,5,6,7};
     printf("Texte généré avant entrainement : ");
-    generer(m,25,0.5,amorce);
+    generer(m,25,0.2,amorce);
     printf("\n\n");
 
 
