@@ -2,6 +2,7 @@
 #include "../include/perceptron.h"
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 int main(int argc, char *argv[]) {
 
@@ -27,14 +28,14 @@ int main(int argc, char *argv[]) {
     srand(seed);   // avant new_network, qui choisie les poids initiaux
     if(HumanOutput==1) printf("Graine : %u\n", seed);
 
-    Vocab *V;
-    Texte *text_l = load_texte(filepath,&V,d); // <- load text & set le nb de caractères distinct dans le text
-
+    Vocab *voc;
+    Texte *text_l = load_texte(filepath,&voc,d); // <- load text & set le nb de caractères distinct dans le text
     int dimE = N*d;
-    Reseau *n = new_network(nb_couche_cache, H, taux, dimE, V->V);
+    Reseau *n = new_network(nb_couche_cache, H, taux, dimE, voc->V);
+    Modele *m = new_modele(N,voc,n);
     Texte *tr, *tt;
 
-    display_Vocab(*V);
+    // display_Vocab(*voc);
     
     split_texte(text_l,&tr,&tt,train_ratio);
 
@@ -46,9 +47,27 @@ int main(int argc, char *argv[]) {
         isFreed=1;
     }
 
+    // Valeurs initiales du modèle :
+    printf("perte initiale val = %.4f\n", calc_perte(m, tt, 1));
+    printf("ln(V) = %.4f\n", log((double)voc->V));
+
+    // Création initiale : 
+    // generer(m,25,2,get_indices(m,"Bonjour toi",N));
+    int amorce[8] = {1,4,2,3,1,5,2,3};
+    printf("Texte généré avant entrainement : ");
+    generer(m,25,0.5,amorce);
+    printf("\n\n");
+
+
 
     // Train
-    display_Text(*tr);
+    // train(m, nb_epoques, *tr, HumanOutput);
+    train_modele(m,tr,tt,nb_epoques,taux);
+    // display_Text(*tr);
+
+    printf("Texte généré après entrainement : ");
+    generer(m,25,0.5,amorce);
+    printf("\n\n");
 
 
     if(isFreed==0){
@@ -57,6 +76,6 @@ int main(int argc, char *argv[]) {
 
     free_network(n);
     free_text(tr);
-    free_vocab(V);
+    free_vocab(voc);
     return 0;
 }

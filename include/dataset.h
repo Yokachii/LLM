@@ -1,6 +1,25 @@
 #ifndef DATASET_H
 #define DATASET_H
 
+#define ACT_SOFTMAX 1
+#define ACT_TANH 2
+#define ACT_SIG 3
+
+typedef struct couche_s
+{
+    float *b;
+    int act;
+    int dim;
+    float taux;
+    float **poids;
+    int nb_neuronnes;
+} Couche;
+
+typedef struct reseau_s {
+    int nb_layer;
+    Couche **Layers;
+} Reseau;
+
 typedef struct {
     int V;                       // nombre de caractères distincts
     int d;                       // taille du vecteur de chaque caractère
@@ -14,6 +33,16 @@ typedef struct {
     int *tok;         // n indices <- contient des indices de caractères (0..V-1)
     Vocab *voc; // Lien vers le vocabulaire
 } Texte;
+
+typedef struct {
+    int N;                  // taille du contexte
+    Vocab *voc;             // Vocab (V, d, emb)
+    Reseau *net;            // Reseau (Layers[0..L-2] : tanh ; Layers[L-1] : softmax)
+    float *x;               // N*d : entrée du réseau
+    float *dx;              // N*d : gradient sur l'entrée
+    float **a;              // a[l] : sortie de la couche l
+    float **delta;          // delta[l] : même taille que a[l]
+} Modele; // On alloue une fois les tableaux de travail pour le modèle, pour éviter de réallouer à chaque update.
 
 Texte *new_text(int n, Vocab *voc);
 
