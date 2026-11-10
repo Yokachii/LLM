@@ -53,9 +53,8 @@ int main(int argc, char *argv[]) {
 
     // Création initiale : 
     // generer(m,25,2,get_indices(m,"Bonjour toi",N));
-    int amorce[8] = {0,1,2,3,4,5,6,7};
     printf("Texte généré avant entrainement : ");
-    generer(m,35,0.5,amorce);
+    generer(m,35,0.5,tt->tok);
     printf("\n\n");
 
 
@@ -66,19 +65,19 @@ int main(int argc, char *argv[]) {
     // display_Text(*tr);
 
     printf("Texte généré après entrainement à 0.5 : ");
-    generer(m,2000,0.5,amorce);
+    generer(m,2000,0.5,tt->tok);
     printf("\n\n");
 
     printf("Texte généré après entrainement à 0.8: ");
-    generer(m,2000,0.8,amorce);
+    generer(m,2000,0.8,tt->tok);
     printf("\n\n");
 
     printf("Texte généré après entrainement à 0.3 : ");
-    generer(m,2000,0.3,amorce);
+    generer(m,2000,0.3,tt->tok);
     printf("\n\n");
 
     printf("Texte généré après entrainement à 1 : ");
-    generer(m,2000,0.3,amorce);
+    generer(m,2000,0.3,tt->tok);
     printf("\n\n");
 
 

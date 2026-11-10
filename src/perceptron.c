@@ -345,10 +345,9 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
         float Lt = calc_perte(m, train, 7);               // un exemple sur 7 suffit pour surveiller
         float Lv = calc_perte(m, val, 1);
         printf("epoque %d / %d ; lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e,epoques + 1, lr, Lt, Lv, expf(Lv));
-        int amorce[8] = {0,1,2,3,4,5,6,7};
         if(e%10==0){
             printf("Texte généré : ");
-            generer(m,500,0.5,amorce);
+            generer(m,500,0.5,val->tok);
             printf("\n\n");
             fflush(stdout);
         }
