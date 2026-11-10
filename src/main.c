@@ -65,8 +65,20 @@ int main(int argc, char *argv[]) {
     train_modele(m,tr,tt,nb_epoques,taux);
     // display_Text(*tr);
 
-    printf("Texte généré après entrainement : ");
-    generer(m,100,0.5,amorce);
+    printf("Texte généré après entrainement à 0.5 : ");
+    generer(m,2000,0.5,amorce);
+    printf("\n\n");
+
+    printf("Texte généré après entrainement à 0.8: ");
+    generer(m,2000,0.8,amorce);
+    printf("\n\n");
+
+    printf("Texte généré après entrainement à 0.3 : ");
+    generer(m,2000,0.3,amorce);
+    printf("\n\n");
+
+    printf("Texte généré après entrainement à 1 : ");
+    generer(m,2000,0.3,amorce);
     printf("\n\n");
 
 

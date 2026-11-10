@@ -327,6 +327,8 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
     int *pos = malloc(ni * sizeof(int));
     for (int i = 0; i < ni; i++) pos[i] = N + i;
 
+    printf("%d epoques\n",epoques);
+
     for (int e = 0; e < epoques; e++) {
         float lr = taux0 / (1.0f + 3.0f * e / epoques);   // même décroissance que ton classifieur
         for (int l = 0; l < m->net->nb_layer; l++) m->net->Layers[l]->taux = lr;
@@ -342,12 +344,14 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
 
         float Lt = calc_perte(m, train, 7);               // un exemple sur 7 suffit pour surveiller
         float Lv = calc_perte(m, val, 1);
-        printf("epoque %d lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e + 1, lr, Lt, Lv, expf(Lv));
+        printf("epoque %d / %d ; lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e,epoques + 1, lr, Lt, Lv, expf(Lv));
         int amorce[8] = {0,1,2,3,4,5,6,7};
-        printf("Texte généré : ");
-        generer(m,35,0.5,amorce);
-        printf("\n\n");
-        fflush(stdout);
+        if(e%10==0){
+            printf("Texte généré : ");
+            generer(m,500,0.5,amorce);
+            printf("\n\n");
+            fflush(stdout);
+        }
     }
     free(pos);
 }
