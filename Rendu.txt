@@ -1,0 +1,13 @@
+Taux	Perte val	Perplexité
+0,5	20,99	1 305 000 000
+0,1	7,40	1 640
+0,03	2,72	15,3
+0,008	1,92	6,85
+0,002	2,03	7,64
+
+Donc un taux trop haut detruit le modèle -> 0.08 est le meilleur tôt qu'on peut utiliser pour avoir une meilleur perplexite dès le début
+
+
+
+Sigmoid TanH et SoftMax 
+La tanH est plus éfficace pour les couches cachés et SoftMax est obligatoir pour la couche de sortie

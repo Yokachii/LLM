@@ -1,0 +1,148 @@
+elliot@MacBook-Pro-de-Elliot LLM % ./perceptron ./datasets/corpus.txt 50 0.008 0.9 8 10 100 0
+Graine : 1794295944
+perte initiale val = 4.2503
+ln(V) = 4.2341
+Texte généré avant entrainement : the "asrz
+xk[i=[ff[,fk"f.^)bcz~2,;k{}5}sj?~
+
+
+50 epoques
+epoque 0 / 51 ; lr=0.0080 perte train=1.7762 val=1.9226 perplexite val=6.84
+Texte généré : the "asrrted lition of the nonlacal to comparameterd int int "xamplex in the interal and the locals not if a noth comparare intoraly to locally in the return the mathone interalasy camparator interacced, in version is and in the "oveledeld, comparing interacs ased in the oncers in the reformatting
+int is the "exception is and | intinnermation is and contition defined int for "exception is *perations ald sequence interation import
+should. is the interal interpreted within the once.
+ >>> is used in the
+to
+
+
+epoque 1 / 51 ; lr=0.0075 perte train=1.7010 val=1.8656 perplexite val=6.46
+epoque 2 / 51 ; lr=0.0071 perte train=1.6366 val=1.8305 perplexite val=6.24
+epoque 3 / 51 ; lr=0.0068 perte train=1.6211 val=1.8423 perplexite val=6.31
+epoque 4 / 51 ; lr=0.0065 perte train=1.5981 val=1.8129 perplexite val=6.13
+epoque 5 / 51 ; lr=0.0062 perte train=1.5884 val=1.8084 perplexite val=6.10
+epoque 6 / 51 ; lr=0.0059 perte train=1.5606 val=1.7892 perplexite val=5.98
+epoque 7 / 51 ; lr=0.0056 perte train=1.5451 val=1.7817 perplexite val=5.94
+epoque 8 / 51 ; lr=0.0054 perte train=1.5352 val=1.7708 perplexite val=5.88
+epoque 9 / 51 ; lr=0.0052 perte train=1.5282 val=1.7583 perplexite val=5.80
+epoque 10 / 51 ; lr=0.0050 perte train=1.5134 val=1.7593 perplexite val=5.81
+Texte généré : the "asr "__cont__" celefonally using the class bound will namespaces are container with as returned with a couses the class the container to the contained mangs the corres. the class a stround and "__contate contained to the current from a corating that on the curred all context of the curres are consines constring the caricates to instance of the contain conter to the class that not contained to whence than the "__inlly
+ all container. the contained to inders controls are to the containes with the cla
+
+
+epoque 11 / 51 ; lr=0.0048 perte train=1.5235 val=1.7605 perplexite val=5.82
+epoque 12 / 51 ; lr=0.0047 perte train=1.5177 val=1.7736 perplexite val=5.89
+epoque 13 / 51 ; lr=0.0045 perte train=1.4927 val=1.7455 perplexite val=5.73
+epoque 14 / 51 ; lr=0.0043 perte train=1.4939 val=1.7603 perplexite val=5.81
+epoque 15 / 51 ; lr=0.0042 perte train=1.4963 val=1.7499 perplexite val=5.75
+epoque 16 / 51 ; lr=0.0041 perte train=1.4808 val=1.7399 perplexite val=5.70
+epoque 17 / 51 ; lr=0.0040 perte train=1.4878 val=1.7453 perplexite val=5.73
+epoque 18 / 51 ; lr=0.0038 perte train=1.4891 val=1.7565 perplexite val=5.79
+epoque 19 / 51 ; lr=0.0037 perte train=1.4867 val=1.7610 perplexite val=5.82
+epoque 20 / 51 ; lr=0.0036 perte train=1.4625 val=1.7266 perplexite val=5.62
+Texte généré : the "asrect the "except" edsifind one of the byteg]
+ >>> "xamplement the resulting statement refer to in the objects object.__reself[, o attribute used in the function in a descring a pair sesclass set types to the "async selece the "async the "and by yasch itsubfer the numbers. object to the formatters of the exception is returned
+ and a sle definition is the new in version 3.2.
+ >>> and
+ otherent the objects be and the "except" is return and at the objects section is in the objects the "async the obje
+
+
+epoque 21 / 51 ; lr=0.0035 perte train=1.4709 val=1.7403 perplexite val=5.70
+epoque 22 / 51 ; lr=0.0034 perte train=1.4625 val=1.7282 perplexite val=5.63
+epoque 23 / 51 ; lr=0.0034 perte train=1.4585 val=1.7371 perplexite val=5.68
+epoque 24 / 51 ; lr=0.0033 perte train=1.4548 val=1.7315 perplexite val=5.65
+epoque 25 / 51 ; lr=0.0032 perte train=1.4532 val=1.7294 perplexite val=5.64
+epoque 26 / 51 ; lr=0.0031 perte train=1.4608 val=1.7421 perplexite val=5.71
+epoque 27 / 51 ; lr=0.0031 perte train=1.4473 val=1.7284 perplexite val=5.63
+epoque 28 / 51 ; lr=0.0030 perte train=1.4538 val=1.7230 perplexite val=5.60
+epoque 29 / 51 ; lr=0.0029 perte train=1.4410 val=1.7176 perplexite val=5.57
+epoque 30 / 51 ; lr=0.0029 perte train=1.4454 val=1.7188 perplexite val=5.58
+Texte généré : the "asrect the attribute and the exception object is a string matches the byt argument
+************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+
+
+epoque 31 / 51 ; lr=0.0028 perte train=1.4358 val=1.7142 perplexite val=5.55
+epoque 32 / 51 ; lr=0.0027 perte train=1.4429 val=1.7254 perplexite val=5.61
+epoque 33 / 51 ; lr=0.0027 perte train=1.4338 val=1.7175 perplexite val=5.57
+epoque 34 / 51 ; lr=0.0026 perte train=1.4308 val=1.7150 perplexite val=5.56
+epoque 35 / 51 ; lr=0.0026 perte train=1.4346 val=1.7222 perplexite val=5.60
+epoque 36 / 51 ; lr=0.0025 perte train=1.4331 val=1.7170 perplexite val=5.57
+epoque 37 / 51 ; lr=0.0025 perte train=1.4264 val=1.7146 perplexite val=5.55
+epoque 38 / 51 ; lr=0.0024 perte train=1.4320 val=1.7167 perplexite val=5.57
+epoque 39 / 51 ; lr=0.0024 perte train=1.4288 val=1.7128 perplexite val=5.54
+epoque 40 / 51 ; lr=0.0024 perte train=1.4245 val=1.7127 perplexite val=5.54
+Texte généré : the "asrectly class to the "__nelf[(sy" ['''" if the string of the string of the class object.__rastives a list
+ "as" defics of the to leturn the built-in functions an a sequence, an object to the class that the class that the class to the set areof the length the originally at the new ondiding ar integer by the value class construction on a class that the interpreter are all theclass that the statement and as the new "__setico_stor__(self, other)
+object.__()" if its are the "try", "'" | "([x" identif
+
+
+epoque 41 / 51 ; lr=0.0023 perte train=1.4256 val=1.7117 perplexite val=5.54
+epoque 42 / 51 ; lr=0.0023 perte train=1.4216 val=1.7123 perplexite val=5.54
+epoque 43 / 51 ; lr=0.0022 perte train=1.4231 val=1.7184 perplexite val=5.58
+epoque 44 / 51 ; lr=0.0022 perte train=1.4200 val=1.7061 perplexite val=5.51
+epoque 45 / 51 ; lr=0.0022 perte train=1.4190 val=1.7099 perplexite val=5.53
+epoque 46 / 51 ; lr=0.0021 perte train=1.4161 val=1.7124 perplexite val=5.54
+epoque 47 / 51 ; lr=0.0021 perte train=1.4171 val=1.7119 perplexite val=5.54
+epoque 48 / 51 ; lr=0.0021 perte train=1.4151 val=1.7037 perplexite val=5.49
+epoque 49 / 51 ; lr=0.0020 perte train=1.4128 val=1.7077 perplexite val=5.52
+Texte généré après entrainement à 0.5 : the "asrefound only instance of the attribute is execution types that object with an instance of the exceptions
+shanged by a containes "__ed__()" method object insted with the function of the exception class is a singless or containing becally object is a class of the function of the containes in cares are not implementation of a converted to its a "typeerror" is the
+ subper of the string of a containing "except" clause
+ for the exception occurs in the corresponding of the iteration one of context of a contains of the nested with the comparison "__getattr__(" attribute of the form "type(" class_of_bitem__()" butter and a referal the under class that new the object or an object is class attributed to the "__set__()" and "int" and "'" | "'execplice of the complex looking stacting the "__del__()" is orement is is a cure exception when the class return and and "except" clauses of the startitems may be replaced *alse
+ "__parame__ | the current sue namespace the class object indical pattern in the class instance of and an argument the first operator of the as the class are instance of and contain with the "__del__()" expressions are expression of the as the "inted of the "firsting thenew the class deces are also the comparison "typeerror" is consty,
+ "__new__()" is a code called to the order container classes for and a new in version 3.2
+ >>> metaclass of a class
+ print(number of parameters are returned interpreter to use or a code
+chonk one of the comparison "typeerror".
+ characters and the cures are not operator nethods that an instance of the attribute numerule of the formations or index in the string of the formal point classes are subsed in the sume exceptions of the subject of the for the " gelete that in the common "__eq__* attribute__(self, other)
+object.__rastive is a new in version 3.3 |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Texte généré après entrainement à 0.8: the "asrlf" or of the falg can be ousessertire at an |
+| | the "str.regeral" isplement the numes.
+ this
+for examples are interer* to "__getitem__" is alcision of the
+ complex lozence | nall
+ cofter as the sequences are not point pusitem a called in version 10 when a code can be comparisons, the to "mended by function of "x"| "\n" to the same class is line.  how its when
+ mosules than the form not has of assigned to rewings as the type iterable object of a sequence of the part cueeron "condex are note formal no variables of attrother then or metations
+ imported are depattern "__in stargard names can be constring
+ iele (romef* or as implemented with the ether the *"name" clause of the attribute an arguments the object is
+a "typeepricuile, see
+numerol], "call. rithere proged.>
+ | the fo hame racced in "__strode last
+ other its is with the  changed in a cuent, and methods.
+ for the fols
++4) rettring form the name maynote and containes a singlation interalt of the "continue" craising the function of the curres,
+exep class characters to end leading the code with "pe__(x" seerering the locally), or rack they are character on are of the with the comping.sed or objects
+patterned aftth the parameter and optes
+ varuent of the suite
+new the tubcore of the nemoved.
+ []]').
+ * is the ordir argument contains in the string
+object is the with the reated or a bound for file inituotine
+instance, ackingtarlishs.
+ f  eentantics is a "spections of a an if nontaines (.-.", "xcidenct festarless instance of "synt" )'. | fragillodence, on an integer of be remouptesser aliat_able can be class. is contained
+ method operate the command list
+classes |
+ | | | but is then not of a coroutinally are numerical pattern "gals, a comparison exception
+orerror(3
+ >>> t'pesitioner format strined in the raised in the proper the newcen an
+allow ne and the
+ ("1", ":" oreation of key to "teserptor on exception of auses in a descriptor cypes, comperations__ attributes a class of the callocals suctionol-ock tal teourde
+
+
+Texte généré après entrainement à 0.3 : the "asrect:  "x = by construction of the new value of the context of the format and container types that an or a code block the exception of the class of the commands are class in the comparison "']", "//", "__getattribute or a class of the called in the class decess the command its are not implementation of an and containes that or index in the following posal can be constructions an integer in the class of the subsed in version 3.12:
+ >>> '{"].001230'..
+ | "'cires a pounding of support class of a comparison "typeerror" if the class of the comparison "__getitem__()" if the contain sequence is and attribute and an a subclasses in the function of the class of the formatting of the command of the comparison a replaced to a command in the function of the class of a class instances are not defined in the comparison "typeerror" is includes and of the string operator for the containes of a contained to instance of the comparison "typeerror" is the subsed in version 3.3. if the or a code by the format and as the sequence contains of the comparison "typeerror" to its and a subclasses are not be assigned to the containes the string of the contain is can be class that also the formatted as a class defined in the class of the string of the form an are not class thatalso the code block the "except" clauses are all be contain the "__init__()" and "not in the class of the string of an and the subject is is an and containes are not implement subclasses are not implement storerror" is a single underscore of the following the class in the "__cont__" from mother in the comparison "typeerror" is a class that are comparison "typeerror" is a string of the comparison "typeerror" is a "syntaxertation is a class that interator object instance of a contained in the class the subject>__type__(self, other)
+object.__res__(self, other)
+ is
+ in a sequence is a comparison "type(" subclass of a contain is the command in the string of the comparison "typeerror" is a new the object is a cures are not imme
+
+
+Texte généré après entrainement à 1 : the "asred as the format and other class of the class that are also the subject that an also "type(an" statement of the containes are attribute or an and an object is a new the class definitions of the string of the form to reto the following the following of the comparison "typeerror" is a new in version 3.5:
+ >>> '{" "ishont of a context of the formatting of the comparison "typeerror" is complex = zeycepore as the comparison "typeerror" is asingle "attribute of the containes of the contained in a sequence of "hor__" and "__getattr__(self, other)
+object.__raster to a common a single "attribute of the comparison "note character expression "true" is instance of the function of the comparison "type(" with the "except" clauses to oct lefe new once of a containes of a comparison "__getattr__()" method objects can be class the standard containes a "syntaxerror" is the called to it is called to the new values of a coroutinally in the comparison "typeerror" is construction instances are also the class of the class instance is a new in version 3.8:
+ >>> '{" "instance of the code object is a code can be class no the "async is complex ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+
+elliot@MacBook-Pro-de-Elliot LLM % 

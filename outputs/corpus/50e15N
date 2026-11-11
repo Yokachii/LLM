@@ -1,0 +1,144 @@
+elliot@MacBook-Pro-de-Elliot LLM % ./perceptron ./datasets/corpus.txt 50 0.008 0.9 15 10 100 0
+Graine : 1794296869
+perte initiale val = 4.2479
+ln(V) = 4.2341
+Texte généré avant entrainement : version 3.7: thw-0ipv;~\z)i&f$zs p_[,q[.'1
+c>)&<1~
+
+
+50 epoques
+epoque 0 / 51 ; lr=0.0080 perte train=1.8389 val=1.9989 perplexite val=7.38
+Texte généré : version 3.7: the are rest
+the complex not when the corre
+ return may default ther the
+ "mater to lestorpeted or uepers of the base
+ formattr the commert uey on exception of ime rect are object in the cole procertace attribute
+ fise ret contable is faiged beecking the select comparis is a core object lech conting the
+object. the numerce "typertation of the class, the exception_ing
+ in the ret recart
+ ratement meeres of the excortines chat of came are is is a framed compares of the
+ retirn object rear argument c
+
+
+epoque 1 / 51 ; lr=0.0075 perte train=1.7087 val=1.9016 perplexite val=6.70
+epoque 2 / 51 ; lr=0.0071 perte train=1.6732 val=1.8861 perplexite val=6.59
+epoque 3 / 51 ; lr=0.0068 perte train=1.6284 val=1.8511 perplexite val=6.37
+epoque 4 / 51 ; lr=0.0065 perte train=1.6030 val=1.8465 perplexite val=6.34
+epoque 5 / 51 ; lr=0.0062 perte train=1.5760 val=1.8323 perplexite val=6.25
+epoque 6 / 51 ; lr=0.0059 perte train=1.5688 val=1.8275 perplexite val=6.22
+epoque 7 / 51 ; lr=0.0056 perte train=1.5415 val=1.8021 perplexite val=6.06
+epoque 8 / 51 ; lr=0.0054 perte train=1.5355 val=1.7919 perplexite val=6.00
+epoque 9 / 51 ; lr=0.0052 perte train=1.5211 val=1.7963 perplexite val=6.03
+epoque 10 / 51 ; lr=0.0050 perte train=1.5333 val=1.7975 perplexite val=6.03
+Texte généré : version 3.7: the exception of
+ if the expression (etched the class the nerored for enenter formates of the expression "int in the name typed in the neroriable a bels
+ "deft and and the neference of the needation of an exception is evaluater on the called (intribe in the see decer" (ingloy is indeneed". in the enentation of the executed from a from the executed by the executed and the exception of the "gint" in the string on the formatted recermation of a need be neferences bet entained in the ner- in the excep
+
+
+epoque 11 / 51 ; lr=0.0048 perte train=1.5076 val=1.7678 perplexite val=5.86
+epoque 12 / 51 ; lr=0.0047 perte train=1.5116 val=1.7935 perplexite val=6.01
+epoque 13 / 51 ; lr=0.0045 perte train=1.4896 val=1.7625 perplexite val=5.83
+epoque 14 / 51 ; lr=0.0043 perte train=1.4945 val=1.7644 perplexite val=5.84
+epoque 15 / 51 ; lr=0.0042 perte train=1.4901 val=1.7753 perplexite val=5.90
+epoque 16 / 51 ; lr=0.0041 perte train=1.4708 val=1.7538 perplexite val=5.78
+epoque 17 / 51 ; lr=0.0040 perte train=1.4717 val=1.7581 perplexite val=5.80
+epoque 18 / 51 ; lr=0.0038 perte train=1.4771 val=1.7654 perplexite val=5.84
+epoque 19 / 51 ; lr=0.0037 perte train=1.4597 val=1.7474 perplexite val=5.74
+epoque 20 / 51 ; lr=0.0036 perte train=1.4576 val=1.7486 perplexite val=5.75
+Texte généré : version 3.7: the suite implement to implement is see linding of the sive
+ syiniting the provide a tracort in the class at the function of blocally, whis is reture the class the sest
+ "__getites "trom__python the
+ is executed to lo be the sequence of the
+ if "leclace
+ "from the exception is which at the is equal to ommaughide
+this are band not an a defines the expression "__eq__()" and "__del__()" method to the class the object is repled and and a side the descriptions.
+ the sequence of the provide operations t
+
+
+epoque 21 / 51 ; lr=0.0035 perte train=1.4543 val=1.7436 perplexite val=5.72
+epoque 22 / 51 ; lr=0.0034 perte train=1.4574 val=1.7580 perplexite val=5.80
+epoque 23 / 51 ; lr=0.0034 perte train=1.4500 val=1.7503 perplexite val=5.76
+epoque 24 / 51 ; lr=0.0033 perte train=1.4355 val=1.7375 perplexite val=5.68
+epoque 25 / 51 ; lr=0.0032 perte train=1.4440 val=1.7419 perplexite val=5.71
+epoque 26 / 51 ; lr=0.0031 perte train=1.4357 val=1.7409 perplexite val=5.70
+epoque 27 / 51 ; lr=0.0031 perte train=1.4389 val=1.7504 perplexite val=5.76
+epoque 28 / 51 ; lr=0.0030 perte train=1.4313 val=1.7407 perplexite val=5.70
+epoque 29 / 51 ; lr=0.0029 perte train=1.4304 val=1.7298 perplexite val=5.64
+epoque 30 / 51 ; lr=0.0029 perte train=1.4208 val=1.7380 perplexite val=5.69
+Texte généré : version 3.7: the returned as a "__fatce__()" and "__formally "__get__()" method in the name or import arguments and the defined as are is not all arguments and arguments are the acenstruce assignments and a string and invoked and are a descriptor instancation of a
+"none "return" and "notimplementation ond arguments (" subject in the last helby "is" and the "is" or "floating and "pemc* "flo:
+ * a new eh the subser for examplements are useral passed to the "exception("
+and "flow "__allo__()" and "__del__()" or "
+
+
+epoque 31 / 51 ; lr=0.0028 perte train=1.4254 val=1.7404 perplexite val=5.70
+epoque 32 / 51 ; lr=0.0027 perte train=1.4240 val=1.7439 perplexite val=5.72
+epoque 33 / 51 ; lr=0.0027 perte train=1.4148 val=1.7292 perplexite val=5.64
+epoque 34 / 51 ; lr=0.0026 perte train=1.4186 val=1.7363 perplexite val=5.68
+epoque 35 / 51 ; lr=0.0026 perte train=1.4185 val=1.7376 perplexite val=5.68
+epoque 36 / 51 ; lr=0.0025 perte train=1.4076 val=1.7314 perplexite val=5.65
+epoque 37 / 51 ; lr=0.0025 perte train=1.4111 val=1.7342 perplexite val=5.66
+epoque 38 / 51 ; lr=0.0024 perte train=1.4064 val=1.7271 perplexite val=5.62
+epoque 39 / 51 ; lr=0.0024 perte train=1.4053 val=1.7260 perplexite val=5.62
+epoque 40 / 51 ; lr=0.0024 perte train=1.4037 val=1.7309 perplexite val=5.65
+Texte généré : version 3.7: the crause the pyters are not contain the sequence class definition of the funching the
+exception that the code pattern objects is the left operators are is see also statement partict by the support the callection is integer and the
+ argument contains of the
+ the result is
+spectives alls gror instance and to the class namespace (in should in the called to annotation and are uningerer (the the corresplit()"class that the nero it the special return "__equit] (formatterns are not *compield the conta
+
+
+epoque 41 / 51 ; lr=0.0023 perte train=1.4072 val=1.7379 perplexite val=5.69
+epoque 42 / 51 ; lr=0.0023 perte train=1.4067 val=1.7424 perplexite val=5.71
+epoque 43 / 51 ; lr=0.0022 perte train=1.4113 val=1.7442 perplexite val=5.72
+epoque 44 / 51 ; lr=0.0022 perte train=1.4001 val=1.7312 perplexite val=5.65
+epoque 45 / 51 ; lr=0.0022 perte train=1.3967 val=1.7204 perplexite val=5.59
+epoque 46 / 51 ; lr=0.0021 perte train=1.3970 val=1.7289 perplexite val=5.63
+epoque 47 / 51 ; lr=0.0021 perte train=1.3952 val=1.7216 perplexite val=5.59
+epoque 48 / 51 ; lr=0.0021 perte train=1.3987 val=1.7300 perplexite val=5.64
+epoque 49 / 51 ; lr=0.0020 perte train=1.3964 val=1.7247 perplexite val=5.61
+Texte généré après entrainement à 0.5 : version 3.7: the context transe the "__class__()" that the class that the same is tracebacks and the defined assigneressing this should a "setar" tracem*.-===================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+the namespace precises and the subselding the result and to a namespace supperic class values not types are daiting the same the in thename of the standard the "__intatement by argument:
+ this between an instance an exception is raised to a subclass is last stouse the set leclass can types is a single to a python and intis a noteral presentations
+ in "self the specified to same a variables an exception that provided to the same to be a sequences in the same and the "__class__ | default__gythin a "sequences an "am" if the subject part are is compreares of the same is not is true and a string of the contain the method such a ster to the exception is the same is none prement the single the same is in the specified number interf the same the ba
+
+
+Texte généré après entrainement à 0.8: version 3.7: the python yrer the *nonts in the same result and
+   henizigring possible as a sugned on the continue
+ "x = and "none" statere matcher operation befire argument dagsel-object passed in the class in the function and loorite. the "__class__"
+striented instances
+=:
+| | in unt list is executed by the zase. they that the same in support in thyins operations and the class outicause function define types not objects in patter attribute statement is
+expressions (nus ass the can be interpretact and bent toke prrass matins.
+ list shing the
+ types and the "is the python with subsing argeralling are integer to it is created the loilations return a led the string dicl only unstance toven belower posing rode as the class in module not to the following the "__inder__" # caul__()" subclasses then special raises and agocate that is not hefine its its an ebocoass)
+ tappingerces and that allow are user-= "nonly" claunment base
+ "parameter the new in version 3,3.**
+instance, "__getattr__ssess class is equaligines or one of the inentifier ariate the same a i]j "|".
+should()" _slowelige
+ "ma/" is compression "is betwere note: a *f"mavarget attribute and to the sive types are the "is" method lematweiterictional runtialized bections only to geceet lilled instance, these returned to prevaising to behashich an 048* return a values in the result code resubrase the sasces to be set the built-in types
+ annotation scope, see to a strings. the same result to
+ can integer (asy to objects the gige
+ class on the pra pone order detait." selces in context of the sami
+ follow to the ctanamed:
+ >>> or nonuestring returns
+ in a strings a combren using and the string dicaulever some-|
+ ite operands over
+spoc "for than a sequencessing the previal-ade does the "lwint precimed to as returpligit runturned by code allower and to the same is not a bound and
+relebocally the prevocues_pret no conded true ave ond that class bestrations are bane precement **perodp,ion |
++---------------------------------------+
+| sta
+
+
+Texte généré après entrainement à 0.3 : version 3.7: the any the subsel base class instance and the same the same result to return a contere a compressing the same is not are instance provide the interpreter to a sten the set list be a string is and the same is not are is not string of the set  type aliging the set has been the same is exception is the same as instance is an instance and the same is exception is executed to the same as interpreted in the same to be instance of the sequence pattern argument by the same is exception is theset an a class instance and the same as in the prevent an are statement the set the string is the same to  if a string positional provide the same in the string is executed to the one used to a string or instance is the same is not are integer to a string of the same is executed to an integer in the sequence pattern argument to a convert in the string the subscriptions the string the specified to instance of the attribute is not are integer to the same interpreter string the set allow to the class that is a string in the same is executedto the same a function |
+| | "async craused in the set  type a none can a callscations the suite
+ context in the same to  it the string the self to prefix "'0', "__getitem__()" is an instance is a string an exception is a single traises the "is" or "sone in the same of the standard in the class of the sequence of the same to  assignment to a class that the set all contexpression |
+| | | | "unver object is executed to a namespace (in the string represent or insters the list of the same result all container the section is a subsel. the same as the class the same is executed to a namespace to a string the class to all the same is not the suite
+ clls that an a comprement to annotation of the a "conting the same is not are is a singled by python object is trator in the exceptionis any the same is not an an instance is not an an exception is the string or instances to a container the string return a context in the statement any set  and to the same a functio
+
+
+Texte généré après entrainement à 1 : version 3.7: the context manager to be a string is the same is exception is executed to the same and to the set list of the same is exception is evaluated as a name of the string to a sten the class that the set line any to a class of the called to instance is should "none".
+ the "__getattr__()" end__()" and "__set__()" and "__set__()" and "__set__()" is an instance and and the same is not only the same of the standally the sequence pattern argument to a context in the same is not are is executed in the same to be a python the set be returned to a container string are only all the same is exception is the set list print is true and a string at a string the set  type and the same is not arguments are integer to instance is an is an exception is executed to a namespace pattern argument are a context in the class that the set line the next in the same of the define a "sys in the secorators are is the same is not an an exception is the set list of the same a value the specified to instances to a to assigned to a container the same as interpreter the same as in the set  type and the name is a singler to the context to a string set section is executed to the same is not attribute is a ster positional argument to the same the same a comparison is the *consing the interpreter the class that the set in the same is exception is set succedes are are inter the same as instance of the class that the allow at an a context in the context in a names that an a cases that the set line of the sequence pattern argument argument to a conven by the string representation of the signed and the same a function object is the same a function object is the same is executed to the same to be instance is an instance is a string the interpreted as instance and the same asinstance is for example, the namespace class becatter the same is not are integer to a sten the list of the sequence pattern interror" statement is the same is executed to a string represents only the same is not are integer to a subject in th
+
+
+elliot@MacBook-Pro-de-Elliot LLM % 

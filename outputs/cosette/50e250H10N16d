@@ -1,0 +1,146 @@
+elliot@MacBook-Pro-de-Elliot LLM % ./perceptron ./datasets/COSETTE.txt 50 0.008 0.9 10 16 250 0
+Graine : 1794381854
+perte initiale val = 4.7160
+ln(V) = 4.7185
+Texte généré avant entrainement : le, à un _JRt��%Tu 39med?�A5B0c p
+Ø�2�
+
+
+50 epoques
+epoque 0 / 51 ; lr=0.0080 perte train=1.8756 val=2.4103 perplexite val=11.14
+Texte généré : le, à un firait à comment dans la bour sansin cette fien enterre aut on foire, comme aprire. Cette maisit de prisire, et chapelles y avait oi salle avait à noute et figire. La bortée de serrient de pas cette rouve s'arrait sa bait dans la main. La Thénardier par de sur trait de maisire.
+
+L'était de bour de mortier
+était pastout l'affit et de main aprit la borte, de l'aplet apparent dans l'était de Fauchelair somme portier de la carde sabre sacoller et commien et en cette maissait de pour ses b
+
+
+epoque 1 / 51 ; lr=0.0075 perte train=1.7896 val=2.4119 perplexite val=11.16
+epoque 2 / 51 ; lr=0.0071 perte train=1.7466 val=2.4253 perplexite val=11.31
+epoque 3 / 51 ; lr=0.0068 perte train=1.7344 val=2.4473 perplexite val=11.56
+epoque 4 / 51 ; lr=0.0065 perte train=1.6840 val=2.3877 perplexite val=10.89
+epoque 5 / 51 ; lr=0.0062 perte train=1.6763 val=2.3988 perplexite val=11.01
+epoque 6 / 51 ; lr=0.0059 perte train=1.6488 val=2.3986 perplexite val=11.01
+epoque 7 / 51 ; lr=0.0056 perte train=1.6250 val=2.4040 perplexite val=11.07
+epoque 8 / 51 ; lr=0.0054 perte train=1.6436 val=2.4406 perplexite val=11.48
+epoque 9 / 51 ; lr=0.0052 perte train=1.6016 val=2.4036 perplexite val=11.06
+epoque 10 / 51 ; lr=0.0050 perte train=1.6014 val=2.4092 perplexite val=11.13
+Texte généré : le, à un laissait le fût que la moit. Saint-Jean moment pas la pour les francierant.--C'est la prieure de la larre entrer tous la petite
+par les religieuse, et il y a les reprit la regardait à la
+terre en nous les ou sombre.
+
+--C'est les passants de la pas pas que la par les retres de la restier le par les religieuse.
+
+Ce 1849.
+
+Ce ne reprit le pas les des pas retier de la regardait que cet au par l'homme.
+
+Le passait pas la coups de fîtres cela vers son vient qu'il apparticulaire. Il avait 
+
+
+epoque 11 / 51 ; lr=0.0048 perte train=1.5910 val=2.4054 perplexite val=11.08
+epoque 12 / 51 ; lr=0.0047 perte train=1.5933 val=2.4360 perplexite val=11.43
+epoque 13 / 51 ; lr=0.0045 perte train=1.5788 val=2.4182 perplexite val=11.23
+epoque 14 / 51 ; lr=0.0043 perte train=1.5667 val=2.4318 perplexite val=11.38
+epoque 15 / 51 ; lr=0.0042 perte train=1.5614 val=2.4243 perplexite val=11.29
+epoque 16 / 51 ; lr=0.0041 perte train=1.5555 val=2.4217 perplexite val=11.26
+epoque 17 / 51 ; lr=0.0040 perte train=1.5473 val=2.4278 perplexite val=11.33
+epoque 18 / 51 ; lr=0.0038 perte train=1.5381 val=2.4235 perplexite val=11.29
+epoque 19 / 51 ; lr=0.0037 perte train=1.5424 val=2.4274 perplexite val=11.33
+epoque 20 / 51 ; lr=0.0036 perte train=1.5415 val=2.4044 perplexite val=11.07
+Texte généré : le, à un continure de la lui dire de la Thénardier le terre de la lui tout à ce qu'elle noirs de se faisant le rencontrante dans le couvent de la porte de l'arrêtait le couvent. Cette dont le
+du lit fut de la fond dans le ces deux qui rentine d'enfant le vertait de la porte de tenifini sur le pouvert de le contre le contrait dans la consi donnaires de la rue de la rue de la rue Poroles de la rue Porocau de la rue dire de toutes de
+sous les carrés de la vieille de la rue Poter la moit de la rue Par 
+
+
+epoque 21 / 51 ; lr=0.0035 perte train=1.5288 val=2.4078 perplexite val=11.11
+epoque 22 / 51 ; lr=0.0034 perte train=1.5141 val=2.4307 perplexite val=11.37
+epoque 23 / 51 ; lr=0.0034 perte train=1.5136 val=2.4161 perplexite val=11.20
+epoque 24 / 51 ; lr=0.0033 perte train=1.5126 val=2.4283 perplexite val=11.34
+epoque 25 / 51 ; lr=0.0032 perte train=1.5002 val=2.4354 perplexite val=11.42
+epoque 26 / 51 ; lr=0.0031 perte train=1.4944 val=2.4467 perplexite val=11.55
+epoque 27 / 51 ; lr=0.0031 perte train=1.4920 val=2.4258 perplexite val=11.31
+epoque 28 / 51 ; lr=0.0030 perte train=1.4924 val=2.4337 perplexite val=11.40
+epoque 29 / 51 ; lr=0.0029 perte train=1.4840 val=2.4347 perplexite val=11.41
+epoque 30 / 51 ; lr=0.0029 perte train=1.4792 val=2.4394 perplexite val=11.47
+Texte généré : le, à un coura à la réponds haut de ce mont. Vous de voilà et de la bonne remperait de la gargonna il apercevait à un cette chapeau.
+
+Il ajoutait de manger à de la rement de cette espagnontes de cet inconnu de la nuit de cette était de cette l'ors de ce longue cent d'une de cette maison, ce monsieur, ce sont de la bouche de la rue de la forêt de la garde d'un ce lide au gauche de la comme la de service de la fondrité, cela voit de se reconnaires dans les toujours ayous de la nuit de la même au
+
+
+epoque 31 / 51 ; lr=0.0028 perte train=1.4766 val=2.4562 perplexite val=11.66
+epoque 32 / 51 ; lr=0.0027 perte train=1.4689 val=2.4387 perplexite val=11.46
+epoque 33 / 51 ; lr=0.0027 perte train=1.4629 val=2.4359 perplexite val=11.43
+epoque 34 / 51 ; lr=0.0026 perte train=1.4533 val=2.4351 perplexite val=11.42
+epoque 35 / 51 ; lr=0.0026 perte train=1.4665 val=2.4431 perplexite val=11.51
+epoque 36 / 51 ; lr=0.0025 perte train=1.4572 val=2.4501 perplexite val=11.59
+epoque 37 / 51 ; lr=0.0025 perte train=1.4565 val=2.4597 perplexite val=11.70
+epoque 38 / 51 ; lr=0.0024 perte train=1.4469 val=2.4546 perplexite val=11.64
+epoque 39 / 51 ; lr=0.0024 perte train=1.4434 val=2.4525 perplexite val=11.62
+epoque 40 / 51 ; lr=0.0024 perte train=1.4366 val=2.4445 perplexite val=11.52
+Texte généré : le, à un promie sa rette, il faut immense, le dit l'houcher de la mère Cosette, les pétant si quand la rue Piris-nouver sa jeta un seul avec leur avec un l'ordre ce des événement dans le gatter avec le boulevers
+comme s'en vérité sans foudre et qui avait de qui sont la pour soir quelque chose de fermée de temps en temps de se furent de moi,pour fout court sur la malait prise à gauche avec son vous sous les connessieur de l'on la rempler sur le long, sur se service quedu guille. Ce fut une femm
+
+
+epoque 41 / 51 ; lr=0.0023 perte train=1.4377 val=2.4393 perplexite val=11.46
+epoque 42 / 51 ; lr=0.0023 perte train=1.4368 val=2.4464 perplexite val=11.55
+epoque 43 / 51 ; lr=0.0022 perte train=1.4326 val=2.4574 perplexite val=11.67
+epoque 44 / 51 ; lr=0.0022 perte train=1.4277 val=2.4525 perplexite val=11.62
+epoque 45 / 51 ; lr=0.0022 perte train=1.4285 val=2.4614 perplexite val=11.72
+epoque 46 / 51 ; lr=0.0021 perte train=1.4259 val=2.4751 perplexite val=11.88
+epoque 47 / 51 ; lr=0.0021 perte train=1.4177 val=2.4655 perplexite val=11.77
+epoque 48 / 51 ; lr=0.0021 perte train=1.4116 val=2.4521 perplexite val=11.61
+epoque 49 / 51 ; lr=0.0020 perte train=1.4094 val=2.4754 perplexite val=11.89
+Texte généré après entrainement à 0.5 : le, à un des enfonts sont plus d'une pensée
+avait endrir de la plus en bistes s'avaient toutes les plus étaient plus s'autacent ineminait de cessement avec les enfin occiers,avec les maine marche. Celor sur lit à ce deux bassement pour en plis des
+maisons pour lui reprit de se fort en entaintion d'en bois. Welles. Celui à
+pour le minutes de continuer de martine, et ce qui est mouvent à procorait de ce qu'on ne pioiuressant de toute cette pour pourtant le ciel. Le couvent, les bataille, de ce n'était pas de montrer le marais de cette posoles de planger le disparce qu'on poince dece sous les boutis s'étaient plus spitreux, des chemense avec des parler les tables contraire du monte de l'ailletion nous avaientétait à la point de la main ce millions par ce nont, et qui ai fond de minutes de plettent les repareux en plus marches sur ce plus de la morte de deux sur la point de la partie de ce mot de cet homme de la postommencipent saissement cette semble où la mère, lecouvent des casque le contrais de porte d'écrian, et deux par Père Fauvent pour son pauvre de leur comme on était reste était à quatre heures, c'était le possibles de mise certains à Montfermeil pour le point de laisser de ce qu'on pour les mains de moins pas de son sous les points se matin de ce partier à la rue de Martine francs. À le point de responte sans le mois étaient plus sortiers de Montfermeil s'autes fenêtres, cand en heureux et des trousses de la polttait cette ans gardes de Montfermeil, en ce moment de couvent traversétions, les religieuses de marchées, et les comme par des pour serrusser Volons-vous à se plain de pour ses écriant des parles de la marche, reconnaître de fer, qui avait demande de la main de la maison de le ponsière et destin de la main plus marches, repoussien à neuve en passer l'enfière de minutes de point de mit à coup de marches. Les maisons d'un va mort pour par le piècede chemin tait pas de couvent, et qui par une montre de point de le chemin médit passé l'ombre, était plus des Paris des pareillesde ce qu'on ne sont avoir pas plus de marche de mort. Les plus sans les pains de l'autre était, et la maison; elle en de se ponte de la point de le particulier à la porte de l'était pas de la police de coup de baisser le paraissent vête de ce qu'on pour que cela regarder de la mains de la massieurs de minutes de coupar trouvait de ce pauvre margot de ce pouvait sur sous le moins la mains et toute la marche monsieur de ce que ce qu'on n
+
+
+Texte généré après entrainement à 0.8: le, à un écritaite scumparre que sans fille ses souffres parêtes s'emps, elle avait sur lesFrance afférateur de
+soir un du
+terres pour sur de ce qu'il trouver que centaine avec un cette chose. Ce sont des plus de ce qu'on revin de Ligne ou sous lecous du touffle pleine de fond à chiforit du jardin, le victoire, et sous anglaises pas moins d'épida petite à un avec leur y à marin d'ébernapit morte, des cherces, rési, la tête et passepolt, se tenait qu'a est cents, cloître du redoute. Il était à toute la main, çuquines, de faire; comme un fond du comme aveil étions de l'auberge, de la maison des, elle laissé. La premier, c'étaient porte, à ce commençai. Les yeux à précés à maison, glâché, de un pable que cela débos de pour la plus de caveaute de cette poussant entre celui parlée, les manquisésurte billet en effet car absole, redoire rues. Une peu fort des morts de minutes de chembre. Un reste droite était rapperé des parches d'un actoutes de l'était auraille est au de face, il est ce caraie de bondons par la fois
+dans le coup de
+Fauchelevent, absortir son fut mort.
+
+--Ah! premier en épouvait monte. Je sous de tenait pas coup des
+cavalitions;
+nu passeplus
+demandeaute de
+la pointe de leur un passé.
+
+--Parens, porte sur
+était fait qu'on déclatits, un pour sur lessin par sa mois, nous remudement sur sous, en 1815, le cocher des
+ne souge? 
+
+ sont ennonça dans l'incommençait Thénardier avec Beüces vite
+plein. ditentement. Ces devant il seulement avec un coussant des lui qu'uvilu qui s'ou sous vers les ortinatt que je meurtinur.
+
+--Mais de l'avait propossès détaient comme de Solez salameté insent, éterre à 16-vi la coins, une voir où un chef était, de rien fémeire où nous par un rénément.
+
+--Je nais étaient de la tête, en obstavre spriestesent contrant pas encore fièbre à l'interrent pas de cet homme était mortié, sentains pareilles, placer la
+possibrés qui avait pour sur lui.
+
+--Et paisonnait de
+deux le regéelot moi, rece et en
+commençait à paysan indicuent désorte. Mar bien ce bonhomme. Elle fort avait été pareille
+midieux. Cet aux suraite. Denceline. Le bonnemirer dans le brisques deux comme out en même payiétrentière le cinq précipassants demainée 1823, rente. Les
+maisons. En
+pointé du très par le chose
+ne senait soimingent sur une bes deux égayter et démort! mani, des
+pour
+était une de la
+le me
+bruit des pour si férités de montter, qui se retourment, plus tén
+
+
+Texte généré après entrainement à 0.3 : le, à un coup de mit à cette pouvait être pour le distinée de fond du couvent, pour les branches de la main de commençait à particulier qui se mit à son par la plaire de l'autre pour la plus entrer de la main sur sous lesboulets de cents de mensieur, pour les branches de la main de ce particulièrement de la main de cette pour le plus en se déparée de la porte de l'air de cette pour le dire était était des partie de particulier de l'enfant, et la posseur de la main de ce qu'on entendait à peine pour les branches de la main de commençait à trouver en deux manille de la rue de Passe. Cette faisait pour les pour les broustre-t-il entendre sermination de la mort. Mais nous pour la plateau de Montfermeil. Il se mit à coup de marcher les brousses qui se mit, il se sommes de Montfermeil est cela était de ce qu'on ne sont point de la main de ce qu'on avait plus de mois depour la plus entrer de l'enfant, des boutière et de ce qu'on de la main de cette pouvait de commençait de ce qui est autre pour lecomme de Montfermeil. Il se comme un faisait pour les branches de la maison. Le dire était à toute la point de la main paroise de la main se moment qu'on ne s'en pouvait sur sortir de cette pour lui particulatait, comme les des pour lui retoire de la polttant de ce qu'on ne se pour le plus de marche, ce premier en passant de certaines particulièrement à la porte de la prieure de ce que cette pour le dire de le porte de le particulier de la porte de l'armée de mit à coup de sa porte de la prieure de cette point de la main sur les broustre de la main sur le profonde du monte de nouillées de commençait à peu comme un avait pour le plus de la main, par la main de ce qu'on de la main de comme un coup d'oeil somme en toute la plateau de Montfermeil. Quelques de cette pour le plus pouvait sur soupir vient de cette pour le plus de coup de sans endes de la porte de la porte de la point de la maison de son comme il avait plus marches de la main de ce particulier de la porte de la maison des plus en sous les branches de montier l'entendit desparticulier était pas possait à toute le précipita sortière et dessent font des maisons monts de mentre de plus de la mère Martin Verge du cette pouvait être parobre plus retourna pensée de particulier d'été de la main de cette pour les demans cela des morts dele posseur de commençait à travers le monsieur de la pronce de la porte de l'empli plus de mots de font, des boutiente-cet à la porte de l'autre de la p
+
+
+Texte généré après entrainement à 1 : le, à un paysant pour les brutes de minutes de coups de doutier. Les mot de la mère et coupsde la porte de le ponte de la main de ce qu'on ne se pouvait plus traissait à cette était de cette pour les breminer de mirait despassants de minutes de marcher les devants de ce qu'on ne sont point de la main de commençait à cette était pas de la porte de la porte de ce que c'est que ce sous les branches de commençait à terre pour le plus de la maison de se plettent les deux pour les deux contre de ce qu'on appelait plus de couvent en présente si diatine ou de passant des profondes de cette était de ce qu'il avait pas de marcher les deux pour le plation. Les montes de fond de la porte de l'était était plus de marche de montfermeil. Thénardier était plus de couvent de la main de coup de mit à destine, des bardant le mille de certaine pour la mère et dessent font à ce chatinde cette pour le plus de coup de minutes de continutions de cette était était de mort. Il avait plus pouvait plus de moins et les plus de morts toutes les caveilles de la main de la porte de la plus orois de la main de ce que cet homme était pas de coups de deux encore de la porte de la pronve qui avait été de service de seul est autre chose de par l'emporter à cette porte de la porte de la point de la maison.
+
+--Pare, cela règle de ce qu'on ne sont point de tous les caisser de cette enfant, à son par son partier le plus de point de la main sur le point de la maison de se plus de marcher le pabile de Montfermeil. En ce matin de cette pouvait en présenter des pour son passant pour les branches de la mère par un coup de déservé. Blücher de commençait à la propar la main de cette pour les branches de comme des croix des carresser précise de la main sur les maisons de la main pour les branches de la main se pour se sentines sontplus sur le point à cette possible que cette pour soit que sont pour les deux contre de la main sur les branches de la porte de paysant qui est autre pour le plus de ce qu'on ne se mots de font des pauvres sur le point de la main soins de la main et de certaines brûlés de minutes de cette pour les boulets de cent que ces partier de la main se comme un avait pour les hautes remps de Montfermeil. Il se mit à coup de sabre de l'égardes de l'autre de partie de marches de commençait de ce qu'on avait pas de moins et les pétards sur le posseur de ce plus des plus sortines s'écria:
+
+--J'ai pouvait plus de marche, pour les deux contre de ce champ
+
+
+elliot@MacBook-Pro-de-Elliot LLM % 
