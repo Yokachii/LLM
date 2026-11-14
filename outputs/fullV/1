@@ -1,0 +1,238 @@
+elliot@MacBook-Pro-de-Elliot LLM % ./perceptron ./datasets/full.txt 100 0.008 0.9 10 16 250 0 
+Graine : 1794457140
+perte initiale val = 4.6814
+ln(V) = 4.6634
+Texte généré avant entrainement : 
+suaire, �?_Gt T�-1�b".s�O,wPz�'d�x��"qnLmqhS
+
+
+100 epoques
+epoque 0 / 101 ; lr=0.0080 perte train=1.8384 val=1.8198 perplexite val=6.17
+Texte généré : 
+suaire, à villons dessille à partiens pas et à la matille et pas ne les argeur plisser la louille de la grandait éclin de l'encoreauxelle de la vieux tient on peut précite. Il
+enfantit. Complils de la vie moutagais deux autressemmeur. Les deux cette mons couvent la portement était était pas le sauttage.
+
+--Qui a sa vit la plus le passiblessettemanter la cette de cette à la vie de sa vieille de la vieilles, au montement passisa la mête de passièressait au toute l'erriva aux était un lui le vil
+
+
+epoque 1 / 101 ; lr=0.0078 perte train=1.8072 val=1.7903 perplexite val=5.99
+epoque 2 / 101 ; lr=0.0075 perte train=1.7771 val=1.7618 perplexite val=5.82
+epoque 3 / 101 ; lr=0.0073 perte train=1.7861 val=1.7790 perplexite val=5.92
+epoque 4 / 101 ; lr=0.0071 perte train=1.7903 val=1.7767 perplexite val=5.91
+epoque 5 / 101 ; lr=0.0070 perte train=1.7926 val=1.7788 perplexite val=5.92
+epoque 6 / 101 ; lr=0.0068 perte train=1.7574 val=1.7453 perplexite val=5.73
+epoque 7 / 101 ; lr=0.0066 perte train=1.7368 val=1.7301 perplexite val=5.64
+epoque 8 / 101 ; lr=0.0065 perte train=1.7509 val=1.7441 perplexite val=5.72
+epoque 9 / 101 ; lr=0.0063 perte train=1.7211 val=1.7110 perplexite val=5.53
+epoque 10 / 101 ; lr=0.0062 perte train=1.7166 val=1.7121 perplexite val=5.54
+Texte généré : 
+suaire, était éclairs ni des créchemée. Le brasse francs, était éclairés au cournant contrait plus de ceux, et une fille en fait en avec une se dignes enfant de la femme était été cette fréche, tremis par ce décidit Mais le bancourdit à cet en regarda et de ce de cette furage de cet couvent de le premier sur, c'est une fois de la premier, cet énormiré, et avec sa fille était faire sur la toeur dans la femmaises conscanssaient intre sont court se premiers de la ville avent le peut droit au
+
+
+epoque 11 / 101 ; lr=0.0060 perte train=1.7535 val=1.7530 perplexite val=5.77
+epoque 12 / 101 ; lr=0.0059 perte train=1.7157 val=1.7165 perplexite val=5.56
+epoque 13 / 101 ; lr=0.0058 perte train=1.7030 val=1.7036 perplexite val=5.49
+epoque 14 / 101 ; lr=0.0056 perte train=1.7118 val=1.7070 perplexite val=5.51
+epoque 15 / 101 ; lr=0.0055 perte train=1.6993 val=1.6985 perplexite val=5.47
+epoque 16 / 101 ; lr=0.0054 perte train=1.6759 val=1.6723 perplexite val=5.32
+epoque 17 / 101 ; lr=0.0053 perte train=1.6887 val=1.6887 perplexite val=5.41
+epoque 18 / 101 ; lr=0.0052 perte train=1.6853 val=1.6888 perplexite val=5.41
+epoque 19 / 101 ; lr=0.0051 perte train=1.6713 val=1.6698 perplexite val=5.31
+epoque 20 / 101 ; lr=0.0050 perte train=1.6544 val=1.6572 perplexite val=5.24
+Texte généré : 
+suaire, était et constage. Le contrait de temps ercher et qui s'en grand
+son consemble et contre le mère et que la rue. La chambre et de trine et charmits et n'était éprouilles et la trant hauteur d'un pauvre du collant l'air de tous; dit Courton du trant la très
+réversa dans l'ordresse, mais et reste à sa rourdait blanche. C'était la vieux mains de tordiner et contre le monde terre de torminée de jali le mère Sainte. Le conte qu'en traites.
+
+--Monsieur l'embre de sa haite en mante-ne et et que
+
+
+epoque 21 / 101 ; lr=0.0049 perte train=1.6746 val=1.6747 perplexite val=5.34
+epoque 22 / 101 ; lr=0.0048 perte train=1.6569 val=1.6586 perplexite val=5.25
+epoque 23 / 101 ; lr=0.0047 perte train=1.6715 val=1.6773 perplexite val=5.35
+epoque 24 / 101 ; lr=0.0047 perte train=1.6641 val=1.6709 perplexite val=5.32
+epoque 25 / 101 ; lr=0.0046 perte train=1.6309 val=1.6393 perplexite val=5.15
+epoque 26 / 101 ; lr=0.0045 perte train=1.6516 val=1.6657 perplexite val=5.29
+epoque 27 / 101 ; lr=0.0044 perte train=1.6460 val=1.6558 perplexite val=5.24
+epoque 28 / 101 ; lr=0.0043 perte train=1.6313 val=1.6437 perplexite val=5.17
+epoque 29 / 101 ; lr=0.0043 perte train=1.6209 val=1.6323 perplexite val=5.12
+epoque 30 / 101 ; lr=0.0042 perte train=1.6097 val=1.6188 perplexite val=5.05
+Texte généré : 
+suaire, était de sa porte de cette de sa rendrappostière.
+
+--Non pour branche.
+
+--Mois une comme machineur la porte de l'ensemble, et tout dit et sais de bourgeois la garder des billonnements au point de l'homme, un tout en premier, et le dit les comme une cardits d'absent.
+
+--Je suis propres de l'escale
+de marpeçable des margents d'une porte de
+Chapitre V
+
+Marius, dans l'homme qu'elle des lois par la main, Marius de cans carres de Marius entrait qu'une jamais pour plairait de chambre où sans marquel
+
+
+epoque 31 / 101 ; lr=0.0041 perte train=1.6108 val=1.6224 perplexite val=5.07
+epoque 32 / 101 ; lr=0.0041 perte train=1.6059 val=1.6213 perplexite val=5.06
+epoque 33 / 101 ; lr=0.0040 perte train=1.6155 val=1.6304 perplexite val=5.11
+epoque 34 / 101 ; lr=0.0040 perte train=1.6064 val=1.6188 perplexite val=5.05
+epoque 35 / 101 ; lr=0.0039 perte train=1.5976 val=1.6159 perplexite val=5.03
+epoque 36 / 101 ; lr=0.0038 perte train=1.5998 val=1.6125 perplexite val=5.02
+epoque 37 / 101 ; lr=0.0038 perte train=1.5785 val=1.5974 perplexite val=4.94
+epoque 38 / 101 ; lr=0.0037 perte train=1.5870 val=1.6014 perplexite val=4.96
+epoque 39 / 101 ; lr=0.0037 perte train=1.5648 val=1.5861 perplexite val=4.88
+epoque 40 / 101 ; lr=0.0036 perte train=1.5759 val=1.5938 perplexite val=4.92
+Texte généré : 
+suaire, était un bruite, il a déclai. Le tête la peur d'assez la goue entre lui eût dit dément où il y a une plus de la pour le marger avec une idée plus
+de voilà de la Courfeyrac et ma tant d'une plus de ses des
+ballaient les toit de la langue de la main d'autre able et
+une tant d'autre aux devenait sa sachevent les yeux des ans et ne pleine des des des contres, il y a une plaise en margoie d'allaient dérité à la plus de ses genants de la maison. Le nes des
+plus de Courfeyrac, il y a une bass
+
+
+epoque 41 / 101 ; lr=0.0036 perte train=1.5655 val=1.5853 perplexite val=4.88
+epoque 42 / 101 ; lr=0.0035 perte train=1.5684 val=1.5886 perplexite val=4.90
+epoque 43 / 101 ; lr=0.0035 perte train=1.5664 val=1.5879 perplexite val=4.89
+epoque 44 / 101 ; lr=0.0034 perte train=1.5561 val=1.5771 perplexite val=4.84
+epoque 45 / 101 ; lr=0.0034 perte train=1.5556 val=1.5747 perplexite val=4.83
+epoque 46 / 101 ; lr=0.0034 perte train=1.5550 val=1.5779 perplexite val=4.84
+epoque 47 / 101 ; lr=0.0033 perte train=1.5408 val=1.5641 perplexite val=4.78
+epoque 48 / 101 ; lr=0.0033 perte train=1.5514 val=1.5753 perplexite val=4.83
+epoque 49 / 101 ; lr=0.0032 perte train=1.5447 val=1.5693 perplexite val=4.80
+epoque 50 / 101 ; lr=0.0032 perte train=1.5335 val=1.5574 perplexite val=4.75
+Texte généré : 
+suaire, à travers, s'appelait pas celui qui a laissait pas trouvait s'y fait cette femme à travers la plus d'accrotor appelle de la première, et les chevalosse.
+
+La sorte de sa terre traverse de la salle de l'homme qui a pas ètant tout à la main rous les mauvaient de la grande dans la plainta un aspect, dans l'homme, et quand il se mit à cette maison dans l'autre était au sous le soleil
+auguant ajoutez au mois était avec cette son arrivait au carte de sa terestant, la soltine, avait que se réver
+
+
+epoque 51 / 101 ; lr=0.0032 perte train=1.5401 val=1.5643 perplexite val=4.78
+epoque 52 / 101 ; lr=0.0031 perte train=1.5376 val=1.5609 perplexite val=4.76
+epoque 53 / 101 ; lr=0.0031 perte train=1.5286 val=1.5507 perplexite val=4.71
+epoque 54 / 101 ; lr=0.0031 perte train=1.5292 val=1.5506 perplexite val=4.71
+epoque 55 / 101 ; lr=0.0030 perte train=1.5264 val=1.5531 perplexite val=4.73
+epoque 56 / 101 ; lr=0.0030 perte train=1.5188 val=1.5418 perplexite val=4.67
+epoque 57 / 101 ; lr=0.0030 perte train=1.5224 val=1.5507 perplexite val=4.71
+epoque 58 / 101 ; lr=0.0029 perte train=1.5119 val=1.5398 perplexite val=4.66
+epoque 59 / 101 ; lr=0.0029 perte train=1.5280 val=1.5526 perplexite val=4.72
+epoque 60 / 101 ; lr=0.0029 perte train=1.5315 val=1.5568 perplexite val=4.74
+Texte généré : 
+suaire, était pas heures du soit. Être serveillantes de la bonc, dans les tantôt, à l'autre de l'esprit de la chambre étranger en pouvait être écrites et des burence. Jean
+Valjean, reprit le chambre et qui est encore, était presque en france. C'est son cheveux blanche de la fait encore est à la fois. Ce
+toute la dire de l'avenir de pour en peut-être de la contempleriant au point de la souliques des dans la vieilles et son père de la dans les ventes de la vieille en était pas
+l'évêque en env
+
+
+epoque 61 / 101 ; lr=0.0028 perte train=1.5139 val=1.5405 perplexite val=4.67
+epoque 62 / 101 ; lr=0.0028 perte train=1.5068 val=1.5308 perplexite val=4.62
+epoque 63 / 101 ; lr=0.0028 perte train=1.5175 val=1.5455 perplexite val=4.69
+epoque 64 / 101 ; lr=0.0027 perte train=1.5086 val=1.5366 perplexite val=4.65
+epoque 65 / 101 ; lr=0.0027 perte train=1.4967 val=1.5234 perplexite val=4.59
+epoque 66 / 101 ; lr=0.0027 perte train=1.5035 val=1.5290 perplexite val=4.61
+epoque 67 / 101 ; lr=0.0027 perte train=1.5032 val=1.5264 perplexite val=4.60
+epoque 68 / 101 ; lr=0.0026 perte train=1.5045 val=1.5339 perplexite val=4.64
+epoque 69 / 101 ; lr=0.0026 perte train=1.5048 val=1.5317 perplexite val=4.63
+epoque 70 / 101 ; lr=0.0026 perte train=1.5055 val=1.5350 perplexite val=4.64
+Texte généré : 
+suaire, à l'autre de la beaucher l'autre de la première plus le vie à ce que toute la sien que la terre de la lui donner la première pour la première chose singerez pas peut-être un peu de tout ce qu'il a au point du progrès doute sa sociétés à des provins à l'autre. Par la porte d'une homme si vous du chopabrion à Bostaille du maris pauvres à la bouterrude dire. Elle négale pour qui sont nu craillifons par le dire. Il était au point où il était aussi les autres dans le coit du personne 
+
+
+epoque 71 / 101 ; lr=0.0026 perte train=1.5109 val=1.5442 perplexite val=4.68
+epoque 72 / 101 ; lr=0.0025 perte train=1.4970 val=1.5244 perplexite val=4.59
+epoque 73 / 101 ; lr=0.0025 perte train=1.4869 val=1.5144 perplexite val=4.55
+epoque 74 / 101 ; lr=0.0025 perte train=1.4916 val=1.5194 perplexite val=4.57
+epoque 75 / 101 ; lr=0.0025 perte train=1.4895 val=1.5197 perplexite val=4.57
+epoque 76 / 101 ; lr=0.0024 perte train=1.4946 val=1.5209 perplexite val=4.58
+epoque 77 / 101 ; lr=0.0024 perte train=1.4989 val=1.5299 perplexite val=4.62
+epoque 78 / 101 ; lr=0.0024 perte train=1.4925 val=1.5226 perplexite val=4.58
+epoque 79 / 101 ; lr=0.0024 perte train=1.4897 val=1.5176 perplexite val=4.56
+epoque 80 / 101 ; lr=0.0024 perte train=1.4868 val=1.5140 perplexite val=4.54
+Texte généré : 
+suaire, était de prodigrait:
+
+--Par dans la cour de toutes les autres, et elle avait pour était devenu le couvent, et les fit monstrueuse et connaissance à la poche nous avons pendant autour de sa souveurent pour la rue de Grantaire, la convenus, et pourrait pas de pablion rentrait le long des réussieurs conventionnelle était six-cessant de petit, dit la soeur de vint constation était résistes de ces deux était là, chantait à la nuit, tout à coup de votre cette construction était couvert de p
+
+
+epoque 81 / 101 ; lr=0.0023 perte train=1.4824 val=1.5140 perplexite val=4.54
+epoque 82 / 101 ; lr=0.0023 perte train=1.4832 val=1.5125 perplexite val=4.54
+epoque 83 / 101 ; lr=0.0023 perte train=1.4845 val=1.5149 perplexite val=4.55
+epoque 84 / 101 ; lr=0.0023 perte train=1.4849 val=1.5166 perplexite val=4.56
+epoque 85 / 101 ; lr=0.0023 perte train=1.4779 val=1.5072 perplexite val=4.51
+epoque 86 / 101 ; lr=0.0022 perte train=1.4798 val=1.5097 perplexite val=4.53
+epoque 87 / 101 ; lr=0.0022 perte train=1.4759 val=1.5090 perplexite val=4.52
+epoque 88 / 101 ; lr=0.0022 perte train=1.4774 val=1.5083 perplexite val=4.52
+epoque 89 / 101 ; lr=0.0022 perte train=1.4784 val=1.5119 perplexite val=4.54
+epoque 90 / 101 ; lr=0.0022 perte train=1.4727 val=1.5040 perplexite val=4.50
+Texte généré : 
+suaire, à la grille et la barricade de l'argot qu'elle comme un moment d'une griche de ne pouvait de lui visage comme un petit sous le déplique et de la chambre de l'amour de Dieu. C'était un petit sur un berraître et de surtif et le corps de grande de la famille, et ce nom de l'autre à cette heure était morte de la lumière d'un vieux sortir de la rue de l'autre de la cause
+le cabaret et sans l'oriversait sa sage, et les consurs qui lui sans de la Cosette sérés
+de lui.
+
+--Et pris n'arroules de l
+
+
+epoque 91 / 101 ; lr=0.0021 perte train=1.4746 val=1.5054 perplexite val=4.51
+epoque 92 / 101 ; lr=0.0021 perte train=1.4730 val=1.5059 perplexite val=4.51
+epoque 93 / 101 ; lr=0.0021 perte train=1.4718 val=1.5031 perplexite val=4.50
+epoque 94 / 101 ; lr=0.0021 perte train=1.4699 val=1.4996 perplexite val=4.48
+epoque 95 / 101 ; lr=0.0021 perte train=1.4707 val=1.5028 perplexite val=4.49
+epoque 96 / 101 ; lr=0.0021 perte train=1.4679 val=1.4970 perplexite val=4.47
+epoque 97 / 101 ; lr=0.0020 perte train=1.4672 val=1.5023 perplexite val=4.49
+epoque 98 / 101 ; lr=0.0020 perte train=1.4717 val=1.5040 perplexite val=4.50
+epoque 99 / 101 ; lr=0.0020 perte train=1.4654 val=1.4986 perplexite val=4.48
+Texte généré après entrainement à 0.5 : 
+suaire, à l'apportait comme un chapeau.
+
+Comme à ces deux chals de la pour de la combattants de l'évêque dituent sa porte, et de l'agrait de l'armée de l'armop distier de l'évêque d'intentions de la vie et de la garde de combattants à l'autre d'évêque de la main. Les mains, et de fusil, dans la politique et de compte d'avait vient du présentée du pierre, le point d'avant en ce dans les mains de l'artier d'autres. Les chambre de la collier sur la porte de la collier avait dans les paroles, les barres. Un de la cacher de ce soldat, à la porte de doux
+chaises sale de Combeferre de la comme une pour un mot de temps
+à cette comme le plus
+francs, le pourtant de la chambre dans la mort. Une complique de la main dans de l'intérêtre, dans la somme de doit être pour le contrait dans la porte de la bourgeois, comme le plutiques, de faire le président qui l'avait pas de soleil, lui moment! Après de lachandelle, le conseillient, et qui s'était pas de fer pas de chalia
+décitauche de pouveront, sa poupée d'autre où se religieuse dans cette bouger de la chambre de Pontmercylas, mais de l'autre commel'accent de la comme le pour l'évêque de la garde dans le cabout dans les côtés démolilleurs, autre comme un juste à cette de contre de combattant le collier de la poupée de morte. La mort dans cette fit un comme cela dans la porte de pour la pour le père Madeleine bonne font de parler une autre fit que de l'Argent, et qui n'était pas de familles, un chapeau
+dourait débouche et dit: «soisitules, je vous dans le colonel, lui avait de la colle combattant dans sa poliges, dit la solitait dans les mots de la main intue de la colonnée du peuple que peut-être mots de ce qu'il était restichession de la barricade chez les mots dans les trois francs comme les salontérée, et pour voleta la comme cela. Le bout d'était autre comme une chandelle et dont lecoup de droite, et dit pas de femmes d'émeute, c'est le soleil, comme les malheureux, nombre qui l'avait de pomponin dans le jardin. En mesuré dans la vie de la loin. Les bras, le bâtiment
+au-dessous de la barrière de ce qui fait de la pour le pouvait être juste à la fille de sa porte d'avait dans les mots démer éclairait de bonne à contre de la collet d'autre de la pouvait à la vie de de la barricade de l'aller son père de combattants et à le coup d'oeil, loire de la collette de cette comme un moment rament de pour les causes de la partisserait cette chose d'adrezième mialede l'autre dans ce
+
+
+Texte généré après entrainement à 0.8: 
+suaire, éteil
+ifigureux, autre d'Enjolras,
+et considérerrain d'hommes de planche, se sommet dans la fille dans les Marius. Une forme de bonheur.
+
+--Daimez-vous travant lieu débouches-du dans l'était d'avait à continue du bonnerre petament comme s'ouvrait rien. Le petits à desjoie instant les canon de Bolier dans le borra une combat.
+
+
+
+
+Chapitre II La sollier peude, le payez un garéau d'Auroutable progrès
+de liure d'être la comme à que d'ordèrent le mocitres, reconnues salon fort de la pruperez de sa poupée de cette comme le droit, le père Fauchelevent, dans la
+barricade, et cette filament
+comme dans verte, au présentant tout comme M. Gillair de forte de poliques, j'ai précincarme
+l'autre éclairée, nué comme une bête fois de prodigoige de l'autre comme le coup de temps de la rue si boud
+collier pour les évanel, je vieux chaquête à ce
+temps à terre de vol qui est bras, mais c'était une porte de ce dirégurqua est la songea pour volete et déchat-dessus de cinquand partis, le poitrine, dit un coite et qu'oublier d'aupremer la petite, comme le pouvrer. E rocontait pas de rayonner un rappa déliceplat de sortit. La sirécitaient pas enfantion.
+
+Il joëans de l'autre canest des salerie, il sentait cent numenté d'un pays obus de chair d'opis ocigurs de comprent un
+avait départe, mouvement fit on jour pour jour en vision.
+
+Cosaille dans les de l'autre de Bourveres, comme une place bagne de la pouvait de la collance du ballait, comme une mottre qui sont pointe de cette filscien. Le premier mon sous, et de boulevard faut. En mur comme le drant la prieure, comme la misérables de Close de longe dans les par la vie comprimer comme d'à des morts, derrière la main. Les maisons le librette de plaisitulillons, ces femmes dans la prodigieuse fille.
+
+Auses reverbère dans toute la pomphaut Paulouce, n'était na de fandit dans le drapie, ce bimllement, par sa pour la chaire qui écouture des bances d'égrande-dendaire un jardin été
+viapeine d'en balle et d'armanche et le progrès de déconstation: plus de sa redéaux, le mardité de la chair de ce comme le fauboure
+du poitre s'était avec cimes de la compte du gaymant comme les étaient vu gamin de poupoleraite, toisir
+à qu'il appeletérieure, laiglisés, de mos la moins
+d'être un cambique pas d'arrêta s'était pas de lappe.
+
+L'Embissannaient, racontaient leur présenta de condame de loute à travers de moment, l'attendral, du forme de Contre-vrus communeur d'un cliver comme vos de la pour ne meurt
+
+
+Texte généré après entrainement à 0.3 : 
+suaire, à la fille de pour la main. Les malheureusement de la nuit dans les mouvements de la combattant dans les deux comme des passer dans les paysans de la collet de la combattant le condamné à l'autre pour l'autre la bourgeois le pas de la compte d'avant dans la rue de la chambre d'A domeure de ce coup de coup de dire qu'il était de la carable de la combattants, dans les considérabablement de la conscience de la porte de compliquée à son père de la chambre de la comme une porte de la collet de la combattant de la colle comme cela fit de la campagne de la chambre de bout de la colle considérait de l'autre pour le condamné de la chambre de la collier de la chambre du combattant le passant dans le constre d'être de la liberté et de leur comme l'autre pour le pour le pouvait fait à tout cela serge de comploment la porte de la porte de la barricade de la chambre de la barricade de la rue de la comme le comme l'autre de la combattants de la comme comme le pour de la combattant le coup de pour moi de la chambre de la collette, dans la main. Les chapeaux de la chandelle, de dire pour le maire de la porte de cette pour le compte d'avait pas de la collier de la collecomme de l'autre comme une comme les par la porte de la comme de complissait dans les fautes dans le livre de la collier un condamné et de la combat comme le plus de la combattants de la rue de la chambre du combattants, de l'arrêta dans la collet d'armes dans les par des savoir pour les mains carresse de cette fit un passant dans la colleva de la colle combattant dans les considération dela chambre de la porte de la complissait de la collette de cette dit la mort de l'amour. Le président de la libre de la collet de la chambre de la combattants de la poupée de comprendre qui était de la main de l'autre de la combattants de la main de l'autre comme une comme le poupée d'abord dans les mains contre le comprendre le pouvait de la chambre d'un coup d'oeil, le père de la porte de cette de ces deux comme les filles, se dit à la main
+dans la barricade fait de la chambre de la chambre de la pour le pouvait de la porte de la conscience de conde, on ne poupée de comprenait de la chambre de la comme de la colliack, de fait qu'il était de la poupée de la chambre de la comme le comme cela de son père de la conscience de la campagne d'un coup de dragination de la compte d'autres faites, de l'armée de devant les deux comme le pouvait être dans le collet de la nuit de la comme un chapeau. De tout
+
+
+Texte généré après entrainement à 1 : 
+suaire, à coup de fait de la porte de doux conservait à peine de pour la mort de l'armée au-dessus de la chambre de la rue de la pour le pourrait pour les coups de ces deux concement de la collier son père de la pour les pays, comme le comme de place de cinquante est pour le pouvait être dans les fautesse de ce qui s'était reste, et se dire qui n'était pas de faublisé d'un condamné à des marchait de la chambre de Mont-Saint-Jean Valjean, et se montrez, c'était un peu de la collet de compte d'avant dans les partiers, les coups de garde dans les face de la collette, la pour les mains de pour les par des construes, de l'amour. De l'avait dit à des mains nous de la porte de la collet d'ailleurs, de l'avait pas de compte d'autres de l'argot de la combattants de la colonnées de l'argot de la porte de ces consention, et qui parlait de la combattant qu'il était de la conscience de la chapeau de comprendre dans les trouvait le porte de la collette de ce qui est de la porte de la combattant dans les passes, le plus de faite de la chambre d'un condamnées, les marches dans la comme de la ville qui n'était à la barricade de la rue de la comme une femme de l'autre comme le combrait de la chambre de la compte d'avant que les passants de la collette, de la combattants de la compte d'autres. Le compte d'avant dans la nuit et de l'autre comme le comprendre dans les paroles, le coup de dire qu'il ne pouvait le pouvait être blanc à la comme le pour les deux comme les ouvriers, le pouvait de la porte de cette comme le comme le pouvait être dans le coup de l'autre dece dans les passants de l'autre sa pourrait de la comme le plus de la collier de la collier de complissait de la combattants de lacollet de la compte d'avant dans les fautes de l'autre dans les plus fait de la comme le combattant dans l'avait dit à l'était de la collette de pour les fautesse dans les pieds de l'autre comme le comme l'autre de la chambre de la colonne d'armes. Des partiersde l'artif et le plus de la collier un coup de dire qui paystraciable de cette faite d'armes dans les pieds de l'arrête à cette faite d'armes dans les pays, dans le comprendre comme un chapeau.
+
+Comme des passants de la comme de la rue de la comme le pourrait de l'argot de la cause de la chambre de la comme de la main de lacolonne de la chambre de la collette, de l'autre de la comme le pas dans les pieds de la cambre du corde de la colonne de la chambre de la comme si juste à coup de pour le combattants d'armes d
+
+
+elliot@MacBook-Pro-de-Elliot LLM % 

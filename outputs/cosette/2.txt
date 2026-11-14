@@ -1,0 +1,268 @@
+elliot@MacBook-Pro-de-Elliot LLM % ./perceptron ./datasets/COSETTE.txt 100 0.008 0.9 10 16 250 0
+Graine : 1794399654
+perte initiale val = 4.5973
+ln(V) = 4.6052
+Texte généré avant entrainement : Mr MadeleiR?jh�py;���4���9,X�gl�yXp��uD3NPF�i
+
+
+100 epoques
+epoque 0 / 101 ; lr=0.0080 perte train=1.8752 val=1.8635 perplexite val=6.45
+Texte généré : Mr Madeleine et du drent de pout le prit de sin avers pour per bous de pour l'homme de lui-peur. Il se pour de contle porvait peus en de poups du plus prestre et le pouchait parméritin pouné à si pourée de la momme de comme de pristres de toutespartesses ne pous de la chatitre. Peure de puit le pour le pous batter de rent poup tile du de pour tous avel
+pour rient de la pour enouver le pour l'hourier la vous de la mainssibit de londants int le portant de pour à couvent de poules demaises à les de
+
+
+epoque 1 / 101 ; lr=0.0078 perte train=1.8294 val=1.8248 perplexite val=6.20
+epoque 2 / 101 ; lr=0.0075 perte train=1.7485 val=1.7598 perplexite val=5.81
+epoque 3 / 101 ; lr=0.0073 perte train=1.7170 val=1.7374 perplexite val=5.68
+epoque 4 / 101 ; lr=0.0071 perte train=1.6915 val=1.7138 perplexite val=5.55
+epoque 5 / 101 ; lr=0.0070 perte train=1.6903 val=1.7138 perplexite val=5.55
+epoque 6 / 101 ; lr=0.0068 perte train=1.6655 val=1.6899 perplexite val=5.42
+epoque 7 / 101 ; lr=0.0066 perte train=1.6543 val=1.6926 perplexite val=5.43
+epoque 8 / 101 ; lr=0.0065 perte train=1.6517 val=1.6891 perplexite val=5.41
+epoque 9 / 101 ; lr=0.0063 perte train=1.6482 val=1.6872 perplexite val=5.40
+epoque 10 / 101 ; lr=0.0062 perte train=1.6308 val=1.6776 perplexite val=5.35
+Texte généré : Mr Madeleine dans la cordinait démonts celle de l'était recune ne trouvert ce qui a une bâtées vens dit d'effait suisait une froise du comme le même cet homme et cela dui dix du même rembat.
+
+--Elle était le bart du nuite
+comme navaille du
+main d'orreine outroit-ce qui a pas ect qu'il était rent du jardin.
+
+Dans l'orré, et son mous cet enfant du pas pluis et ce l'on lieu d'éclousette petite
+de la rue du peurs un homme vous cet homme intre cet connait recue du pares de selle et comme cet c
+
+
+epoque 11 / 101 ; lr=0.0060 perte train=1.6284 val=1.6681 perplexite val=5.30
+epoque 12 / 101 ; lr=0.0059 perte train=1.6281 val=1.6803 perplexite val=5.37
+epoque 13 / 101 ; lr=0.0058 perte train=1.6175 val=1.6687 perplexite val=5.31
+epoque 14 / 101 ; lr=0.0056 perte train=1.6155 val=1.6691 perplexite val=5.31
+epoque 15 / 101 ; lr=0.0055 perte train=1.6014 val=1.6619 perplexite val=5.27
+epoque 16 / 101 ; lr=0.0054 perte train=1.6017 val=1.6645 perplexite val=5.28
+epoque 17 / 101 ; lr=0.0053 perte train=1.5957 val=1.6546 perplexite val=5.23
+epoque 18 / 101 ; lr=0.0052 perte train=1.5908 val=1.6485 perplexite val=5.20
+epoque 19 / 101 ; lr=0.0051 perte train=1.5663 val=1.6316 perplexite val=5.11
+epoque 20 / 101 ; lr=0.0050 perte train=1.5898 val=1.6552 perplexite val=5.23
+Texte généré : Mr Madeleiner les bataientes, il traveilles, il la chose que cette par ses cela
+rassera à ses jardine par ses mortes, les précisse des Fontes
+ces par ses vont des précise était cette par les passait des
+cette par les paysant à cette par les paysreurs ses ces hommes. Les centres pour était marcher, pour une par les bas flançait à brances pas cette par les
+était la bas son guerre des basses
+marcher, on contrait cette pas omcha pas pauvronte quelques par les pas des ramphanches de
+cette par se
+
+
+epoque 21 / 101 ; lr=0.0049 perte train=1.5696 val=1.6372 perplexite val=5.14
+epoque 22 / 101 ; lr=0.0048 perte train=1.5587 val=1.6300 perplexite val=5.10
+epoque 23 / 101 ; lr=0.0047 perte train=1.5512 val=1.6282 perplexite val=5.09
+epoque 24 / 101 ; lr=0.0047 perte train=1.5591 val=1.6395 perplexite val=5.15
+epoque 25 / 101 ; lr=0.0046 perte train=1.5458 val=1.6286 perplexite val=5.10
+epoque 26 / 101 ; lr=0.0045 perte train=1.5468 val=1.6261 perplexite val=5.08
+epoque 27 / 101 ; lr=0.0044 perte train=1.5340 val=1.6166 perplexite val=5.04
+epoque 28 / 101 ; lr=0.0043 perte train=1.5334 val=1.6211 perplexite val=5.06
+epoque 29 / 101 ; lr=0.0043 perte train=1.5126 val=1.6021 perplexite val=4.96
+epoque 30 / 101 ; lr=0.0042 perte train=1.5203 val=1.6084 perplexite val=4.99
+Texte généré : Mr Madeleine fait très répétrer allées de guerres à la porte autre été étradier ces bêtes que cette en ferme sa polouile, ce toute la tête cette catholerle à cette étrange dans les peupée emplings faire du ce que cette fille autre été étrangeuxeset quelque celle était l'archaise et l'on paraisseller un peu des grand un envisant prendre que cans que celle était toute de la chapendu le couvent de la premier avec s'idées d'arbres de mous de la chapéeure été à que pour autre chapeau un
+
+
+epoque 31 / 101 ; lr=0.0041 perte train=1.5136 val=1.6132 perplexite val=5.02
+epoque 32 / 101 ; lr=0.0041 perte train=1.5187 val=1.6149 perplexite val=5.03
+epoque 33 / 101 ; lr=0.0040 perte train=1.5153 val=1.6133 perplexite val=5.02
+epoque 34 / 101 ; lr=0.0040 perte train=1.5203 val=1.6225 perplexite val=5.07
+epoque 35 / 101 ; lr=0.0039 perte train=1.5008 val=1.6065 perplexite val=4.99
+epoque 36 / 101 ; lr=0.0038 perte train=1.5039 val=1.6084 perplexite val=4.99
+epoque 37 / 101 ; lr=0.0038 perte train=1.5065 val=1.6136 perplexite val=5.02
+epoque 38 / 101 ; lr=0.0037 perte train=1.4961 val=1.6050 perplexite val=4.98
+epoque 39 / 101 ; lr=0.0037 perte train=1.4952 val=1.6077 perplexite val=4.99
+epoque 40 / 101 ; lr=0.0036 perte train=1.4915 val=1.6023 perplexite val=4.96
+Texte généré : Mr Madeleine sur son pourre de rien de cassas, semblait à l'ordre de ce qu'on ne souvent été à épouvre pour aine serrés pour se farmetait à Droite de la rue Droit-Mare?
+
+--Le monde à se sentait sur souler.
+
+--Mais à coup de sa récolié de cours branche. On porte de se serre du cheval, combe, quatre croire.
+
+--Mais saints milliant avait écria le droit après savenants écriait était que ces âmes de se et elle avait pas bouche se premier était à son son souler et se retourna.
+
+--Vous 
+
+
+epoque 41 / 101 ; lr=0.0036 perte train=1.4837 val=1.5990 perplexite val=4.95
+epoque 42 / 101 ; lr=0.0035 perte train=1.4825 val=1.5951 perplexite val=4.93
+epoque 43 / 101 ; lr=0.0035 perte train=1.4768 val=1.5988 perplexite val=4.95
+epoque 44 / 101 ; lr=0.0034 perte train=1.4820 val=1.6054 perplexite val=4.98
+epoque 45 / 101 ; lr=0.0034 perte train=1.4658 val=1.5969 perplexite val=4.94
+epoque 46 / 101 ; lr=0.0034 perte train=1.4692 val=1.5918 perplexite val=4.91
+epoque 47 / 101 ; lr=0.0033 perte train=1.4680 val=1.5890 perplexite val=4.90
+epoque 48 / 101 ; lr=0.0033 perte train=1.4574 val=1.5856 perplexite val=4.88
+epoque 49 / 101 ; lr=0.0032 perte train=1.4670 val=1.5931 perplexite val=4.92
+epoque 50 / 101 ; lr=0.0032 perte train=1.4620 val=1.5905 perplexite val=4.91
+Texte généré : Mr Madeleine, de disaissaient de bonhe, ferme qui attant avec la porte de cette contre de la femme avaient à la perse pointentes
+par le partie de l'esprit le moi, s'en deux invires de tinque,
+les pensionnaires de l'autre, quand il était dans l'ombre, ce n'avait pas d'autres sont
+comme par la porte de cette connaire, de la porte d'assez coup de contrer. Il n'y avait prober de la porte de contre-de l'étille du matinent d'un était dans le perse, mais il était
+comme il avait
+contince, éguise
+des s
+
+
+epoque 51 / 101 ; lr=0.0032 perte train=1.4605 val=1.5974 perplexite val=4.94
+epoque 52 / 101 ; lr=0.0031 perte train=1.4622 val=1.5941 perplexite val=4.92
+epoque 53 / 101 ; lr=0.0031 perte train=1.4445 val=1.5739 perplexite val=4.83
+epoque 54 / 101 ; lr=0.0031 perte train=1.4403 val=1.5746 perplexite val=4.83
+epoque 55 / 101 ; lr=0.0030 perte train=1.4539 val=1.5908 perplexite val=4.91
+epoque 56 / 101 ; lr=0.0030 perte train=1.4523 val=1.5948 perplexite val=4.93
+epoque 57 / 101 ; lr=0.0030 perte train=1.4473 val=1.5905 perplexite val=4.91
+epoque 58 / 101 ; lr=0.0029 perte train=1.4429 val=1.5831 perplexite val=4.87
+epoque 59 / 101 ; lr=0.0029 perte train=1.4347 val=1.5792 perplexite val=4.85
+epoque 60 / 101 ; lr=0.0029 perte train=1.4328 val=1.5780 perplexite val=4.85
+Texte généré : Mr Madeleine, le brussa de l'eau pierrit de l'empereurs qui encore qu'elle l'avait sur le chapelle était comme un allait qu'un morce d'argent de l'abbé de l'aboupiracité
+d'un coupertelles de la brigade
+seule heure, il y a prit d'appelait l'exans qu'on adrie de la chapelle qu'un avait récescre d'un homme qui avait été qu'en voyait
+s'enfantent éveraient par le chantait cette
+particulie d'allait pas de précids femmes qu'il y avait donné, l'arrier les yeux de l'arricer donner à cheval. Des cular
+
+
+epoque 61 / 101 ; lr=0.0028 perte train=1.4287 val=1.5816 perplexite val=4.86
+epoque 62 / 101 ; lr=0.0028 perte train=1.4362 val=1.5907 perplexite val=4.91
+epoque 63 / 101 ; lr=0.0028 perte train=1.4246 val=1.5799 perplexite val=4.85
+epoque 64 / 101 ; lr=0.0027 perte train=1.4247 val=1.5811 perplexite val=4.86
+epoque 65 / 101 ; lr=0.0027 perte train=1.4230 val=1.5863 perplexite val=4.89
+epoque 66 / 101 ; lr=0.0027 perte train=1.4148 val=1.5669 perplexite val=4.79
+epoque 67 / 101 ; lr=0.0027 perte train=1.4180 val=1.5793 perplexite val=4.85
+epoque 68 / 101 ; lr=0.0026 perte train=1.4131 val=1.5789 perplexite val=4.85
+epoque 69 / 101 ; lr=0.0026 perte train=1.4160 val=1.5800 perplexite val=4.85
+epoque 70 / 101 ; lr=0.0026 perte train=1.4090 val=1.5784 perplexite val=4.85
+Texte généré : Mr Madeleine de l'enfant Jean Valjean avait dans une sorte de l'abritant l'homme de l'Anglaise dans le partie de blanches de la solunées à l'On avait pas ce proffon et rien des ha long à la grande de l'interne de l'aile gaine dans l'obscurité, sais à la nuit s'interrope, si l'antrée, le bain, étaient repparition de la doute le plus pas, des
+pour les charrait pas
+même le cruplocrait son ce qui s'approchait l'ombre, le lieu avec leures, l'épaises et l'un bois. Il avait plus parlage dans l'armeur 
+
+
+epoque 71 / 101 ; lr=0.0026 perte train=1.4083 val=1.5773 perplexite val=4.84
+epoque 72 / 101 ; lr=0.0025 perte train=1.4156 val=1.5876 perplexite val=4.89
+epoque 73 / 101 ; lr=0.0025 perte train=1.4014 val=1.5793 perplexite val=4.85
+epoque 74 / 101 ; lr=0.0025 perte train=1.4107 val=1.5860 perplexite val=4.88
+epoque 75 / 101 ; lr=0.0025 perte train=1.3921 val=1.5689 perplexite val=4.80
+epoque 76 / 101 ; lr=0.0024 perte train=1.4071 val=1.5821 perplexite val=4.87
+epoque 77 / 101 ; lr=0.0024 perte train=1.4021 val=1.5819 perplexite val=4.86
+epoque 78 / 101 ; lr=0.0024 perte train=1.3995 val=1.5834 perplexite val=4.87
+epoque 79 / 101 ; lr=0.0024 perte train=1.3933 val=1.5703 perplexite val=4.81
+epoque 80 / 101 ; lr=0.0024 perte train=1.3876 val=1.5713 perplexite val=4.81
+Texte généré : Mr Madeleine le parlait sur la corde à la four avait posté de la rue Poloncerte de plus en comptent de la rue Du corveau.
+
+Voil de l'autre charte, ce commença la mère Crucifixion qu'il voyait que je vient une porte une intoire de la charré. Il rente le partie une petite, la ne sacre-sent que le grande à un route de cette bout sur le couvent que le grand et le monant armée la contrer de ces
+hommes. Il
+prendit: _Ce quinères et que l'aile lieu de sublier son général quelque chaussée de Bois de
+
+
+epoque 81 / 101 ; lr=0.0023 perte train=1.3944 val=1.5854 perplexite val=4.88
+epoque 82 / 101 ; lr=0.0023 perte train=1.3922 val=1.5797 perplexite val=4.85
+epoque 83 / 101 ; lr=0.0023 perte train=1.3899 val=1.5733 perplexite val=4.82
+epoque 84 / 101 ; lr=0.0023 perte train=1.3870 val=1.5715 perplexite val=4.81
+epoque 85 / 101 ; lr=0.0023 perte train=1.3929 val=1.5820 perplexite val=4.86
+epoque 86 / 101 ; lr=0.0022 perte train=1.3813 val=1.5754 perplexite val=4.83
+epoque 87 / 101 ; lr=0.0022 perte train=1.3878 val=1.5790 perplexite val=4.85
+epoque 88 / 101 ; lr=0.0022 perte train=1.3726 val=1.5760 perplexite val=4.84
+epoque 89 / 101 ; lr=0.0022 perte train=1.3757 val=1.5737 perplexite val=4.82
+epoque 90 / 101 ; lr=0.0022 perte train=1.3760 val=1.5751 perplexite val=4.83
+Texte généré : Mr Madeleine et pas de la poincerce que le bois de la posère.
+
+--Mais voilins.
+
+Il ne dieu de la bataille et sabre de la bataille de Waterloo. Le fait de la poursuit de Nivelles.
+
+L'homme s'appuise haute chambres que le ses savant dans un coup de la coup d'oeuait
+une notre de l'Angles que je clane de toutes les régionté de certain et garder la passe de la coeur, quand il chevaux.
+
+La prieure des chevaux, il étrange de la batterie duresselles étaient ce que cette fois un vice de la bataille d
+
+
+epoque 91 / 101 ; lr=0.0021 perte train=1.3766 val=1.5856 perplexite val=4.88
+epoque 92 / 101 ; lr=0.0021 perte train=1.3706 val=1.5804 perplexite val=4.86
+epoque 93 / 101 ; lr=0.0021 perte train=1.3691 val=1.5810 perplexite val=4.86
+epoque 94 / 101 ; lr=0.0021 perte train=1.3674 val=1.5793 perplexite val=4.85
+epoque 95 / 101 ; lr=0.0021 perte train=1.3687 val=1.5817 perplexite val=4.86
+epoque 96 / 101 ; lr=0.0021 perte train=1.3770 val=1.5890 perplexite val=4.90
+epoque 97 / 101 ; lr=0.0020 perte train=1.3619 val=1.5811 perplexite val=4.86
+epoque 98 / 101 ; lr=0.0020 perte train=1.3615 val=1.5823 perplexite val=4.87
+epoque 99 / 101 ; lr=0.0020 perte train=1.3558 val=1.5754 perplexite val=4.83
+Texte généré après entrainement à 0.5 : Mr Madeleine, le voix de décomme un le disait:
+
+--Est-ce que nous avons en évident quelque chose de ses
+commencement
+de l'homme avait été de cet au donna la rue de Ponsieur de la grenâta, comme un a beux du Tout ce qu'il venur avons dire pas encore avait le commencement de ce droit qui était de ce lieu mille du pendant des bruitôt, le faire de Cosette était dans la porte était comme un a bruiture Vil-ne de l'air chevaux le dumeure dont il se sorte de l'air soi sur le venouition d'un les pieds de haut ce qu'elles ne des pour ces toutes les enfondes d'une évait êcre
+son était à la main à ces petites filles de son de l'autre commencement de considraux, ce froidement de l'autre de l'autelle de lasacoute la pendant des bernant le corps, voirnie de sortir devient les yeux possible de ce qui était
+l'écisieur de la guerre qui le voiture, cela felavait le même comme le droite de ces âme, une fille d'un avait pour lui le corps embinnante le voitunant de ce qui fit anglaise de son longues de l'autre, et s'appuyait pour voir noir de l'autelle dussale nommes et de ces des corrides
+enfants, on ne sa fille du cette avait des
+sous ors commencement de la bataille de Waterloo. Testi à la désertait un peu à la la dussinguharssé le voix de dont les assez coups de ces mulle du reste du rien fit des bas, du Saint-Sacrement de l'armée de Comme un petit proisent école bien était un trois leleurs pour des hauteur de la main comme un coups de commencement de l'autre chose qui froidement de l'autre au mille qui sous riende ce qui fille de ce qui se pour les liberté.
+
+--C'est là la porte s'était pour ne droite en ciste de cette pour le couvent du Petit-Picpus. C'était un lours ses mariens. Ces decouvent du Petit-Picpus et on l'oire de l'enfant de cet homme de la point de vit à la corde de sorte de ces hommes qui louilune dudermin évidemment se destin de la chambre, on ailleur se ce se fondin apergent de l'autre. Le demeure qui se se doute la criennes de ces ces princes de mains soit de l'armée de l'était le voyageur de la masure, on ne l'avait décées et le main retir à l'angle del'avait pas de la vieux de l'homme ne drapercents, On en asmis de l'homme et larges, mais du dehors, il y avait à la maison.
+
+L'homme avait été de certains prodent sur le lui faisait pas une ville voix:
+
+--Il ne plus d'oeuvent du Petit-Picpus de ce posant
+leur était de l'autet de la poursuit décèrent les veut soit de côté de ces en n'est pas de la vanier 
+
+
+Texte généré après entrainement à 0.8: Mr Madeleine, près de deux, avec un
+doute Javert, c'était apparaille
+Chapitre II
+
+Cosette.
+
+--Ah, en fér les mortes de des mullines, iletôt de bonne ne pècre une enfant à l'enfant. Il se remoise de ce lorguise dans
+tous.
+
+En chomme_.
+
+--Rent la voix
+Chame toute, qui avait
+qu'il s'apteille à devient si pour noi.
+
+En moment; voire de ces en éclairait ce qu'il faut en outre comme un a le déminquements des encore des volété.
+
+L'homme se discravicttable. Il n'en redi pas bui, on ce pour ces heures. Les maisaine.
+
+Il y assé bénédille.
+
+Cepentement de sorte oon trois rien de colère. Dèle
+figuché et la bataille de la barra
+
+Chapitre IV
+
+Dieu_ qui la vieux journas. Il ne outroite
+de cette de ce misinaient de dessinguer à celles de ces trouette ou excindit la greux de gros, un euroit étallustant dans, quelquechose au
+gros. L'était
+l'armée d'hiceux, ne le vent. Mais ne voyait dans le nouveulement de la petite rue Polonceau.
+Les respolierez fouille, voilà qui
+été hyanse le lor qui ye rendre
+changeaien de ce qu'il fut plus reche savait devenables reconnut de dernier, on plus
+minier assez cellesque déthoe, aduse un il l'homme, et d'allemant pour voir noir de reste. Angle de roulait d'une gocer
+point. Le donne dans ce liage en effrayantait grands à le difficts du côté de ces de la victoire
+pied quand le droit dire si celle qui entre de
+les genses conscins au enfant. Il sedegnel, les bois. C'est que la
+gazandabes religieuses dont le suivre on s'y reste la missement du cidence de la maison du vrai, avect de certe sur le conner étêtre le voyageur, c'excle d'un guides et Pouzillement il ne s'est point cormissement dans les foymmes houche d'hanonheur. Sais le vertu.
+
+Cependant, à loi? Ce celle n'est pas de l'Approcha de ce mit à l'horre de ces du nom
+d'oeux du Pet ce donne obscurité straciors, se décinne de Saigneure. Les mel se disquelait palérient de ces deux obadise commandéede Moles-pêles, que ces vitant et de devient
+volons et les calades de l'autôte, la forme de ce qui ses asmissemées.
+
+Mont-Saint-Antie, mais que cette conditions
+un petit où il en lieu la bataille à céduparte à cette homme, pas de pierres rien on ailes dit: _Ce
+volontisait-il trens de ces hommes et de Rispecte était son ceux, nommettens dien déce.
+
+On n'est dont souvent de des brumes; et
+extant et à cette ou de ces voignendait, le sendansseau demande-veute où il son demandé de
+toutes les mains
+de Cosette était de 
+
+
+Texte généré après entrainement à 0.3 : Mr Madeleine de l'air de ce qui se pour lui les en neuvent en était tout de l'aile du monde de l'armée de l'église au ventre de l'air de la nuit de la porte ou voyageur se commencement de l'autre ce qui lui avait été à laporte où il y avait de ce qui s'était de l'autre chandelles de la bruit de l'homme avec la poste de vieux et toute l'air de la chambre, était donné à l'angle de la rue de l'homme avec un général en devant la porte était l'était pas recise du corps de Romber unemain d'un enfant. Le Pourtant l'ordre de se corde de l'était pas bestiseurs de l'autre comme un a breuse de Bouler, ou d'allument ne distaire d'un coup de ces étaient de l'armée de l'église de la vie même de l'air de l'armée de l'homme avait été ce noms les deux profondeur de l'armée de l'était pas pour les étaient de la petite rois ont un peu de ces deux ou toiste. Le couvent du Petit-Picpus et de ce qui se reste de l'autelle du sorte de ces écoute nous les espèce de se corper de la petite rue Picpus. C'était un peu à la poche de la masure Gorbeau
+
+
+Chapitre IV La main de l'homme avait sous les astes de droite, le mari d'un coup de comme un avait de ce qui sont du Petit-Picpus et de ce qui sont de son appelle qui lui avait été être de l'homme de la guerre de 1823, mais en de ce qui était de l'armée de l'aile des bas retons de l'horres qui les en toute de l'armée de l'était l'esce de cet homme de l'air le voit de se trouvait le venu dela porte ou douze de l'échappur, elle en a genoux, avec les rois on templope qui en cette de passants de sa main de ce qui était àl'homme, et de ce qu'il s'appelles de la bataille de Waterloo. Te pous rien de ce qui se pour les plus restait un ce qui se reste de l'air de la main de l'autre ces âmes de l'air de la vie guette pour les deux ou tois, les mille qui le manière d'un des boulets de l'autre comme un avait de ce qui n'était pas où l'on ne l'avait remplacent des bourgeoise de l'Angleterre pour ce précipitant à la corde de se distaire de Saint-Sacrement de l'autre comme un aller le contre la prieure de Montreuil-se pas de ces étaient de l'homme de la porte ou voyageur se droite de l'armée de l'était le verre de vit ans, aux où il y avait de ce qui se refermes de ces écoutait un combie à côté de l'air de la vie de l'est pas étaient de la porte ou voix, avec des voix de voix de l'église du dernier cela fait du reste des choses qui les en dessemble que ces enfants comme un aller de ces en était à 
+
+
+Texte généré après entrainement à 1 : Mr Madeleine de la porte ou entendait de l'argent du Petit-Picpus et le voille de l'air de la doure du derrière lui semble des batterie été comme à l'air à cette comme un homme, pas de l'air soi bache Bouciens à l'angle de la Thénardier était donné à l'observation est à la porte ou dire se toute l'armée de l'église de l'air seulement de l'armée anglaise pas de cette comme un coup de comme un avait été commencement de l'autre chandelles. Les bourgeoise et les deux obscur de ce lieunor la petite rue Picpus. Cette comme un avait pas de ces deux obscur de la déplule. Les deux ces bourgeoise de voyen de ce qui sepour lui les devant la duceur, des boutes de de des du des murs noire de se constant à cette avait des asteriens de ces écoute norde de son charge de l'armée de l'était pas ête de cette maison du reste du monde ce qu'il vous de l'armée dans le monde de l'armée au moins ses vois de l'argent de l'armée de l'échappa contre-réverse du sur les pieds de la porte ou voyageur ses écoutant l'ordre de se retourna et de se toute l'armée de l'aime_, et comptent d'orires restes dire de se dises de l'autre ces deux ors de l'air de la dérient de ces deux obscurient le morie de tomber à ce pour des
+plus son comme le dours qui s'était son comme un a bruit du vi lui être chandelle à la figure de la nuit, les voletter de leur comme les devant l'air de l'une pas de ce lieu, qui est des
+possible de ce livre de l'air de la main de ce qui se pour lui l'autre à la main de l'air de la vie, grenchilles de la bataille deWaterloo, de l'armée de l'épouvantant de cette pour les loues de devient les enfants de sa taint de volet pas de la vie le donne de l'air dans le corps de longueur de l'homme avait été et de ce lie un avait dement point de son chapelle qui est une comme un allemand de l'arrêter et se seconnus de l'homme avec un euxe-vents ses vous ce doux noires. Les brises de l'armée de l'éclient de l'autre chandelle à la bruit du vi à ce qui n'est possible de l'air à côté de l'air soi bacours de l'autre comme un a beux des on des condes de ces écoute volontiers et des point de voleur de la Haie-Sainte à la fois de l'argent de ces voix de ses échapper, elle avait des asterien de ce qui n'était pas reci de ce qui n'assur des bas, soit de rois on a main d'un bon ce ne disait de l'argent du des Thénardier était à l'ombre avec un se fond de sorte de ces deux ces hommes s'extant de l'armée de l'air de la chapelle que ces parles de l'ar
+
+
+elliot@MacBook-Pro-de-Elliot LLM % 
