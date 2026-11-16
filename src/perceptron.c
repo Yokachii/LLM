@@ -150,6 +150,7 @@ Couche *new_layer(int dim, float taux, int nb_neuronnes, int act){
 
 
 void free_layer(Couche *p){
+    if (p == NULL) return;
     int nb_neuronnes = p->nb_neuronnes;
     for(int i = 0;i<nb_neuronnes;i++){
         free(p->poids[i]);
@@ -573,6 +574,15 @@ Modele *charger_modele(const char *chemin){
         return NULL;
     }
     p++;
+
+    while (*p == '#') {
+        p = strchr(p, '\n');
+        if (p == NULL) {
+            free(buffer);
+            return NULL;
+        }
+        p++;
+    }
 
     Reseau *net = malloc(sizeof(Reseau));
     if (net == NULL) {
