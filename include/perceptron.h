@@ -32,7 +32,7 @@ float calc_perte(Modele *m, const Texte *t, int pas);
 
 void update_modele(Modele *m, int *ctx, int cible);
 
-int sauver_modele(const Modele *m, const char *chemin);
+int sauver_modele(const Modele *m, char *chemin);
 Modele *charger_modele(const char *chemin);    // NULL si le fichier est invalide
 void encoder_amorce(const Vocab *voc, const char *texte, int N, int *out);
 

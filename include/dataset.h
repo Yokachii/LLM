@@ -8,7 +8,7 @@
 typedef struct couche_s
 {
     float *b;
-    int act;
+    int act; // <- SOFTAMAX - SIGMOID - TANH
     int dim;
     float taux;
     float **poids;
@@ -38,14 +38,15 @@ typedef struct {
     int N;                  // taille du contexte
     Vocab *voc;             // Vocab (V, d, emb)
     Reseau *net;            // Reseau (Layers[0..L-2] : tanh ; Layers[L-1] : softmax)
+    int nbEpoque;
+    int nbTraining;
+    float version;
+
+
     float *x;               // N*d : entrée du réseau
     float *dx;              // N*d : gradient sur l'entrée
     float **a;              // a[l] : sortie de la couche l
     float **delta;          // delta[l] : même taille que a[l]
-
-    int nbEpoque;
-    int nbTraining;
-    float version;
 } Modele; // On alloue une fois les tableaux de travail pour le modèle, pour éviter de réallouer à chaque update.
 
 Texte *new_text(int n, Vocab *voc);

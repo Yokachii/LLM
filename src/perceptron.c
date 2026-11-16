@@ -1,6 +1,7 @@
 #include "../include/perceptron.h"
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 void softmax(float *z, int n){
     float m = z[0];
@@ -374,17 +375,61 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
     free(pos);
 }
 
-int sauver_modele(const Modele *m, const char *chemin){
-FILE *file = fopen("/test/model.bin", "wb");
+int sauver_modele(const Modele *m, char *chemin){
+    if (chemin == NULL) {
+        fprintf(stderr, "Erreur : chemin de sauvegarde invalide\n");
+        return -1;
+    }
 
-if (file == NULL) {
-    perror("Erreur d'ouverture du fichier");
-    return -1;
-}
+    FILE *file = fopen(chemin, "wb");
 
-fprintf(file, "Some text");
+    if (file == NULL) {
+        perror("Erreur d'ouverture du fichier");
+        return -1;
+    }
 
-fclose(file);
+    fprintf(file, "N : %d\n",m->N);
+    fprintf(file, "nbEpoque : %d\n",m->nbEpoque);
+    fprintf(file, "nbTraining : %d\n",m->nbTraining);
+    fprintf(file, "version : %f\n",m->version);
+
+    Reseau *net = m->net;
+    fprintf(file, "nb_layer : %d\n",net->nb_layer);
+
+    fprintf(file, "# Couche i : act;dim;taux;nb_neuronnes;(b1,b2,...,bn);({w1,...,wn},{w1,...,wn},...,{w1,...,wn})\n");
+
+    for(int i = 0; i<net->nb_layer;i++){
+        Couche *c = net->Layers[i];
+        int dim = c->dim;
+
+        fprintf(file, "Couche %d : %d;%d;%f;%d;(",i,c->act,c->dim,c->taux,c->nb_neuronnes);
+        for(int i = 0; i<c->nb_neuronnes;i++){
+            if(i==0) fprintf(file,"%f",c->b[i]);
+            else fprintf(file,",%f",c->b[i]);
+        }
+        fprintf(file,");(");
+        for(int i = 0; i<c->nb_neuronnes;i++){
+            if(i==0) fprintf(file,"{");
+            else fprintf(file,",{");
+            
+            for(int j = 0; j<dim; j++){
+                if(j==0) fprintf(file,"%f",c->poids[i][j]);
+                else fprintf(file,",%f",c->poids[i][j]);
+            }
+
+            fprintf(file,"}");
+        }
+        fprintf(file,")\n");
+    }
+
+    
+
+    if (fclose(file) != 0) {
+        perror("Erreur de fermeture du fichier");
+        return -1;
+    }
+
+    return 0;
 }
 
 Modele *charger_modele(const char *chemin){

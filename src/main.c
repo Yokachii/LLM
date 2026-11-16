@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     Modele *m = new_modele(N,voc,n);
     Texte *tr, *tt;
 
-    sauver_modele(m, "./t/filename.txt");
+    sauver_modele(m, "./modeles/test/main.txt");
     
     split_texte(text_l,&tr,&tt,train_ratio);
 
