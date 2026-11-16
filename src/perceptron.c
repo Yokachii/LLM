@@ -422,7 +422,42 @@ int sauver_modele(const Modele *m, char *chemin){
         fprintf(file,")\n");
     }
 
-    
+    fprintf(file, "# Vocab\n");
+
+    Vocab *voc = m->voc;
+
+    fprintf(file, "d : %d\n",voc->d);
+    fprintf(file, "V : %d\n",voc->V);
+
+    fprintf(file, "emb : (");
+    for(int i = 0; i<voc->V;i++){
+        if(i==0) fprintf(file,"{");
+        else fprintf(file,",{");
+        
+        for(int j = 0; j<voc->d; j++){
+            float value = voc->emb[i][j];
+            if(j==0) fprintf(file,"%f",value);
+            else fprintf(file,",%f",value);
+        }
+
+        fprintf(file,"}");
+    }
+    fprintf(file,")\n");
+
+    fprintf(file, "dic : (");
+    for(int j = 0; j<voc->V; j++){
+        int value = voc->dic[j];
+        if(j==0) fprintf(file,"%d",value);
+        else fprintf(file,",%d",value);
+    }
+
+    fprintf(file, ")\ndic_inv : (");
+    for(int j = 0; j<voc->V; j++){
+        char value = voc->dic_inv[j];
+        if(j==0) fprintf(file,"'%c'",value);
+        else fprintf(file,",'%c'",value);
+    }
+    fprintf(file,")\n");
 
     if (fclose(file) != 0) {
         perror("Erreur de fermeture du fichier");
