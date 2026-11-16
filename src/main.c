@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     Modele *m = new_modele(N,voc,n);
     Texte *tr, *tt;
 
-    sauver_modele(m, "./modeles/test/main.txt");
+    sauver_modele(m, "./modeles/main1.txt");
     
     split_texte(text_l,&tr,&tt,train_ratio);
 
@@ -58,8 +58,8 @@ int main(int argc, char *argv[]) {
 
 
     // Train
-    train_modele(m,tr,tt,nb_epoques,taux,"./modeles/modelname/best.bin");
-    sauver_modele(m, "./modeles/modelname/final.bin");
+    train_modele(m,tr,tt,nb_epoques,taux,"./modeles/best1.txt");
+    sauver_modele(m, "./modeles/final1.txt");
 
     printf("Texte généré après entrainement à 0.5 : ");
     generer(m,2500,0.5,tt->tok);

@@ -1,3 +1,5 @@
 *.o
 /perceptron
 *.exe
+/train
+/use

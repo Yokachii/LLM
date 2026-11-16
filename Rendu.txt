@@ -11,3 +11,6 @@ Donc un taux trop haut detruit le modèle -> 0.08 est le meilleur tôt qu'on peu
 
 Sigmoid TanH et SoftMax 
 La tanH est plus éfficace pour les couches cachés et SoftMax est obligatoir pour la couche de sortie
+
+
+./perceptron ./datasets/full.txt 100 0.008 0.9 10 16 500 1

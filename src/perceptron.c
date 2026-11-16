@@ -343,9 +343,12 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
     float meilleure = 1e30f;
     int meilleure_epoque = -1;
 
+    int epoques_initial = m->nbEpoque;
+    int maxEpoques = epoques + m->nbEpoque;
+
     printf("%d epoques\n",epoques);
 
-    for (int e = 0; e < epoques; e++) {
+    for (int e = epoques_initial; e < maxEpoques; e++) {
         float lr = taux0 / (1.0f + 3.0f * e / epoques);   // Decroissance du taux
         for (int l = 0; l < m->net->nb_layer; l++) m->net->Layers[l]->taux = lr;
 
@@ -360,7 +363,7 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
 
         float Lt = calc_perte(m, train, 1);
         float Lv = calc_perte(m, val, 1);
-        printf("epoque %d / %d ; lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e,epoques + 1, lr, Lt, Lv, expf(Lv));
+        printf("epoque %d / %d ; lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e,maxEpoques - 1, lr, Lt, Lv, expf(Lv));
         if(e%10==0){
             printf("Texte généré : ");
             generer(m,500,0.5,val->tok);
