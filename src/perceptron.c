@@ -103,9 +103,11 @@ void display_network(Reseau n){
 }
 
 void free_network(Reseau *n){
+    if (n == NULL) return;
     for(int i = 0;i<n->nb_layer;i++){
         free_layer(n->Layers[i]);
     }
+    free(n->Layers);
     free(n);
 }
 
@@ -182,6 +184,7 @@ float* prediction(Modele *m, int indice_couche, float* inputs) {
     }else{
         for(int j = 0; j < c->nb_neuronnes; j++) m->a[indice_couche][j] = tanhf(m->a[indice_couche][j]);
     }
+    return m->a[indice_couche];
 }
 
 float *forward_modele(Modele *m, int *ctx){
@@ -384,7 +387,7 @@ int sauver_modele(const Modele *m, char *chemin){
     FILE *file = fopen(chemin, "wb");
 
     if (file == NULL) {
-        perror("Erreur d'ouverture du fichier");
+        perror("Erreur ouverture");
         return -1;
     }
 
@@ -460,16 +463,618 @@ int sauver_modele(const Modele *m, char *chemin){
     fprintf(file,")\n");
 
     if (fclose(file) != 0) {
-        perror("Erreur de fermeture du fichier");
+        perror("Erreur");
         return -1;
     }
 
     return 0;
 }
 
-Modele *charger_modele(const char *chemin){
+static char *read_entire_file(const char *chemin, size_t *total_size) {
+    FILE *f = fopen(chemin, "rb");
+    if (f == NULL) return NULL;
 
-}    // NULL si le fichier est invalide
+    if (fseek(f, 0, SEEK_END) != 0) {
+        fclose(f);
+        return NULL;
+    }
+    long size = ftell(f);
+    if (size < 0) {
+        fclose(f);
+        return NULL;
+    }
+    rewind(f);
+
+    char *buffer = malloc((size_t)size + 1U);
+    if (buffer == NULL) {
+        fclose(f);
+        return NULL;
+    }
+
+    size_t read_count = fread(buffer, 1, (size_t)size, f);
+    fclose(f);
+    if (read_count != (size_t)size) {
+        free(buffer);
+        return NULL;
+    }
+
+    buffer[size] = '\0';
+    if (total_size != NULL) *total_size = (size_t)size;
+    return buffer;
+}
+
+Modele *charger_modele(const char *chemin){
+    if (chemin == NULL) return NULL;
+
+    size_t size = 0;
+    char *buffer = read_entire_file(chemin, &size);
+    if (buffer == NULL) return NULL;
+
+    char *p = buffer;
+    int N = 0, nbEpoque = 0, nbTraining = 0, nb_layer = 0, V = 0, d = 0;
+    float version = 0.0f;
+
+    char *tag = strstr(p, "N : ");
+    if (tag == NULL || sscanf(tag + 4, "%d", &N) != 1) {
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    tag = strstr(p, "nbEpoque : ");
+    if (tag == NULL || sscanf(tag + 11, "%d", &nbEpoque) != 1) {
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    tag = strstr(p, "nbTraining : ");
+    if (tag == NULL || sscanf(tag + 13, "%d", &nbTraining) != 1) {
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    tag = strstr(p, "version : ");
+    if (tag == NULL || sscanf(tag + 10, "%f", &version) != 1) {
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    tag = strstr(p, "nb_layer : ");
+    if (tag == NULL || sscanf(tag + 11, "%d", &nb_layer) != 1) {
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    Reseau *net = malloc(sizeof(Reseau));
+    if (net == NULL) {
+        free(buffer);
+        return NULL;
+    }
+    net->nb_layer = nb_layer;
+    net->Layers = calloc((size_t)nb_layer, sizeof(Couche *));
+    if (net->Layers == NULL) {
+        free(net);
+        free(buffer);
+        return NULL;
+    }
+
+    for (int l = 0; l < nb_layer; l++) {
+        char *layer_tag = strstr(p, "Couche ");
+        if (layer_tag == NULL) {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        int expected = 0;
+        if (sscanf(layer_tag, "Couche %d :", &expected) != 1 || expected != l) {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+
+        char *line_end = strchr(layer_tag, '\n');
+        if (line_end == NULL) {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+
+        char *rest = strchr(layer_tag, ':');
+        if (rest == NULL) {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        rest++;
+
+        char *after = rest;
+        long act = strtol(after, &after, 10);
+        if (*after != ';') {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        long dim = strtol(after, &after, 10);
+        if (*after != ';') {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        float taux = strtof(after, &after);
+        if (*after != ';') {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        long nb_neuronnes = strtol(after, &after, 10);
+        if (*after != ';') {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        Couche *c = malloc(sizeof(Couche));
+        if (c == NULL) {
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+
+        c->act = (int)act;
+        c->dim = (int)dim;
+        c->taux = taux;
+        c->nb_neuronnes = (int)nb_neuronnes;
+        c->b = malloc(sizeof(float) * (size_t)c->nb_neuronnes);
+        c->poids = malloc(sizeof(float *) * (size_t)c->nb_neuronnes);
+        if (c->b == NULL || c->poids == NULL) {
+            free(c->b);
+            free(c->poids);
+            free(c);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+
+        if (*after != '(') {
+            free(c->b);
+            free(c->poids);
+            free(c);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        for (int j = 0; j < c->nb_neuronnes; j++) {
+            c->b[j] = strtof(after, &after);
+            if (j + 1 < c->nb_neuronnes) {
+                while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+                if (*after != ',') {
+                    free(c->b);
+                    free(c->poids);
+                    free(c);
+                    free_network(net);
+                    free(buffer);
+                    return NULL;
+                }
+                after++;
+            }
+        }
+
+        while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+        if (*after != ')') {
+            free(c->b);
+            free(c->poids);
+            free(c);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+        if (*after != ';') {
+            free(c->b);
+            free(c->poids);
+            free(c);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+        while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+        if (*after != '(') {
+            free(c->b);
+            free(c->poids);
+            free(c);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        for (int j = 0; j < c->nb_neuronnes; j++) {
+            c->poids[j] = malloc(sizeof(float) * (size_t)c->dim);
+            if (c->poids[j] == NULL) {
+                for (int k = 0; k < j; k++) free(c->poids[k]);
+                free(c->b);
+                free(c->poids);
+                free(c);
+                free_network(net);
+                free(buffer);
+                return NULL;
+            }
+
+            while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+            if (*after != '{') {
+                free(c->poids[j]);
+                for (int k = 0; k < j; k++) free(c->poids[k]);
+                free(c->b);
+                free(c->poids);
+                free(c);
+                free_network(net);
+                free(buffer);
+                return NULL;
+            }
+            after++;
+
+            for (int i = 0; i < c->dim; i++) {
+                c->poids[j][i] = strtof(after, &after);
+                if (i + 1 < c->dim) {
+                    while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+                    if (*after != ',') {
+                        free(c->poids[j]);
+                        for (int k = 0; k < j; k++) free(c->poids[k]);
+                        free(c->b);
+                        free(c->poids);
+                        free(c);
+                        free_network(net);
+                        free(buffer);
+                        return NULL;
+                    }
+                    after++;
+                }
+            }
+
+            while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+            if (*after != '}') {
+                free(c->poids[j]);
+                for (int k = 0; k < j; k++) free(c->poids[k]);
+                free(c->b);
+                free(c->poids);
+                free(c);
+                free_network(net);
+                free(buffer);
+                return NULL;
+            }
+            after++;
+
+            if (j + 1 < c->nb_neuronnes) {
+                while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+                if (*after != ',') {
+                    free(c->poids[j]);
+                    for (int k = 0; k < j; k++) free(c->poids[k]);
+                    free(c->b);
+                    free(c->poids);
+                    free(c);
+                    free_network(net);
+                    free(buffer);
+                    return NULL;
+                }
+                after++;
+            }
+        }
+
+        while (*after == ' ' || *after == '\t' || *after == '\n' || *after == '\r') after++;
+        if (*after != ')') {
+            for (int j = 0; j < c->nb_neuronnes; j++) free(c->poids[j]);
+            free(c->b);
+            free(c->poids);
+            free(c);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        after++;
+
+        net->Layers[l] = c;
+        p = line_end + 1;
+    }
+
+    tag = strstr(p, "# Vocab");
+    if (tag == NULL) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    tag = strstr(p, "d : ");
+    if (tag == NULL || sscanf(tag + 4, "%d", &d) != 1) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    tag = strstr(p, "V : ");
+    if (tag == NULL || sscanf(tag + 4, "%d", &V) != 1) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p = strchr(tag, '\n');
+    if (p == NULL) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p++;
+
+    Vocab *voc = malloc(sizeof(Vocab));
+    if (voc == NULL) {
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    voc->V = V;
+    voc->d = d;
+    voc->dic = calloc(512, sizeof(int));
+    voc->dic_inv = calloc((size_t)V, sizeof(unsigned char));
+    voc->emb = malloc(sizeof(float *) * (size_t)V);
+    if (voc->dic == NULL || voc->dic_inv == NULL || voc->emb == NULL) {
+        free(voc->dic);
+        free(voc->dic_inv);
+        free(voc->emb);
+        free(voc);
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+
+    for (int i = 0; i < 512; i++) voc->dic[i] = -1;
+
+    tag = strstr(p, "emb : (");
+    if (tag == NULL) {
+        free_vocab(voc);
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p = tag + strlen("emb : (");
+    for (int i = 0; i < V; i++) {
+        while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+        if (*p != '{') {
+            free_vocab(voc);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        p++;
+        voc->emb[i] = malloc(sizeof(float) * (size_t)d);
+        if (voc->emb[i] == NULL) {
+            free_vocab(voc);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        for (int j = 0; j < d; j++) {
+            voc->emb[i][j] = strtof(p, &p);
+            if (j + 1 < d) {
+                while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+                if (*p != ',') {
+                    free_vocab(voc);
+                    free_network(net);
+                    free(buffer);
+                    return NULL;
+                }
+                p++;
+            }
+        }
+        while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+        if (*p != '}') {
+            free_vocab(voc);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        p++;
+        if (i + 1 < V) {
+            while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+            if (*p != ',') {
+                free_vocab(voc);
+                free_network(net);
+                free(buffer);
+                return NULL;
+            }
+            p++;
+        }
+    }
+
+    tag = strstr(p, ")\ndic : (");
+    if (tag == NULL) {
+        free_vocab(voc);
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p = tag + strlen(")\ndic : (");
+    for (int i = 0; i < V; i++) {
+        while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+        if (*p == ')') break;
+        int value = (int)strtol(p, &p, 10);
+        if (i + 1 < V) {
+            while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+            if (*p != ',') {
+                free_vocab(voc);
+                free_network(net);
+                free(buffer);
+                return NULL;
+            }
+            p++;
+        }
+        if (value >= 0 && value < V) {
+            voc->dic_inv[value] = (unsigned char)i;
+            voc->dic[(unsigned char)i] = value;
+        }
+    }
+
+    tag = strstr(p, ")\ndic_inv : (");
+    if (tag == NULL) {
+        free_vocab(voc);
+        free_network(net);
+        free(buffer);
+        return NULL;
+    }
+    p = tag + strlen(")\ndic_inv : (");
+    for (int i = 0; i < V; i++) {
+        while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+        if (*p == ')') break;
+        if (*p != '\'') {
+            free_vocab(voc);
+            free_network(net);
+            free(buffer);
+            return NULL;
+        }
+        p++;
+        char c = *p;
+        if (*p == '\\') {
+            p++;
+            switch (*p) {
+                case 'n': c = '\n'; break;
+                case 'r': c = '\r'; break;
+                case 't': c = '\t'; break;
+                case '0': c = '\0'; break;
+                default: c = *p; break;
+            }
+        }
+        voc->dic_inv[i] = (unsigned char)c;
+        voc->dic[(unsigned char)c] = i;
+        p++;
+        if (*p == '\'') p++;
+        if (i + 1 < V) {
+            while (*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r') p++;
+            if (*p != ',') {
+                free_vocab(voc);
+                free_network(net);
+                free(buffer);
+                return NULL;
+            }
+            p++;
+        }
+    }
+
+    free(buffer);
+
+    Modele *m = malloc(sizeof(Modele));
+    if (m == NULL) {
+        free_vocab(voc);
+        free_network(net);
+        return NULL;
+    }
+
+    m->N = N;
+    m->voc = voc;
+    m->net = net;
+    m->nbEpoque = nbEpoque;
+    m->nbTraining = nbTraining;
+    m->version = version;
+
+    m->x = malloc(sizeof(float) * (size_t)N * (size_t)voc->d);
+    m->dx = malloc(sizeof(float) * (size_t)N * (size_t)voc->d);
+    m->a = malloc(sizeof(float *) * (size_t)net->nb_layer);
+    m->delta = malloc(sizeof(float *) * (size_t)net->nb_layer);
+    if (m->x == NULL || m->dx == NULL || m->a == NULL || m->delta == NULL) {
+        free(m->x);
+        free(m->dx);
+        free(m->a);
+        free(m->delta);
+        free_modele(m);
+        free_vocab(voc);
+        free_network(net);
+        return NULL;
+    }
+
+    for (int i = 0; i < net->nb_layer; i++) {
+        m->a[i] = malloc(sizeof(float) * (size_t)net->Layers[i]->nb_neuronnes);
+        m->delta[i] = malloc(sizeof(float) * (size_t)net->Layers[i]->nb_neuronnes);
+        if (m->a[i] == NULL || m->delta[i] == NULL) {
+            for (int j = 0; j < i; j++) {
+                free(m->a[j]);
+                free(m->delta[j]);
+            }
+            free(m->a);
+            free(m->delta);
+            free(m->x);
+            free(m->dx);
+            free(m);
+            free_vocab(voc);
+            free_network(net);
+            return NULL;
+        }
+    }
+
+    return m;
+}
+
 void encoder_amorce(const Vocab *voc, const char *texte, int N, int *out){
-    
+    if (voc == NULL || texte == NULL || out == NULL || N <= 0) return;
+
+    size_t len = strlen(texte);
+    size_t start = (len > (size_t)N) ? len - (size_t)N : 0;
+
+    for (int i = 0; i < N; i++) {
+        int idx = (int)(start + (size_t)i);
+        int code = (idx < (int)len) ? (unsigned char)texte[idx] : 0;
+        int token = voc->dic[code];
+        out[i] = (token >= 0) ? token : 0;
+    }
 }
