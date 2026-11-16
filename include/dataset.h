@@ -42,6 +42,10 @@ typedef struct {
     float *dx;              // N*d : gradient sur l'entrée
     float **a;              // a[l] : sortie de la couche l
     float **delta;          // delta[l] : même taille que a[l]
+
+    int nbEpoque;
+    int nbTraining;
+    float version;
 } Modele; // On alloue une fois les tableaux de travail pour le modèle, pour éviter de réallouer à chaque update.
 
 Texte *new_text(int n, Vocab *voc);

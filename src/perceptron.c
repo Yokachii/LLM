@@ -31,6 +31,10 @@ Modele *new_modele(int n, Vocab *voc, Reseau *net){
     m->a=malloc(sizeof(float*)*net->nb_layer);
     m->delta=malloc(sizeof(float*)*net->nb_layer);
 
+    m->nbEpoque=0;
+    m->nbTraining=0;
+    m->version=0;
+
     for(int i = 0; i<net->nb_layer;i++){
         Couche *l = net->Layers[i];
         m->a[i]=malloc(sizeof(float)*l->nb_neuronnes);
@@ -321,19 +325,26 @@ void   update_modele(Modele *m, int *ctx, int cible) {
             m->voc->emb[ctx[k]][j] -= lr * m->dx[k*d + j];
 }
 
-void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, float taux0){
+void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, float taux0, char *best_path){
+
+    m->nbTraining=m->nbTraining+1;
+    m->version=m->version+0.1;
+
     int N = m->N;      // Taille du ctx
     int ni = train->n - N; // Taille du texte - taille ctx -> nombre d'incrementation possible avant de depasser
     int *pos = malloc(ni * sizeof(int));
     for (int i = 0; i < ni; i++) pos[i] = N + i;
 
+    float meilleure = 1e30f;
+    int meilleure_epoque = -1;
+
     printf("%d epoques\n",epoques);
 
     for (int e = 0; e < epoques; e++) {
-        float lr = taux0 / (1.0f + 3.0f * e / epoques);   // même décroissance que ton classifieur
+        float lr = taux0 / (1.0f + 3.0f * e / epoques);   // Decroissance du taux
         for (int l = 0; l < m->net->nb_layer; l++) m->net->Layers[l]->taux = lr;
 
-        for (int i = ni - 1; i > 0; i--) {                // Fisher-Yates sur les positions
+        for (int i = ni - 1; i > 0; i--) {                // Fisher-Yates
             int j = rand() % (i + 1);
             int tmp = pos[i]; pos[i] = pos[j]; pos[j] = tmp;
         }
@@ -342,7 +353,7 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
             update_modele(m, train->tok + t - N, train->tok[t]);
         }
 
-        float Lt = calc_perte(m, train, 7);               // un exemple sur 7 suffit pour surveiller
+        float Lt = calc_perte(m, train, 1);
         float Lv = calc_perte(m, val, 1);
         printf("epoque %d / %d ; lr=%.4f perte train=%.4f val=%.4f perplexite val=%.2f\n",e,epoques + 1, lr, Lt, Lv, expf(Lv));
         if(e%10==0){
@@ -351,6 +362,34 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
             printf("\n\n");
             fflush(stdout);
         }
+
+        m->nbEpoque=m->nbEpoque+1;
+
+        if(best_path != NULL && (Lv < meilleure || meilleure_epoque==-1)){
+            meilleure = Lv;
+            meilleure_epoque = e;
+            sauver_modele(m, best_path);
+        }
     }
     free(pos);
+}
+
+int sauver_modele(const Modele *m, const char *chemin){
+FILE *file = fopen("/test/model.bin", "wb");
+
+if (file == NULL) {
+    perror("Erreur d'ouverture du fichier");
+    return -1;
+}
+
+fprintf(file, "Some text");
+
+fclose(file);
+}
+
+Modele *charger_modele(const char *chemin){
+
+}    // NULL si le fichier est invalide
+void encoder_amorce(const Vocab *voc, const char *texte, int N, int *out){
+    
 }

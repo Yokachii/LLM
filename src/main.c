@@ -34,6 +34,8 @@ int main(int argc, char *argv[]) {
     Reseau *n = new_network(nb_couche_cache, H, taux, dimE, voc->V);
     Modele *m = new_modele(N,voc,n);
     Texte *tr, *tt;
+
+    sauver_modele(m, "./t/filename.txt");
     
     split_texte(text_l,&tr,&tt,train_ratio);
 
@@ -55,9 +57,9 @@ int main(int argc, char *argv[]) {
     printf("\n\n");
 
 
-
     // Train
-    train_modele(m,tr,tt,nb_epoques,taux);
+    train_modele(m,tr,tt,nb_epoques,taux,"./modeles/modelname/best.bin");
+    sauver_modele(m, "./modeles/modelname/final.bin");
 
     printf("Texte généré après entrainement à 0.5 : ");
     generer(m,2500,0.5,tt->tok);
