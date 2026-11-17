@@ -133,7 +133,7 @@ Couche *new_layer(int dim, float taux, int nb_neuronnes, int act){
     for(int i = 0; i<nb_neuronnes; i++){
         float *p = malloc(sizeof(float)*dim);
 
-        float scale = sqrtf(1.0f / dim);
+        float scale = (act == ACT_SOFTMAX) ? sqrtf(1.0f / dim) : sqrtf(3.0f / dim);
         for(int j = 0; j<dim; j++){
             p[j] = ((float)rand() / RAND_MAX * 2.0f - 1.0f) * scale;
         }
@@ -156,6 +156,7 @@ void free_layer(Couche *p){
         free(p->poids[i]);
     }
     free(p->b);
+    free(p->poids);
     free(p);
 };
 
@@ -252,10 +253,6 @@ float calc_perte(Modele *m, const Texte *t, int pas){   // pas = 1 : tous les ex
     return (float)(L / c);
 }
 
-static void set_taux(Reseau *n, float taux){
-    for(int l = 0; l < n->nb_layer; l++) n->Layers[l]->taux = taux;
-}
-
 void generer(Modele *m, int longueur, float temperature, const int *amorce){
     int N = m->N, V = m->voc->V;
     int *ctx = malloc(N * sizeof(int));
@@ -349,7 +346,7 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
     printf("%d epoques\n",epoques);
 
     for (int e = epoques_initial; e < maxEpoques; e++) {
-        float lr = taux0 / (1.0f + 3.0f * e / epoques);   // Decroissance du taux
+        float lr = taux0 / (1.0f + 3.0f * e / maxEpoques);   // Decroissance du taux
         for (int l = 0; l < m->net->nb_layer; l++) m->net->Layers[l]->taux = lr;
 
         for (int i = ni - 1; i > 0; i--) {                // Fisher-Yates
@@ -1081,13 +1078,12 @@ Modele *charger_modele(const char *chemin){
 void encoder_amorce(const Vocab *voc, const char *texte, int N, int *out){
     if (voc == NULL || texte == NULL || out == NULL || N <= 0) return;
 
-    size_t len = strlen(texte);
-    size_t start = (len > (size_t)N) ? len - (size_t)N : 0;
-
+    int pad = (voc->dic[(unsigned char)' '] >= 0) ? voc->dic[(unsigned char)' '] : 0;
+    int len = (int)strlen(texte);
+    
     for (int i = 0; i < N; i++) {
-        int idx = (int)(start + (size_t)i);
-        int code = (idx < (int)len) ? (unsigned char)texte[idx] : 0;
-        int token = voc->dic[code];
-        out[i] = (token >= 0) ? token : 0;
+        int idx = len - N + i;
+        int token = (idx >= 0) ? voc->dic[(unsigned char)texte[idx]] : pad;
+        out[i] = (token >= 0) ? token : pad;
     }
 }

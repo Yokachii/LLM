@@ -55,7 +55,8 @@ void free_text(Texte *t);
 void free_vocab(Vocab *v);
 
 Texte *load_texte(char *path, Vocab **v, int d);
-
+Vocab *construire_vocab(const char *path, int d);
+Texte *encoder_texte(const char *path, Vocab *voc);
 
 void display_Text(Texte t);
 void display_Vocab(Vocab v);

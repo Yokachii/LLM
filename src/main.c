@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 
     if (argc<2) {
         fprintf(stderr, "Usage: %s <dataset_path> <nb_epoques> <learning_rate> <train_ratio> <N> <d> <H> <couches_cache> <HumanOutput> <graine>\n", argv[0]);
-        fprintf(stderr, "Example: %s ./datasets/corpus.txt 10 0.1 0.8 1 42\n", argv[0]);
+        fprintf(stderr, "Example: %s ./datasets/corpus.txt 20 0.03 0.8 16 16 256 1 1 42\n", argv[0]);
         return 1;
     }
 
@@ -30,6 +30,10 @@ int main(int argc, char *argv[]) {
 
     Vocab *voc;
     Texte *text_l = load_texte(filepath,&voc,d); // <- load text & set le nb de caractères distinct dans le text
+    if(text_l==NULL) {
+        printf("Erreur de chargement du texte");
+        return 1;
+    }
     int dimE = N*d;
     Reseau *n = new_network(nb_couche_cache, H, taux, dimE, voc->V);
     Modele *m = new_modele(N,voc,n);

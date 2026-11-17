@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 
     if (argc<3) {
         fprintf(stderr, "Usage: %s <modele_path> <text_path> <nb_epoques> <learning_rate_base> <train_ratio> <HumanOutput> <graine>\n", argv[0]);
-        fprintf(stderr, "Example: %s ./modeles/main1.txt ./datasets/full.txt 0.04 0.8 1 725462\n", argv[0]);
+        fprintf(stderr, "Example: %s ./modeles/main1.txt ./datasets/full.txt 20 0.04 0.8 1 725462\n", argv[0]);
         return 1;
     }
 
@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
     int nb_epoques = (argc > 3) ? atoi(argv[3]) : 10;
     float taux = (argc > 4) ? atof(argv[4]) : 0.03;
     float train_ratio = (argc > 5) ? atof(argv[5]) : 0.8;
-    int HumanOutput = (argc > 5) ? atoi(argv[5]) : 1;
-    unsigned int seed = (argc > 6) ? (unsigned int)strtoul(argv[6], NULL, 6) : (unsigned int)time(NULL);
+    int HumanOutput = (argc > 6) ? atoi(argv[6]) : 1;
+    unsigned int seed = (argc > 7) ? (unsigned int)strtoul(argv[7], NULL, 10) : (unsigned int)time(NULL);
     
     srand(seed);
     if(HumanOutput==1) printf("Graine : %u\n", seed);
@@ -33,13 +33,15 @@ int main(int argc, char *argv[]) {
     Vocab *voc = m->voc;
     Reseau *net = m->net;
 
-    int d = voc->d;
-
-
-    Texte *text_l = load_texte(text_path,&voc,d); // <- load text & set le nb de caractères distinct dans le text
+    Texte *text_l = encoder_texte(text_path, voc);
+    if (text_l == NULL) {
+        free_modele(m);
+        free_network(net);
+        free_vocab(voc);
+        return 1;
+    }
     Texte *tr, *tt;
-
-    split_texte(text_l,&tr,&tt,train_ratio);
+    split_texte(text_l, &tr, &tt, train_ratio);
 
     int isFreed = 0;
 

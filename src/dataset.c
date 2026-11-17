@@ -104,69 +104,88 @@ void display_Vocab(Vocab v){
     }
 }
 
-Texte *load_texte(char *path, Vocab **v, int d){
-
-    FILE *fichier = fopen(path, "r");
-    if (fichier == NULL) {
-        printf("Erreur lors du chargement\n");
+static unsigned char *lire_fichier(const char *path, long *n){
+    FILE *f = fopen(path, "rb");
+    if (f == NULL) {
+        fprintf(stderr, "Erreur : impossible d'ouvrir '%s'\n", path);
         return NULL;
     }
-    
-    long n = getFileSize(fichier);
+    long size = getFileSize(f);
+    unsigned char *buf = malloc((size_t)size + 1);
+    if (buf == NULL || fread(buf, 1, (size_t)size, f) != (size_t)size) {
+        fprintf(stderr, "Erreur : lecture de '%s'\n", path);
+        free(buf);
+        fclose(f);
+        return NULL;
+    }
+    fclose(f);
+    buf[size] = '\0';
+    *n = size;
+    return buf;
+}
 
-    unsigned char *fileContents = malloc(n+1);
+Vocab *construire_vocab(const char *path, int d){
+    long n = 0;
+    unsigned char *buf = lire_fichier(path, &n);
+    if (buf == NULL) return NULL;
 
-    fread(fileContents, 1, n, fichier);
-
-    fileContents[n] = '\0'; // Ajout du caractère de fin
-
-    fclose(fichier);
-
+    int *dic = malloc(sizeof(int) * 256);
+    unsigned char *dic_inv = malloc(256);
+    for (int i = 0; i < 256; i++) dic[i] = -1;
 
     int V = 0;
-    *v = malloc(sizeof(Vocab));
-    int *dic = malloc(sizeof(int)*512);
-    unsigned char *dic_inv = malloc(sizeof(char)*512);
-
-    for(int i = 0; i<512; i++) dic[i]=-1;
-
-    for(long i = 0; i<n;i++){
-        unsigned char cc = fileContents[i];
-        if(dic[cc]==-1){
-            dic[cc] = V;
-            dic_inv[V] = cc;
+    for (long i = 0; i < n; i++) {
+        unsigned char c = buf[i];
+        if (dic[c] == -1) {
+            dic[c] = V;
+            dic_inv[V] = c;
             V++;
         }
     }
+    free(buf);
 
-    Texte *new_t = malloc(sizeof(Texte));
-    new_t->n=n;
-    new_t->tok=(int *)malloc(n * sizeof(int));
-    (*v)->V=V;
-    float **vocabulaire = malloc(sizeof(*vocabulaire)*V);
-    for(int i = 0; i<V; i++){
-        float *ligne = malloc(d*sizeof(float));
-        for(int j = 0; j<d; j++){
-            ligne[j] = (float)rand() / RAND_MAX - 0.5f;
-        }
-        vocabulaire[i]=ligne;
+    Vocab *voc = malloc(sizeof(Vocab));
+    voc->V = V;
+    voc->d = d;
+    voc->dic = dic;
+    voc->dic_inv = realloc(dic_inv, (size_t)V);
+    voc->emb = malloc(sizeof(float *) * (size_t)V);
+    for (int i = 0; i < V; i++) {
+        voc->emb[i] = malloc(sizeof(float) * (size_t)d);
+        for (int j = 0; j < d; j++)
+            voc->emb[i][j] = (float)rand() / RAND_MAX * 2.0f - 1.0f;
     }
-    new_t->voc=*v;
+    return voc;
+}
 
-    for(long i = 0; i<n; i++){
-        new_t->tok[i]=dic[fileContents[i]];
-        // printf("%d ",new_t->tok[i]);
+Texte *encoder_texte(const char *path, Vocab *voc){
+    long n = 0;
+    unsigned char *buf = lire_fichier(path, &n);
+    if (buf == NULL) return NULL;
+
+    Texte *t = malloc(sizeof(Texte));
+    t->tok = malloc((size_t)n * sizeof(int));
+    t->voc = voc;
+
+    long k = 0, inconnus = 0;
+    for (long i = 0; i < n; i++) {
+        int id = voc->dic[buf[i]];
+        if (id >= 0) t->tok[k++] = id;
+        else inconnus++;
     }
+    t->n = (int)k;
+    free(buf);
 
-    (*v)->emb=vocabulaire;
-    (*v)->dic=dic;
-    (*v)->d=d;
-    (*v)->dic_inv=dic_inv;
+    if (inconnus > 0)
+        fprintf(stderr, "Attention : %ld caractères hors vocabulaire ignorés\n", inconnus);
+    return t;
+}
 
-    free(fileContents);
-
-    return new_t;
-};
+Texte *load_texte(char *path, Vocab **v, int d){
+    *v = construire_vocab(path, d);
+    if (*v == NULL) return NULL;
+    return encoder_texte(path, *v);
+}
 
 float sigmoide(float z){
     return (1 / (1 + exp(-z)));
