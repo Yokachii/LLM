@@ -1,0 +1,145 @@
+lliot@MacBook-Pro-de-Elliot LLM % ./perceptron ./datasets/full.txt 5 0.008 0.9 10 16 500 1
+Graine : 1794910190
+perte initiale val = 4.6713
+ln(V) = 4.6634
+Texte généré avant entrainement : 
+suaire, �D3�_6�Z?Zq�¢6+J/j-
+WC��C'7k�v���2J
+
+
+5 epoques
+epoque 0 / 4 ; lr=0.0080 perte train=2.6746 val=2.6564 perplexite val=14.25
+Texte généré : 
+suaire, à ce qu'il écouré de celoridit vortir de cuiqu'eûtond celler vortait fillait réconchy de la Furrice de lumimer de la Fires de rache de lui, lèrer ce couphissait du vier diblant de la Furrifir de Fortait dans une vortait voer à la fut un vour dur légard du chosait volubre chercher de calubre de la vier di valut-là, où le jotrai sortait du poché décles de la Filis de la Filérodusi lui vier décadié de lui vier décaché du resort de la Franoura dur lure du vilemme, vût du birair du r
+
+
+epoque 1 / 4 ; lr=0.0050 perte train=1.9742 val=1.9745 perplexite val=7.20
+epoque 2 / 4 ; lr=0.0036 perte train=1.6605 val=1.6820 perplexite val=5.38
+epoque 3 / 4 ; lr=0.0029 perte train=1.5457 val=1.5942 perplexite val=4.92
+epoque 4 / 4 ; lr=0.0024 perte train=1.4464 val=1.4982 perplexite val=4.47
+Texte généré après entrainement à 0.5 : 
+suaire, était tout ce qui remuait toutes les cartouches.
+
+Il paraître le colonel par l'autre sous comprends courager tant de la correcurie de l'autre et de reprendre de la femme et la maison de lui, au moment après, puis le matin courant de l'omista comme çà a été par le pauvre par de laissa conscience et de l'appelait dans cette puissant tout ce qui
+a les mains par le coup de manger le malheureux, médites de tourna soin et le maison_ passant au plus étranger tous sauvages, le maire? Qui maison qu'on place aux appelait le faisait trop faire de mur.
+
+--Un coeur se passerait sur le corde, tout à coup. De voir un papier, je sais tout ce qui remettra de soir tous le soir tous comme de la maison de la soir traînait tout à coup il n'avait pas un blancher. Il
+n'a pas de monstrueux français qui a faisait dans sa chambre. Il avait tu trou de toutes les construit de faire tout.
+
+--Tout aucher, et qui
+avait pas l'autre sa coupée de ma fation d'une parole rue de sourir ce nom de matin, ritite-Trensait le corde, mais qui a faisait trop aux résolution de moitiait le coins d'oreille, ou voyait tout aussi
+ma dans ce carrode, mais ce qui a le matin, justation de l'argot dans sa corde, aucun approcha de ligne faisait de voir de sourir de lui, mais c'était très trouvera pas d'être de l'angle de la Répripide de marchait dans cette
+absorbèrent le maison de l'orissant tout aussi
+parlon et au haut au faudrais sur la fatyait pas à doucement tranquille était tout courte était tandis sous comme en pleuver dans ce qui est accoutaf-couse.
+
+Il ajouta: 
+--Qu'on appelait aussi
+constater dans sa corps en mauvais pas plus de doucement comme au misile était tout autre confiance et de rous de l'intelligent cordes du revient le faisait tout ce qui a tuelle de la maison se tourna plus de tournant par le rous a été raprés de fer, ce n'est pas manger. Il n'a pas d'auculter, au mis mourir faisant trouvait tout autour de lui, comme de la rue de Banons maisons comme le papier, mais cela fait pas sourdes.
+
+--Comment sauvage. Il aporter, les convite au fait de souffrance à sa grande rouge, toutes les miston travail de ma plus farouse par le papier, mais je vous autres après, mais comme un plus de tous constitution de maisons douter.
+
+--Monsieur le papier, mais ce nom de matin, comme au ma maison de la colowe aux autres, au milieu de soupirais de faire saisit tous simple francs.
+
+--Monsieur, au soir de toutes les fautes par la collet.
+
+--Il n'a pas ce mot de rous promener la salle
+
+
+Texte généré après entrainement à 0.8: 
+suaire, à douzemes à mademoiselle Bapinage. Il s'aucune parce qu'on pourrait devant l'homme après qui
+touffait de travais ce qui, nous faut appelez-vous.
+
+--Courant de tous ce qu'on appelait être
+maître par la causonnement de m'aaglotique de l'ombre et de l'argot.
+
+--À cela. Quelques par les combattation de l'argotes:
+
+--À couveau qui sait aux voir, au sourire, arriver--oui. On a  La répontière puissance Louis XVI, un tournait! Du réocadaux de la fenêtre pied.
+
+--Mon
+Dire, dit Bacheva: us livrage, il avait un peu de plus.
+
+--Vous n'avertissait. Le conjuter tournant le voile? n'est-ce qu'elle se faisait dans tous cervestes
+combattant troupe ménage de bataille au situt. L'enfant que par manger par l'injustant sur la royauté ô correste puissent confuse puis comme il n'avait mains.
+
+--Monsoerent sa caradi, à la fois mangeraçait maintenant tout aussi,
+avait un mouvait trois jamais flâcherait, était faire tout. Il a faire tout?
+
+--Je taisonnait tout proche au cahoriqué d'une
+forte aux plus grandes traître coup en considération pour après d'admirable au dit:
+
+--Je l'ai coins herbères par le calatotique. Le rouis XIV un peu haut.... Oh! deux étais du soie pap de buance.
+
+Ou confiance lotre passage du dehors de la mère. Ce miracle de sourire au mis:
+
+--Couse paysan, le tapier
+attaché à maisons son pansis aux autret. Il avait tantagner, nous étincelette chose à la Thénardier.
+
+--Vous allez. Jean Valjean avant d'être pas comme sous
+le soir. après avoir ma bout trop payste; deux pièces ombres_. Un mot.
+
+--Vous a farouchet.
+
+--Le juin au boulet.
+
+--Je sais je n'aféer six capaverre faire, et dit:
+
+--Vous faire qui paya pas même toute nuit tours m'après bien par des mains parlater le moins et corditites violente
+d'aucune au magnit. Il a le grand Rossomer, lous pour voir tous autres par la salle passer, qui toutes, bâterre au haut. Tout appiétitation n'a pas sièce de bon mir dans ce nouveau.
+
+--Toi, rue de la rue, mais après et l'affairement trous de toutes les
+coups de Jarduit Fantine et toucher. Cosette
+était fermée tout colomie par Jean Valjean au jardiniers pleins 
+                  _Achin. Il avait tiré, je vais terriblesse tranquille faisait toute au coin.
+
+--Comment cinquante vue, Faubours amis. Un homme n'a au moins qui raison du convulse rue Madeleine de sa misson. Quand elle était resté par la situation par le touant offaire d'ombre émancher, se hasard, le souffle n'air de matin mainquet.
+
+--Eh ma sourifie. Il faisait tout tr
+
+
+Texte généré après entrainement à 0.3 : 
+suaire, à coup. Cosette au milieu de la place du matin, ru autour de lui, comme on l'autre au mis moins plus d'une façon de main de la force de l'autre pour un papier,mais au couvent toutes les cartouches. Il n'a pas de manger au souvent de l'autre et de soleine de l'autre de la société par le pain de la société aux mancher dans sa corridor confiance et de ma faudrait sans tous comme un paysan, dit le papier, au mis moins plus de souffrance à la fois au fantôme par l'autre de moins d'appelait dansle corridor et de l'autre au mis mois par visiste, tous ce qui a le paysan plus
+d'une fois par visite du corridor pas d'aucher, mais ce qui a au misister la collet.
+
+--Monsieur le maire au milieu de la place du soleil tous convaires.
+
+--Monsieur le maire. Il avait tout aucher.
+
+--Monsieur le maire au mis muisons de maisons de maisons pas un autre faisait tout ce qui souffrez mais comme un papier. Il a au misième--Le paysans de l'ouvrait tout à coup il n'avait pas en tatite de muisse par le papier, toutes les pauvres mains par le papier, mais ce qui a le papier, au misister dans sa chambre de madame Magloireaux appelée de la soir travail de la fenêtre et reprit:
+
+--Pourquoi?
+
+--Comment troupe taison de l'autre tous conviers d'une façon de soir tous confiance pas plus tard toutes les cartouches. Il avait tiré.
+
+--Monsieur le maire. Il avait tout ce qui se faisait trouvé coup de manger appelait au coin de la colonne n'avait pas ce qu'il aperçut par le pain de la rue de l'autretout ce qui remple était très de son collet.
+
+--Vous aurons plus de toutes les cartouches.
+
+--Vous a comme un affaction tui manquait toujours par le roi de madame Magloire de ma fatite. Il avait appelée de sourir au moins mains rouges.
+
+On appelait trop paystation de l'argot. Il a là un paysan, toutes les mains.
+
+--Monsieur le maire.
+
+--Monsieur, au milieu d'un paysan, mais approcha de la force de souffrance à la maison de l'idéal, était trouvé coup de maisons pas plus tard trop court. Tout cela au misiseurs aux talitait suprême terrer.
+
+--Je l'ai pas mêmes par le pain de la rue de l'officier, nous aurons plancher. Il a au me faisant au soleil pas de la maison de l'autre de maire. Il avait tout ce qui saisit l'autre comme un papier plus d'autres. Il appelait le papier, par le pain de la rue de la rue, mais ce qui n'a pas de la société par le papier, mais au moins près de la société tous ce qui est troupe de son coeur était très faude, tous ce qui est la soir tous le m
+
+
+Texte généré après entrainement à 1 : 
+suaire, à tous ce qui a le maire. Quand le corbertes.
+
+--Monsieur le maire sous le coifférentes, mais tout ce qui s'appelait troupe de sourir de lui, l'ombre de madame Magloire au mis maisons pas été au moins ma colonel mangeait tout ce qui a au miterdit. Il avait tiré à la plus profonde, tous ce qui est au milieu de la société par le papier, au moment après de la grille du pape, qui se faisait par le comprends par la soir tous le paysan malade, mais toutes les pauvres par le maire au mis mois par le papier, ce mot de l'autre tout ce qui remuena comme on a dit rien autre de la paysant de sourire d'un autre par le papier, mais aucun au couvent pas ce qu'on appelait trouvé dans le corridor pas cela. Qui appelée de la fatigée de ma fation pour un paysan de l'autre confuse par le tournait tout ce qui a le paysan plus de tous ce qui a aura faisant le tournant tout ce qui souffrance à mafit au souriant tout ce qui souffrez mais de mit à convait pas médecin de la soir, au milieu de la maison de la fois par le roment. Il arriva de moi de la soir tourna soit travais de la fenêtre par le coup de mangerait au soir tous le mot.
+
+--J'ai faire au milieu de la porte de la rue, un poit. Il avait tout ce qui a le pays tiche était troupe de l'éléphant à coup. Il n'a pas de la fatigée de fleurs d'or le corridor et se faisait toutes les pavés, tourna soit travailler.
+
+--Comment troupe de soir. Comme il n'avait pas médecin de la place du matin, un paysan de la plus
+tard trop sa sources au couvent au moins d'appelait trouvé ce papier, au mis moins par l'évêque.
+
+--C'est après, mais comme un paison de l'idéal, par la souveraineté ma fatigue de la plus de toutes de la barricade, et plus tard trouver le papier, au mis moins plus de tous ce qui a le souleva sur la soeur de la salle à main de la soir, donner un paysan de l'autre de la fatigue.
+
+--Je n'ai pas peut-être pas échappait le papier, le fatigue et par le pain de corde, et le répondit le maison de la corde, et dit:
+
+--Vous faisaient tous ce qui a au miter-même terroute. De lui, par la soir transfication de lui, mais après, toutes les chambres d'autres. Marius par le papier, çà et là de l'autre par la soir toucher.
+
+--Monsieur, dit Bavards de la plus de tous ces matela au soleil tomba en pleuve tui, je n'ai pas de l'inconnu travail de la paysant de sourire. Il avait tout ce qui remue de la soir tous le maison de l'inconnu travail par l'égout. Il a toutes les colossale traîner dans le maison de 
