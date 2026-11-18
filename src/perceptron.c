@@ -327,6 +327,11 @@ void   update_modele(Modele *m, int *ctx, int cible) {
             m->voc->emb[ctx[k]][j] -= lr * m->dx[k*d + j];
 }
 
+void displayPerfs(Modele *m, const Texte *t){
+    float Lt = calc_perte(m, t, 1);
+    printf("perte train=%.4f perplexite val=%.2f\n",Lt, expf(Lt));
+}
+
 void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, float taux0, char *best_path){
 
     m->nbTraining=m->nbTraining+1;
@@ -346,7 +351,8 @@ void train_modele(Modele *m, const Texte *train, const Texte *val, int epoques, 
     printf("%d epoques\n",epoques);
 
     for (int e = epoques_initial; e < maxEpoques; e++) {
-        float lr = taux0 / (1.0f + 3.0f * e / maxEpoques);   // Decroissance du taux
+        float lr = taux0 / (1.0f + 3.0f * (e) / maxEpoques);  // Decroissance du taux
+        printf("lr : %f\n",lr);
         for (int l = 0; l < m->net->nb_layer; l++) m->net->Layers[l]->taux = lr;
 
         for (int i = ni - 1; i > 0; i--) {                // Fisher-Yates

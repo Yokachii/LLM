@@ -36,4 +36,6 @@ int sauver_modele(const Modele *m, char *chemin);
 Modele *charger_modele(const char *chemin);    // NULL si le fichier est invalide
 void encoder_amorce(const Vocab *voc, const char *texte, int N, int *out);
 
+void displayPerfs(Modele *m, const Texte *t);
+
 #endif

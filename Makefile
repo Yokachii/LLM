@@ -1,8 +1,11 @@
-main : perceptron.o main.o dataset.o use train
+main : perceptron.o main.o dataset.o use train test
 	gcc -O3 -Wall -Wextra -o perceptron perceptron.o main.o dataset.o -lm
 
 use : perceptron.o use.o dataset.o 
 	gcc -O3 -Wall -Wextra -o use perceptron.o use.o dataset.o -lm
+
+test : perceptron.o test.o dataset.o 
+	gcc -O3 -Wall -Wextra -o test perceptron.o test.o dataset.o -lm
 
 train : perceptron.o train.o dataset.o 
 	gcc -O3 -Wall -Wextra -o train perceptron.o train.o dataset.o -lm
@@ -18,6 +21,9 @@ main.o : ./src/main.c ./include/dataset.h ./include/perceptron.h
 
 use.o : ./src/use.c ./include/dataset.h ./include/perceptron.h
 	gcc -c -O3 -Wall -Wextra -o use.o ./src/use.c
+
+test.o : ./src/test.c ./include/dataset.h ./include/perceptron.h
+	gcc -c -O3 -Wall -Wextra -o test.o ./src/test.c
 
 train.o : ./src/train.c ./include/dataset.h ./include/perceptron.h
 	gcc -c -O3 -Wall -Wextra -o train.o ./src/train.c
